@@ -22,4 +22,4 @@
 
 09. Write a C++ program to find the largest of two numbers.
 
-10. Write a C++ program to add all the numbers of an array of size 10.
+10. Write a C++ program to find of all the numbers of an array of size 10.
