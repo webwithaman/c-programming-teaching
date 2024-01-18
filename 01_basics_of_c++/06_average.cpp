@@ -10,15 +10,15 @@ using namespace std;
 // // Main Function Start
 int main()
 {
-    float l, b, h, vol;
+    float num1, num2, num3, sum, avg;
 
-    cout << "\nEnter Length, Breadth and Height of Cuboid to Find Volume => ";
-    cin >> l >> b >> h;
+    cout << "\nEnter 3 Numbers to Find Average => ";
+    cin >> num1 >> num2 >> num3;
 
-    // // calculate volume
-    vol = l * b * h;
+    sum = num1 + num2 + num3;
+    avg = sum / 3;
 
-    cout << "\nVolume of Cuboid => " << vol;
+    cout << "\nAverage => " << avg;
 
     cout << endl; // Add new line
     getch();
