@@ -1,0 +1,25 @@
+⭐⭐⭐⭐⭐⭐⭐ WEB WITH AMAN ⭐⭐⭐⭐⭐⭐⭐
+
+🟢 Language ➡ C++
+🟢 Topic ➡ Basics of C++
+
+
+01. Write a C++ program to print Hello MySirG on the screen.
+
+02. Write a C++ program to print Hello on the first line and MySirG on the second   line using endl.
+
+03. Write a C++ program to calculate the sum of two numbers.
+
+04. Write a C++ program to calculate the area of a circle.
+
+05. Write a C++ program to calculate the volume of a cuboid.
+
+06. Write a C++ program to calculate an average of 3 numbers.
+
+07. Write a C++ program to calculate the square of a number.
+
+08. Write a C++ program to swap values of two int variables without using third variable.
+
+09. Write a C++ program to find the maximum of two numbers.
+
+10. Write a C++ program to add all the numbers of an array of size 10.
