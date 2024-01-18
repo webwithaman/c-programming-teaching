@@ -1,4 +1,4 @@
-// // Write a C++ program to calculate the volume of a cuboid.
+// // Write a C++ program to calculate average of 3 numbers.
 
 // // Header files
 #include <iostream>

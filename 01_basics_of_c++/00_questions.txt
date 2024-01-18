@@ -14,7 +14,7 @@
 
 05. Write a C++ program to calculate the volume of a cuboid.
 
-06. Write a C++ program to calculate an average of 3 numbers.
+06. Write a C++ program to calculate average of 3 numbers.
 
 07. Write a C++ program to calculate the square of a number.
 
