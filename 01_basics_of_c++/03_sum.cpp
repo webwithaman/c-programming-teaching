@@ -1,4 +1,4 @@
-// Write a C++ program to calculate the sum of two numbers.
+// // Write a C++ program to calculate the sum of two numbers.
 
 // // Header files
 #include <iostream>
