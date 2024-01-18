@@ -14,6 +14,7 @@ int main()
     cout << "cpp" << endl
          << "programming"; // endl is used to add new line '\n' char
 
+    cout << endl; // Add new line
     getch();
     return 0;
 }
