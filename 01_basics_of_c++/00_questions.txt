@@ -4,7 +4,7 @@
 🟢 Topic ➡ Basics of C++
 
 
-01. Write a C++ program to print Hello MySirG on the screen.
+01. Write a C++ program to print "cpp-programming" on the screen.
 
 02. Write a C++ program to print Hello on the first line and MySirG on the second   line using endl.
 
