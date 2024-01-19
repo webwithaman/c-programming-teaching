@@ -15,19 +15,19 @@ double largestOfTwo(double, double);
 // // Main Function Start
 int main()
 {
-    float l, b, radius;
 
-    cout << "\nEnter Length and Breadth of Rectangle to Find Area => ";
-    cin >> l >> b;
+    int num1, num2;
+    double num3, num4;
 
-    // // calculate area of rectangle using overloaded area function
-    cout << "\nArea of Rectangle => " << area(l, b);
+    cout << "\nEnter 2 Integer Numbers to Find Largest => ";
+    cin >> num1 >> num2;
 
-    cout << "\n\nEnter Radius of Circle to Find Area => ";
-    cin >> radius;
+    cout << "\nLargest of " << num1 << " and " << num2 << " => " << largestOfTwo(num1, num2);
 
-    // // calculate area of circle using overloaded area function
-    cout << "\nArea of Circle => " << area(radius);
+    cout << "\n\nEnter 2 Real Numbers to Find Largest => ";
+    cin >> num3 >> num4;
+
+    cout << "\nLargest of " << num3 << " and " << num4 << " => " << largestOfTwo(num3, num4);
 
     cout << endl; // Add new line
     getch();
@@ -37,14 +37,14 @@ int main()
 
 // // Function Definition
 
-// // Overloaded Function to Find Area of Rectangle
-float area(float l, float b)
+// // Overloaded Function to Find Largest of Two Integer Constants
+int largestOfTwo(int num1, int num2)
 {
-    return l * b;
+    return num1 > num2 ? num1 : num2;
 }
 
-// // Overloaded Function to Find Area of Circle
-float area(float radius)
+// // Overloaded Function to Largeet of Two Real Constants
+double largestOfTwo(double num1, double num2)
 {
-    return 22.0 / 7 * radius * radius;
+    return num1 > num2 ? num1 : num2;
 }

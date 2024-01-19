@@ -9,13 +9,13 @@
 using namespace std;
 
 // // Functions Declarations (Prototypes)
-float area(float);
-float area(float, float);
+double area(double);
+double area(double, double);
 
 // // Main Function Start
 int main()
 {
-    float l, b, radius;
+    double l, b, radius;
 
     cout << "\nEnter Length and Breadth of Rectangle to Find Area => ";
     cin >> l >> b;
@@ -38,13 +38,13 @@ int main()
 // // Function Definition
 
 // // Overloaded Function to Find Area of Rectangle
-float area(float l, float b)
+double area(double l, double b)
 {
     return l * b;
 }
 
 // // Overloaded Function to Find Area of Circle
-float area(float radius)
+double area(double radius)
 {
     return 22.0 / 7 * radius * radius;
 }
