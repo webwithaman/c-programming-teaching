@@ -8,7 +8,7 @@
 // // Add namespace
 using namespace std;
 
-// // Function Declaration (Prototype)
+// // Functions Declarations (Prototypes)
 int largestOfTwo(int, int);
 double largestOfTwo(double, double);
 
