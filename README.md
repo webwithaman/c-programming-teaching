@@ -7,6 +7,7 @@ This repository contains a collection of programming questions and solutions in 
 The repository is structured based on different topics, with each topic having its dedicated folder containing relevant programming questions and solutions.
 
 - /01_basics_of_c++
+- /02_functions
 
 ## Clone this Repository
 
