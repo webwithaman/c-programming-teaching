@@ -10,9 +10,9 @@
 
 3. Define a function to calculate x raised to the power y.
 
-4. Define a function to print Pascal Triangle up to N lines.
+4. Define a function to check whether a given number is a term in a Fibonacci  series or not.
 
-5. Define a function to check whether a given number is a term in a Fibonacci  series or not.
+5. Define a function to print Pascal Triangle up to N lines.
 
 6. Define a function to swap data of two int variables using call by reference.
 
