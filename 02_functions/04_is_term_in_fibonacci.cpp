@@ -40,6 +40,8 @@ int main()
 // // Function to Check whether A Given Number is a Term in Fibonacci Series or Not
 int isTermInFibonacci(int num)
 {
+    // // Assuming Series Starting from 0,1,1,2,3.... N
+
     int prev = -1, next = 1, res = 0;
 
     while (res < num)
