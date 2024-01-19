@@ -3,7 +3,6 @@
 // // Header files
 #include <iostream>
 #include <conio.h>
-#include <math.h>
 
 // // Add namespace
 using namespace std;
@@ -31,7 +30,7 @@ int main()
 
 // // Function Definition
 
-// // Function to Check Whether A Given Number is Prime or Not
+// // Function to Find Highest Value Digit of A Number
 int highestDigit(int num)
 {
     int highDigit = num % 10;
