@@ -20,11 +20,13 @@ int main()
     cout << "\nEnter Length and Breadth of Rectangle to Find Area => ";
     cin >> l >> b;
 
+    // // calculate area of rectangle using overloaded area function
     cout << "\nArea of Rectangle => " << area(l, b);
 
     cout << "\n\nEnter Radius of Circle to Find Area => ";
     cin >> radius;
 
+    // // calculate area of circle using overloaded area function
     cout << "\nArea of Circle => " << area(radius);
 
     cout << endl; // Add new line
