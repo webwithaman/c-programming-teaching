@@ -1,4 +1,4 @@
-// // Define overloaded functions to calculate area of circle, area of rectangle.
+// // Write functions using function overloading to find largest of two numbers and both the numbers can be integer or real.
 
 // // Header files
 #include <iostream>
@@ -8,9 +8,9 @@
 // // Add namespace
 using namespace std;
 
-// // Functions Declarations (Prototypes)
-float area(float);
-float area(float, float);
+// // Function Declaration (Prototype)
+int largestOfTwo(int, int);
+double largestOfTwo(double, double);
 
 // // Main Function Start
 int main()
