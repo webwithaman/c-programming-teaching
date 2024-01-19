@@ -10,17 +10,24 @@
 using namespace std;
 
 // // Function Declaration (Prototype)
-void pascalTriangle(int);
-long long unsigned int factorial(int);
+void swap(int &, int &);
 
 // // Main Function Start
 int main()
 {
-    int lines;
-    cout << "\nHow Many Lines of Pascal Triangle You Want to Print => ";
-    cin >> lines;
+    int a, b;
+    cout << "\nEnter value of a => ";
+    cin >> a;
+    cout << "\nEnter value of b => ";
+    cin >> b;
+    cout << "\n\n>>>>>>>>>>> Before Swapping <<<<<<<<<<<" << endl;
+    cout << "a => " << a << ", b => " << b;
 
-    pascalTriangle(lines);
+    // // swap values of a and b
+    swap(a, b);
+
+    cout << "\n\n>>>>>>>>>>> After Swapping <<<<<<<<<<<" << endl;
+    cout << "a => " << a << ", b => " << b;
 
     cout << endl; // Add new line
     getch();
@@ -31,24 +38,24 @@ int main()
 // // Function Definition
 
 // // Function to Print Pascal Triangle Upto N Lines
-void pascalTriangle(int maxRows)
+void swap(int &a, int &b)
 {
-    cout << "\n-------------------------------------------------------------\n";
 
-    int element;
+    // // using Addition and Subtraction
+    a = a + b;
+    b = a - b;
+    a = a - b;
 
-    for (int row = 0; row < maxRows; row++)
-    {
+    // // using Divison and Multiplication
+    // // a = a * b;
+    // // b = a / b;
+    // // a = a / b;
 
-        for (int space = 0; space < maxRows - row - 1; space++)
-            cout << "   ";
+    // // using Bitwise XOR (^)
+    // // a = a ^ b;
+    // // b = a ^ b;
+    // // a = a ^ b;
 
-        for (int col = 0; col <= row; col++)
-        {
-            element = factorial(row) / (factorial(col) * factorial(row - col));
-            cout << setw(3) << element << "   ";
-        }
-
-        cout << endl;
-    }
+    // // In Single line
+    // // a = (a + b) - (b = a);
 }
