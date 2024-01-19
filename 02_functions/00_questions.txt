@@ -18,7 +18,7 @@
 
 7. Write a function using the default argument that is able to add 2 or 3 numbers.
 
-8. Define overloaded functions to calculate area of circle, area of rectangle and area of triangle.
+8. Define overloaded functions to calculate area of circle, area of rectangle.
 
 9. Write functions using function overloading to find largest of two numbers and
 both the numbers can be integer or real.
