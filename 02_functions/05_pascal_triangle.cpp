@@ -4,6 +4,7 @@
 #include <iostream>
 #include <conio.h>
 #include <math.h>
+#include <iomanip>
 
 // // Add namespace
 using namespace std;
@@ -32,30 +33,20 @@ int main()
 // // Function to Print Pascal Triangle Upto N Lines
 void pascalTriangle(int maxRows)
 {
-    cout << "\n----------------------------------------------------\n";
+    cout << "\n-------------------------------------------------------------\n";
 
-    int toggle, element, colValue;
+    int element;
 
     for (int row = 0; row < maxRows; row++)
     {
-        toggle = 1;
-        colValue = 0;
 
         for (int space = 0; space < maxRows - row - 1; space++)
-            cout << " ";
+            cout << "   ";
 
-        for (int col = 0; col < row * 2 + 1; col++)
+        for (int col = 0; col <= row; col++)
         {
-            if (toggle)
-            {
-                element = factorial(row) / (factorial(row) * factorial(row - colValue));
-                cout << element;
-                colValue++;
-            }
-            else
-                cout << " ";
-
-            toggle = !toggle;
+            element = factorial(row) / (factorial(col) * factorial(row - col));
+            cout << setw(3) << element << "   ";
         }
 
         cout << endl;
