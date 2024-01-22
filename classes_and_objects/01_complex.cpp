@@ -5,6 +5,9 @@
 #include <conio.h>
 #include <math.h>
 
+// // use namespace
+using namespace std;
+
 // // define class Complex
 class Complex
 {

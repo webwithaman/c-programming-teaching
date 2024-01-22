@@ -4,7 +4,7 @@
 #include <iostream>
 #include <conio.h>
 
-// // Add namespace
+// // use namespace
 using namespace std;
 
 #define ARRAY_SIZE 10

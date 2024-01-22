@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <math.h>
 
-// // Add namespace
+// // use namespace
 using namespace std;
 
 // // Function Declaration (Prototype)

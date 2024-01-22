@@ -26,7 +26,7 @@
 #include <math.h>
 #include <iomanip>
 
-// // Add namespace
+// // use namespace
 using namespace std;
 
 // // Function Declaration (Prototype)

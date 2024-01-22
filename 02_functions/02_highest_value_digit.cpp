@@ -4,7 +4,7 @@
 #include <iostream>
 #include <conio.h>
 
-// // Add namespace
+// // use namespace
 using namespace std;
 
 // // Function Declaration (Prototype)
