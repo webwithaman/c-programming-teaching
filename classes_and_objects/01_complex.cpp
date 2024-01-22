@@ -3,7 +3,6 @@
 // // Header files
 #include <iostream>
 #include <conio.h>
-#include <math.h>
 
 // // use namespace
 using namespace std;
@@ -11,16 +10,19 @@ using namespace std;
 // // define class Complex
 class Complex
 {
+    // instance member variables
     float real;
     float imag;
 
 public:
+    // instance member function to set compelx number
     void setComplex(float r, float i)
     {
         real = r;
         imag = i;
     }
 
+    // instance member function to print compelx number
     void printComplex()
     {
         cout << "\n"

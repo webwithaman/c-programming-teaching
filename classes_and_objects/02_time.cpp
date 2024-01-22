@@ -3,19 +3,19 @@
 // // Header files
 #include <iostream>
 #include <conio.h>
-#include <math.h>
 
 // // use namespace
 using namespace std;
 
-// // define class Complex
-class Complex
+// // define class Time
+class Time
 {
-    float real;
-    float imag;
+    int hours;
+    int minutes;
+    int seconds;
 
 public:
-    void setComplex(float r, float i)
+    void setTime(int)
     {
         real = r;
         imag = i;
