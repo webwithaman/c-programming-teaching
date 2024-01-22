@@ -8,7 +8,7 @@ The repository is structured based on different topics, with each topic having i
 
 - /01_basics_of_c++
 - /02_functions
-
+- /classes_and_objects
 
 ## Clone this Repository
 
