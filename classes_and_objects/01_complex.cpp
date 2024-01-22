@@ -9,15 +9,19 @@
 class Complex
 {
     float real;
-    float imaginary;
+    float imag;
 
 public:
-    void setComplex()
+    void setComplex(float r, float i)
     {
+        real = r;
+        imag = i;
     }
 
     void printComplex()
     {
+        cout << "\n"
+             << real << " + " << imag << "i" << endl;
     }
 };
 
