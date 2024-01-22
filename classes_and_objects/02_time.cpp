@@ -10,41 +10,47 @@ using namespace std;
 // // define class Time
 class Time
 {
+    // instance member variables
     int hours;
     int minutes;
     int seconds;
 
 public:
-    void setTime(int)
+    // instance member function to set compelx number
+    void setTime(int hr, int min, int sec)
     {
-        real = r;
-        imag = i;
+        hours = hr;
+        minutes = min;
+        seconds = sec;
     }
 
-    void printComplex()
+    // instance member function to display
+    void displayTime()
     {
         cout << "\n"
-             << real << " + " << imag << "i" << endl;
+             << hours << " hr " << minutes << " min " << seconds << " sec " << endl;
     }
 };
 
 // // Main Function Start
 int main()
 {
-    Complex c1; // create object of Complex
-    float real, imag;
+    Time t1; // create object of Time
+    int hr, min, sec;
 
-    // Get Complex number
-    cout << "\n>>>>>>>> Enter A Complex Number <<<<<<<<<\n";
-    cout << "\nEnter Real Part => ";
-    cin >> real;
-    cout << "\nEnter Imaginary Part => ";
-    cin >> imag;
+    // Get Time number
+    cout << "\n>>>>>>>> Enter Time <<<<<<<<<\n";
+    cout << "\nEnter Hours => ";
+    cin >> hr;
+    cout << "\nEnter Minutes => ";
+    cin >> min;
+    cout << "\nEnter Seconds => ";
+    cin >> sec;
 
-    c1.setComplex(real, imag); // set complex number
+    t1.setTime(hr, min, sec); // set time
 
-    cout << "\n>>>>>>>> Entered Complex Number <<<<<<<<<";
-    c1.printComplex(); // print complex number
+    cout << "\n>>>>>>>> Entered Time <<<<<<<<<";
+    t1.displayTime(); // display time
 
     cout << endl; // Add new line
     getch();

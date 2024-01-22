@@ -1,4 +1,4 @@
-// // Define a class Complex to represent a complex number. Declare instance member variables to store real and imaginary part of a complex number, also define instance member functions to set values of complex number and print values of complex number.
+// // Define a class Complex to represent a complex number. Declare instance member variables to store real and imaginary part of a complex number, also define instance member functions to set values of complex number and display values of complex number.
 
 // // Header files
 #include <iostream>
@@ -22,8 +22,8 @@ public:
         imag = i;
     }
 
-    // instance member function to print compelx number
-    void printComplex()
+    // instance member function to display compelx number
+    void displayComplex()
     {
         cout << "\n"
              << real << " + " << imag << "i" << endl;
@@ -46,7 +46,7 @@ int main()
     c1.setComplex(real, imag); // set complex number
 
     cout << "\n>>>>>>>> Entered Complex Number <<<<<<<<<";
-    c1.printComplex(); // print complex number
+    c1.displayComplex(); // display complex number
 
     cout << endl; // Add new line
     getch();
