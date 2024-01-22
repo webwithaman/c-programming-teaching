@@ -34,11 +34,10 @@ int main()
     Complex c1; // create object of Complex
     float real, imag;
 
+    // Get Complex number
     cout << "\n>>>>>>>> Enter A Complex Number <<<<<<<<<\n";
-
     cout << "\nEnter Real Part => ";
     cin >> real;
-    
     cout << "\nEnter Imaginary Part => ";
     cin >> imag;
 
