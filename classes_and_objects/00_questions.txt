@@ -1,7 +1,7 @@
 ⭐⭐⭐⭐⭐⭐⭐ WEB WITH AMAN ⭐⭐⭐⭐⭐⭐⭐
 
 🟢 Language ➡ C++
-🟢 Topic ➡ Functions
+🟢 Topic ➡ Classes And Objects
 
 
 01. Define a class Complex to represent a complex number. Declare instance member
@@ -29,4 +29,4 @@ Count number of times a function is called.
 09. Define a class Circle and define an instance member function to find the area of the circle.
 
 10. Define a class Area and define instance member functions to find the area of the
-different shapes like square, rectangle , circle etc
+different shapes like square, rectangle , circle etc.
