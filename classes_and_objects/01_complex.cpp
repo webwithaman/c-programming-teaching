@@ -31,5 +31,24 @@ public:
 // // Main Function Start
 int main()
 {
+    Complex c1; // create object of Complex
+    float real, imag;
+
+    cout << "\n>>>>>>>> Enter A Complex Number <<<<<<<<<\n";
+
+    cout << "\nEnter Real Part => ";
+    cin >> real;
+    
+    cout << "\nEnter Imaginary Part => ";
+    cin >> imag;
+
+    c1.setComplex(real, imag); // set complex number
+
+    cout << "\n>>>>>>>> Entered Complex Number <<<<<<<<<";
+    c1.printComplex(); // print complex number
+
+    cout << endl; // Add new line
+    getch();
+    return 0;
 }
 // // Main Function End
