@@ -1,6 +1,6 @@
 # Cpp Programming Questions
 
-This repository contains a collection of programming questions and solutions in the Cpp programming language. The questions cover various fundamental concepts such as Input/Output, Operators, Object-Oriented Programming, Classes and Objects, Constructors, Operator Overloading, Exception Handling and more.
+This repository contains a collection of programming questions and solutions in the Cpp programming language. The questions cover various fundamental concepts such as Input/Output, Operators, Object-Oriented Programming, Classes and Objects, Constructors, Inheritance, Operator Overloading, Exception Handling and more.
 
 ## Directory Structure
 
