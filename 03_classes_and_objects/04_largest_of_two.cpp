@@ -1,4 +1,4 @@
-// // Define a class LargestNumber and define an instance member function to find the Largest of two Numbers using the class.
+// // Define a class LargestNumber which should be able to find largest of 2 or 3 numbers. So, define appropriate instance member functions to do this task.
 
 // // Header files
 #include <iostream>
@@ -7,8 +7,8 @@
 // // use namespace
 using namespace std;
 
-// // define class Factorial
-class Factorial
+// // define class LargestOfTwo
+class LargestOfTwo
 {
     // instance member variable
     int num;
@@ -28,7 +28,7 @@ public:
     }
 
     // instance member function to calculate factorial of num
-    void calculateFactorial()
+    void calculateLargestOfTwo()
     {
         factorial = 1;
         for (int i = 2; i <= num; i++)
@@ -36,7 +36,7 @@ public:
     }
 
     // instance member function to display the factorial
-    void displayFactorial()
+    void displayLargestOfTwo()
     {
         cout << factorial;
     }
@@ -45,20 +45,20 @@ public:
 // // Main Function Start
 int main()
 {
-    Factorial f1; // create object of Factorial
+    LargestOfTwo f1; // create object of LargestOfTwo
     int n;
 
     // Get a number to calculate factorial
-    cout << "\nEnter A Number to Calculate Factorial => ";
+    cout << "\nEnter A Number to Calculate LargestOfTwo => ";
     cin >> n;
 
     f1.setNumber(n); // set Number to calculate factorial
 
-    f1.calculateFactorial(); // calculate factorial of n
+    f1.calculateLargestOfTwo(); // calculate factorial of n
 
-    cout << "\nFactorial of " << n << " => ";
+    cout << "\nLargestOfTwo of " << n << " => ";
 
-    f1.displayFactorial(); // display factorial of n
+    f1.displayLargestOfTwo(); // display factorial of n
 
     cout << endl; // Add new line
     getch();

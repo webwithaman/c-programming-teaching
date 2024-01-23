@@ -10,11 +10,9 @@
 
 03. Define a class Factorial and define an instance member function to find the Factorial of a number using class.
 
-04. Define a class LargestNumber and define an instance member function to find the
-Largest of two Numbers using the class.
+04. Define a class LargestNumber which should be able to find largest of 2 or 3 numbers. So, define appropriate instance member functions to do this task.
 
-05. Define a class LargestNumber and define an instance member function to find the
-Largest amnong 3 Numbers using the class.
+05. Define a class Student having member variables roll and name. Now, define instance member functions to set data of these member variables and display these member variables.
 
 06. Define a class Square to find the square of a number and write a C++ program to
 Count number of times a function is called.
