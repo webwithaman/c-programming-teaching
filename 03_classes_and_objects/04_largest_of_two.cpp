@@ -10,18 +10,18 @@ using namespace std;
 // // define class LargestNumber
 class LargestNumber
 {
-    // instance member variables
+    // // instance member variables
     int num1, num2, num3, largest;
 
 public:
-    // instance member function to set number 2 numbers
+    // // instance member function to set number 2 numbers
     void setNumbers(int n1, int n2)
     {
         num1 = n1;
         num2 = n2;
     }
 
-    // instance member function to set number 3 numbers
+    // // instance member function to set number 3 numbers
     void setNumbers(int n1, int n2, int n3)
     {
         num1 = n1;
@@ -29,13 +29,13 @@ public:
         num3 = n3;
     }
 
-    // instance member function to find largest of 2 numbers
+    // // instance member function to find largest of 2 numbers
     void findLargestOfTwo()
     {
         largest = num1 > num2 ? num1 : num2;
     }
 
-    // instance member function to find largest among three  numbers
+    // // instance member function to find largest among three  numbers
     void findLargestOfThree()
     {
         if (num1 > num2)
@@ -51,7 +51,7 @@ public:
             largest = num3;
     }
 
-    // instance member function to get the largest number
+    // // instance member function to get the largest number
     int getLargest()
     {
         return largest;
@@ -64,7 +64,7 @@ int main()
     LargestNumber l1; // create object of LargestNumber
     int n1, n2, n3, largest;
 
-    // Get two numbers to find largest of 2 numbers
+    // // Get two numbers to find largest of 2 numbers
     cout << "\nEnter Two Numbers to Find Largest => ";
     cin >> n1 >> n2;
 
@@ -75,7 +75,7 @@ int main()
     // // display largest number
     cout << "\nLargest Number => " << largest;
 
-    // Get three numbers to find largest of 2 numbers
+    // // Get three numbers to find largest of 2 numbers
     cout << "\n\nEnter Three Numbers to Find Largest => ";
     cin >> n1 >> n2 >> n3;
 

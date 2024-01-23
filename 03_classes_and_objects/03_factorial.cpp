@@ -10,24 +10,24 @@ using namespace std;
 // // define class Factorial
 class Factorial
 {
-    // instance member variable
+    // // instance member variable
     int num;
     long long unsigned int factorial;
 
 public:
-    // instance member function to set number for which the factorial will be calculated
+    // // instance member function to set number for which the factorial will be calculated
     void setNumber(int n)
     {
         num = n;
     }
 
-    // instance member function to get number for which the factorial will be calculated
+    // // instance member function to get number for which the factorial will be calculated
     int getNumber()
     {
         return num;
     }
 
-    // instance member function to calculate factorial of num
+    // // instance member function to calculate factorial of num
     void calculateFactorial()
     {
         factorial = 1;
@@ -35,7 +35,7 @@ public:
             factorial *= i;
     }
 
-    // instance member function to get the factorial
+    // // instance member function to get the factorial
     long long unsigned int getFactorial()
     {
         return factorial;
@@ -49,7 +49,7 @@ int main()
     int n;
     long long unsigned int fact;
 
-    // Get a number to calculate factorial
+    // // Get a number to calculate factorial
     cout << "\nEnter A Number to Calculate Factorial => ";
     cin >> n;
 

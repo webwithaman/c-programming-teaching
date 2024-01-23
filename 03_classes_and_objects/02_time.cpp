@@ -10,13 +10,13 @@ using namespace std;
 // // define class Time
 class Time
 {
-    // instance member variables
+    // // instance member variables
     int hours;
     int minutes;
     int seconds;
 
 public:
-    // instance member function to set compelx number
+    // // instance member function to set compelx number
     void setTime(int hr, int min, int sec)
     {
         hours = hr;
@@ -24,7 +24,7 @@ public:
         seconds = sec;
     }
 
-    // instance member function to display
+    // // instance member function to display
     void displayTime()
     {
         cout << "\n"
@@ -38,7 +38,7 @@ int main()
     Time t1; // create object of Time
     int hr, min, sec;
 
-    // Get Time number
+    // // Get Time number
     cout << "\n>>>>>>>> Enter Time <<<<<<<<<\n";
     cout << "\nEnter Hours => ";
     cin >> hr;
