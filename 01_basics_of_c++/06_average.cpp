@@ -10,7 +10,7 @@ using namespace std;
 // // Main Function Start
 int main()
 {
-    float num1, num2, num3, sum, avg;
+    double num1, num2, num3, sum, avg;
 
     cout << "\nEnter 3 Numbers to Find Average => ";
     cin >> num1 >> num2 >> num3;

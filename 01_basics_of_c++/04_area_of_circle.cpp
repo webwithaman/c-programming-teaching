@@ -10,7 +10,7 @@ using namespace std;
 // // Main Function Start
 int main()
 {
-    float radius, area;
+    double radius, area;
 
     cout << "\nEnter Radius of Circle => ";
     cin >> radius;

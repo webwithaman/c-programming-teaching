@@ -10,7 +10,7 @@ using namespace std;
 // // Main Function Start
 int main()
 {
-    float l, b, h, vol;
+    double l, b, h, vol;
 
     cout << "\nEnter Length, Breadth and Height of Cuboid to Find Volume => ";
     cin >> l >> b >> h;

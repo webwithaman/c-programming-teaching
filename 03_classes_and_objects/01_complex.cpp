@@ -11,12 +11,12 @@ using namespace std;
 class Complex
 {
     // // instance member variables
-    float real;
-    float imag;
+    double real;
+    double imag;
 
 public:
     // // instance member function to set compelx number
-    void setComplex(float r, float i)
+    void setComplex(double r, double i)
     {
         real = r;
         imag = i;
@@ -34,7 +34,7 @@ public:
 int main()
 {
     Complex c1; // create object of Complex
-    float real, imag;
+    double real, imag;
 
     // // Get Complex number
     cout << "\n>>>>>>>> Enter A Complex Number <<<<<<<<<\n";

@@ -11,7 +11,7 @@ using namespace std;
 class Circle
 {
     // // instance member variables
-    float radius, area;
+    double radius, area;
 
 public:
     // // instance member function to set radius of circle
@@ -21,7 +21,7 @@ public:
     }
 
     // // instance member function to get radius of circle
-    float getRadius(int l)
+    double getRadius(int l)
     {
         return radius;
     }
@@ -33,7 +33,7 @@ public:
     }
 
     // // instance member function to get the area of circle
-    int getArea()
+    double getArea()
     {
         return area;
     }
@@ -43,7 +43,7 @@ public:
 int main()
 {
     Circle cir1; // create object of Circle
-    float rad, area;
+    double rad, area;
 
     // // Get radius of a circle to find its area
     cout << "\nEnter Radius of A Circle => ";

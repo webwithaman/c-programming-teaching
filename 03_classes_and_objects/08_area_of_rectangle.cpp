@@ -11,7 +11,7 @@ using namespace std;
 class Rectangle
 {
     // // instance member variables
-    float length, breadth, area;
+    double length, breadth, area;
 
 public:
     // // instance member function to set length of rectangle
@@ -34,13 +34,13 @@ public:
     }
 
     // // instance member function to get length of rectangle
-    float getLength(int l)
+    double getLength(int l)
     {
         return length;
     }
 
     // // instance member function to get breadth of rectangle
-    float getBreadth(int b)
+    double getBreadth(int b)
     {
         return breadth;
     }
@@ -52,7 +52,7 @@ public:
     }
 
     // // instance member function to get the area of rectangle
-    int getArea()
+    double getArea()
     {
         return area;
     }
@@ -62,7 +62,7 @@ public:
 int main()
 {
     Rectangle rec1; // create object of Rectangle
-    float l, b, area;
+    double l, b, area;
 
     // // Get length and breadth of a rectangle to find its area
     cout << "\nEnter Length and Breadth of A Rectangle => ";

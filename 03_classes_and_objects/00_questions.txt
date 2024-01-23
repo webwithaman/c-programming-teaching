@@ -25,4 +25,4 @@ Reverse of a Number using class.
 09. Define a class Circle and define an instance member function to find the area of the circle.
 
 10. Define a class Area and define instance member functions to find the area of the
-different shapes like square, rectangle , circle etc.
+different shapes like square, rectangle, triangle and circle etc.
