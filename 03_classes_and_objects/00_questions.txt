@@ -11,15 +11,16 @@
 03. Define a class Factorial and define an instance member function to find the Factorial of a number using class.
 
 04. Define a class LargestNumber and define an instance member function to find the
-Largest of three Numbers using the class.
+Largest of two Numbers using the class.
 
-05. Define a class ReverseNumber and define an instance member function to find
-Reverse of a Number using class.
+05. Define a class LargestNumber and define an instance member function to find the
+Largest amnong 3 Numbers using the class.
 
 06. Define a class Square to find the square of a number and write a C++ program to
 Count number of times a function is called.
 
-07. Define a class Greatest and define instance member function to find Largest among 3 numbers using classes.
+07. Define a class ReverseNumber and define an instance member function to find
+Reverse of a Number using class.
 
 08. Define a class Rectangle and define an instance member function to find the area of the rectangle.
 
