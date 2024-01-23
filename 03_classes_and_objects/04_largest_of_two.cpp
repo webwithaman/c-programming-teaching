@@ -51,10 +51,10 @@ public:
             largest = num3;
     }
 
-    // instance member function to display the largest number
-    void displayLargestNumber()
+    // instance member function to get the largest number
+    int getLargest()
     {
-        cout << largest;
+        return largest;
     }
 };
 
@@ -62,18 +62,18 @@ public:
 int main()
 {
     LargestNumber l1; // create object of LargestNumber
-    int n1, n2, n3;
+    int n1, n2, n3, largest;
 
     // Get two numbers to find largest of 2 numbers
     cout << "\nEnter Two Numbers to Find Largest => ";
     cin >> n1 >> n2;
 
-    l1.setNumbers(n1, n2); // set numbers to find largest of two numbers
-    l1.findLargestOfTwo(); // find largest of two numbers
+    l1.setNumbers(n1, n2);     // set numbers to find largest of two numbers
+    l1.findLargestOfTwo();     // find largest of two numbers
+    largest = l1.getLargest(); // get largets number
 
     // // display largest number
-    cout << "\nLargest Number => ";
-    l1.displayLargestNumber();
+    cout << "\nLargest Number => " << largest;
 
     // Get three numbers to find largest of 2 numbers
     cout << "\n\nEnter Three Numbers to Find Largest => ";
@@ -81,10 +81,10 @@ int main()
 
     l1.setNumbers(n1, n2, n3); // set numbers to find largest among three numbers
     l1.findLargestOfThree();   // find largest of two numbers
+    largest = l1.getLargest(); // get largets number
 
     // // display largest number
-    cout << "\nLargest Number => ";
-    l1.displayLargestNumber();
+    cout << "\nLargest Number => " << largest;
 
     cout << endl; // Add new line
     getch();
