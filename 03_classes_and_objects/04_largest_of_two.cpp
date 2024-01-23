@@ -1,4 +1,4 @@
-// //  Define a class LargestNumber and define an instance member function to find the Largest of two Numbers using the class.
+// // Define a class LargestNumber and define an instance member function to find the Largest of two Numbers using the class.
 
 // // Header files
 #include <iostream>
