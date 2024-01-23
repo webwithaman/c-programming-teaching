@@ -1,9 +1,8 @@
-// // Define a class Student having member variables roll and name. Now, define instance member functions to set data of these member variables and get these member variables.
+// // Define a class Square to find the square of a number and write a C++ program to Count number of times a function is called.
 
 // // Header files
 #include <iostream>
 #include <conio.h>
-#include <string.h>
 
 #define MAX_CHARS_NAME 31
 
