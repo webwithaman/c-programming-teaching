@@ -21,10 +21,10 @@ public:
         num = n;
     }
 
-    // instance member function to display number for which the factorial will be calculated
-    void displayNumber()
+    // instance member function to get number for which the factorial will be calculated
+    int getNumber()
     {
-        cout << num;
+        return num;
     }
 
     // instance member function to calculate factorial of num
@@ -35,10 +35,10 @@ public:
             factorial *= i;
     }
 
-    // instance member function to display the factorial
-    void displayFactorial()
+    // instance member function to get the factorial
+    long long unsigned int getFactorial()
     {
-        cout << factorial;
+        return factorial;
     }
 };
 
@@ -47,6 +47,7 @@ int main()
 {
     Factorial f1; // create object of Factorial
     int n;
+    long long unsigned int fact;
 
     // Get a number to calculate factorial
     cout << "\nEnter A Number to Calculate Factorial => ";
@@ -56,9 +57,9 @@ int main()
 
     f1.calculateFactorial(); // calculate factorial of n
 
-    cout << "\nFactorial of " << n << " => ";
+    fact = f1.getFactorial(); // get factorial
 
-    f1.displayFactorial(); // display factorial of n
+    cout << "\nFactorial of " << n << " => " << fact;
 
     cout << endl; // Add new line
     getch();

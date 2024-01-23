@@ -1,52 +1,57 @@
-// // Define a class Complex to represent a complex number. Declare instance member variables to store real and imaginary part of a complex number, also define instance member functions to set values of complex number and display values of complex number.
+// // Define a class Student having member variables roll and name. Now, define instance member functions to set data of these member variables and display these member variables.
 
 // // Header files
 #include <iostream>
 #include <conio.h>
+#include <string.h>
 
 // // use namespace
 using namespace std;
 
-// // define class Complex
-class Complex
+// // define class Student
+class Student
 {
-    // instance member variables
-    float real;
-    float imag;
+    static const int MAX_CHARS_NAME = 31;
+    char name[MAX_CHARS_NAME];
+    int roll;
 
 public:
-    // instance member function to set compelx number
-    void setComplex(float r, float i)
+    // instance member function to set roll
+    void setRoll(int r)
     {
-        real = r;
-        imag = i;
+        roll = r;
     }
 
-    // instance member function to display compelx number
-    void displayComplex()
+    // instance member function to set name
+    void setRoll(char *nm)
     {
-        cout << "\n"
-             << real << " + " << imag << "i" << endl;
+        strcpy(name, nm);
+    }
+
+    // instance member function to display roll
+    void displayRoll()
+    {
+        
     }
 };
 
 // // Main Function Start
 int main()
 {
-    Complex c1; // create object of Complex
+    Student c1; // create object of Student
     float real, imag;
 
-    // Get Complex number
-    cout << "\n>>>>>>>> Enter A Complex Number <<<<<<<<<\n";
+    // Get Student number
+    cout << "\n>>>>>>>> Enter A Student Number <<<<<<<<<\n";
     cout << "\nEnter Real Part => ";
     cin >> real;
     cout << "\nEnter Imaginary Part => ";
     cin >> imag;
 
-    c1.setComplex(real, imag); // set complex number
+    c1.setStudent(real, imag); // set complex number
 
-    cout << "\n>>>>>>>> Entered Complex Number <<<<<<<<<";
-    c1.displayComplex(); // display complex number
+    cout << "\n>>>>>>>> Entered Student Number <<<<<<<<<";
+    c1.displayStudent(); // display complex number
 
     cout << endl; // Add new line
     getch();
