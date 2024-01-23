@@ -13,6 +13,7 @@ using namespace std;
 // // define class Student
 class Student
 {
+    // // instance member variables
     char name[MAX_CHARS_NAME];
     int roll;
 

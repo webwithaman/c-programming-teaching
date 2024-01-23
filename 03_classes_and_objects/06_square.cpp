@@ -4,66 +4,67 @@
 #include <iostream>
 #include <conio.h>
 
-#define MAX_CHARS_NAME 31
-
 // // use namespace
 using namespace std;
 
-// // define class Student
-class Student
+// // define class Square
+class Square
 {
-    char name[MAX_CHARS_NAME];
-    int roll;
+    // // instance member variables
+    int num;
+    long long unsigned int square;
 
 public:
-    // instance member function to set roll
-    void setRoll(int r)
+    // static member variable to count number of times the calculateSquare function is called
+    static int countFunctionCalls;
+
+    // // instance member function to set number for which the square will be calculated
+    void setNumber(int n)
     {
-        roll = r;
+        num = n;
     }
 
-    // instance member function to set name
-    void setName(char *nm)
+    // // instance member function to get number for which the square will be calculated
+    int getNumber()
     {
-        strcpy(name, nm);
+        return num;
     }
 
-    // instance member function to get roll
-    int getRoll()
+    // // instance member function to calculate square of num
+    void calculateSquare()
     {
-        return roll;
+        square = num * num;
+        countFunctionCalls++;
     }
 
-    // instance member function to get name
-    char *getName(char *nm)
+    // // instance member function to get the square
+    long long unsigned int getSquare()
     {
-        strcpy(nm, name);
-        return nm;
+        return square;
     }
 };
+
+// define (initialize) static member variable of Square class
+int Square::countFunctionCalls = 0;
 
 // // Main Function Start
 int main()
 {
-    Student s1; // create object of Student
-    char name[MAX_CHARS_NAME];
-    int roll;
+    Square sqr1; // create object of Square
+    int n;
+    long long unsigned int square;
 
-    // // Get student's Data
-    cout << "\nEnter Student's Roll Number => ";
-    cin >> roll;
+    // // Get a number to calculate square of it
+    cout << "\nEnter A Number to Calculate Square => ";
+    cin >> n;
 
-    cout << "\nEnter Student's Name (MAX_CHARACTERS " << MAX_CHARS_NAME - 1 << ") => ";
-    cin.ignore();
-    cin.getline(name, MAX_CHARS_NAME);
+    sqr1.setNumber(n);      // set number to calculate square
+    sqr1.calculateSquare(); // calculate square
 
-    // // set students's data
-    s1.setRoll(roll);
-    s1.setName(name);
+    // // Get and display square
+    square = sqr1.getSquare();
 
-    // // get and display students's data
-    cout << "\nStudent's Roll Number => " << s1.getRoll();
-    cout << "\nStudent's Name => " << s1.getName(name);
+    cout << "\nSquare of " << n << " => " << square;
 
     cout << endl; // Add new line
     getch();
