@@ -37,11 +37,10 @@ public:
     }
 
     // instance member function to get name
-    char *getName()
+    char *getName(char *nm)
     {
-        char copyName[MAX_CHARS_NAME];
-        strcpy(copyName, name);
-        return copyName;
+        strcpy(nm, name);
+        return nm;
     }
 };
 
@@ -66,7 +65,7 @@ int main()
 
     // // get and display students's data
     cout << "\nStudent's Roll Number => " << s1.getRoll();
-    cout << "\nStudent's Name => " << s1.getName();
+    cout << "\nStudent's Name => " << s1.getName(name);
 
     cout << endl; // Add new line
     getch();
