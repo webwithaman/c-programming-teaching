@@ -15,13 +15,13 @@ class Factorial
     long long unsigned int factorial;
 
 public:
-    // // instance member function to set number for which the factorial will be calculated
+    // // instance member function to set the value of num
     void setNumber(int n)
     {
         num = n;
     }
 
-    // // instance member function to get number for which the factorial will be calculated
+    // // instance member function to get the value of num
     int getNumber()
     {
         return num;
@@ -46,20 +46,20 @@ public:
 int main()
 {
     Factorial f1; // create object of Factorial
-    int n;
+    int num;
     long long unsigned int fact;
 
     // // Get a number to calculate factorial
     cout << "\nEnter A Number to Calculate Factorial => ";
-    cin >> n;
+    cin >> num;
 
-    f1.setNumber(n); // set Number to calculate factorial
+    f1.setNumber(num); // set Number to calculate factorial
 
     f1.calculateFactorial(); // calculate factorial of n
 
     fact = f1.getFactorial(); // get factorial
 
-    cout << "\nFactorial of " << n << " => " << fact;
+    cout << "\nFactorial of " << num << " => " << fact;
 
     cout << endl; // Add new line
     getch();

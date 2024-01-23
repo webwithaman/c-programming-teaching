@@ -15,53 +15,55 @@ class ReverseNumber
     int revOfNum;
 
 public:
-    // // instance member function to set number for which the square will be calculated
+    // // instance member function to set number
     void setNumber(int n)
     {
         num = n;
     }
 
-    // // instance member function to get number for which the square will be calculated
+    // // instance member function to get the value of num
     int getNumber()
     {
         return num;
     }
 
     // // instance member function to calculate square of num
-    void calculateReverseNumber()
+    void findReverse()
     {
-        square = num * num;
-        countFunctionCalls++;
+        int copyNum = num;
+        revOfNum = 0;
+
+        while (copyNum)
+        {
+            revOfNum = revOfNum * 10 + copyNum % 10;
+            copyNum /= 10;
+        }
     }
 
-    // // instance member function to get the square
-    long long unsigned int getReverseNumber()
+    // // instance member function to get the reverse number
+    int getReverseNumber()
     {
-        return square;
+        return revOfNum;
     }
 };
-
-// define (initialize) static member variable of ReverseNumber class
-int ReverseNumber::countFunctionCalls = 0;
 
 // // Main Function Start
 int main()
 {
-    ReverseNumber sqr1; // create object of ReverseNumber
-    int n;
-    long long unsigned int square;
+    ReverseNumber rev1; // create object of ReverseNumber
+    int num, rev;
 
-    // // Get a number to calculate square of it
-    cout << "\nEnter A Number to Calculate ReverseNumber => ";
-    cin >> n;
+    // // Get a number to find its reverse
+    cout << "\nEnter A Number to Find It's Reverse => ";
+    cin >> num;
 
-    sqr1.setNumber(n);             // set number to calculate square
-    sqr1.calculateReverseNumber(); // calculate square
+    rev1.setNumber(num); // set number to find it's reverse
+    rev1.findReverse();  // find reverse
 
-    // // Get and display square
-    square = sqr1.getReverseNumber();
+    // // Get and display reverse of num
+    rev = rev1.getReverseNumber();
 
-    cout << "\nReverseNumber of " << n << " => " << square;
+    cout << "\nReverse of " << num << " => " << rev;
 
     cout << endl; // Add new line
     getch();

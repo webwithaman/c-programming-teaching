@@ -18,13 +18,13 @@ public:
     // static member variable to count number of times the calculateSquare function has called
     static int countFunctionCalls;
 
-    // // instance member function to set number for which the square will be calculated
+    // // instance member function to set the value of num
     void setNumber(int n)
     {
         num = n;
     }
 
-    // // instance member function to get number for which the square will be calculated
+    // // instance member function to get the value of num
     int getNumber()
     {
         return num;
@@ -51,32 +51,32 @@ int Square::countFunctionCalls = 0;
 int main()
 {
     Square sqr1, sqr2; // create object of Square
-    int n;
+    int num;
     long long unsigned int square;
 
     // // Get a number to calculate square of it
     cout << "\nEnter A Number to Calculate Square => ";
-    cin >> n;
+    cin >> num;
 
-    sqr1.setNumber(n);      // set number to calculate square
+    sqr1.setNumber(num);    // set number to calculate square
     sqr1.calculateSquare(); // calculate square
 
     // // Get and display square
     square = sqr1.getSquare();
 
-    cout << "\nSquare of " << n << " => " << square;
+    cout << "\nSquare of " << num << " => " << square;
 
     // // Get a number to calculate square of it
     cout << "\n\nEnter A Number to Calculate Square => ";
-    cin >> n;
+    cin >> num;
 
-    sqr2.setNumber(n);      // set number to calculate square
+    sqr2.setNumber(num);    // set number to calculate square
     sqr2.calculateSquare(); // calculate square
 
     // // Get and display square
     square = sqr2.getSquare();
 
-    cout << "\nSquare of " << n << " => " << square;
+    cout << "\nSquare of " << num << " => " << square;
 
     // // display number of times the calculateSquare function has called
     cout << "\nYou Have Calculated Square of " << Square::countFunctionCalls << " Numbers";
