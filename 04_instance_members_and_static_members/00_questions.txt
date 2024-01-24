@@ -17,24 +17,28 @@ b. void showTime()
 c. void normalize()
 d. Time add(Time)
 
-3. Define a class Cube and calculate Volume of Cube and initialise it using constructor.
+3. Create a class named Person with instance member variables for name, age, and gender. Implement a function to display the details of a person.
 
-4. Define a class Counter and Write a program to Show Counter using Constructor.
+4. Define a class Rectangle with instance member variables length and width. Write a member function to calculate the area of the rectangle.
 
-5. Define a class Date and write a program to Display Dateand initialise date object
-using Constructors.
+5. Design a class Circle with an instance member variable radius. Write a member function to calculate the circumference of the circle.
 
-6. Define a class student and write a program to enter student details using constructor and define member function to display all the details.
+6. Create a class BankAccount with instance member variables accountNumber, balance, and ownerName. Implement member functions for deposit and withdrawal operations.
 
-7. Define a class Box and write a program to enter length, breadth and height and
-initialise objects using constructor also define member functions to calculate volume
-of the box.
+7. Define a class Student with instance member variables for name, rollNumber, and an array marks to store subject-wise marks. Write a member function to calculate the average marks.
 
-8. Define a class Bank and define member functions to read principal , rate of interest and year. Another member functions to calculate simple interest and display it. Initialise all details using constructor.
+8. Develop a class MathOperations with a static member function square that calculates the square of a given number.
 
-9. Define a class Bill and define its member function get() to take detail of customer, calculateBill() function to calculate electricity bill using below tariff :
-Upto 100 unit RS. 1.20 per unit
-From 100 to 200 unit RS. 2 per unit
-Above 200 units RS. 3 per unit.
+9. Create a class Library with a static member variable totalBooks and a static member function borrowBook. Track the number of available books in the library.
 
 10. Define a class StaticCount and create a static variable. Increment this variable in a function and call this 3 times and display the result
+
+11. mplement a class Counter with a static member variable count and a member function to increment the count. Display the count after creating multiple objects.
+
+12. Design a class Employee with instance member variables for name, salary, and a static member variable for totalEmployees. Write a member function to display employee details and update the total number of employees.
+
+13. Create a class TemperatureConverter with a static member function to convert Celsius to Fahrenheit. Include an instance member variable for storing the temperature in Celsius.
+
+14. Define a class Product with instance member variables for productName, price, and a static member variable for totalProducts. Implement member functions for displaying product details and updating the total number of products.
+
+15. Define a class Triangle with instance member variables for the three sides (side1, side2, side3). Write a member function to check if the triangle is valid.
