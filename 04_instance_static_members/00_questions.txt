@@ -1,7 +1,7 @@
 ⭐⭐⭐⭐⭐⭐⭐ WEB WITH AMAN ⭐⭐⭐⭐⭐⭐⭐
 
 🟢 Language ➡ C++
-🟢 Topic ➡ Instance Members and Static Members 
+🟢 Topic ➡ Instance And Static Members 
 
 
 1. Define a class Complex to represent a complex number with instance variables a and
