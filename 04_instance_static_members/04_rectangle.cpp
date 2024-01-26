@@ -1,4 +1,4 @@
-// // Define a class Rectangle and define an instance member function to find the area of the rectangle.
+// // Define a class Rectangle and define an instance member function to find Reverse of a Number using class.
 
 // // Header files
 #include <iostream>

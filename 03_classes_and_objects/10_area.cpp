@@ -1,4 +1,4 @@
-// // Define a class Shape and define an instance member function to find Reverse of a Number using class.
+// // Define a class Area and define instance member functions to find the area of the different shapes like square, rectangle, triangle and circle etc.
 
 // // Header files
 #include <iostream>
