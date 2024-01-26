@@ -7,9 +7,8 @@ Define a class Time to represent a time with instance variables h,m and s to sto
 - c. void normalize()
 - d. Time add(Time)
 
-*/
 
-/*
+Normalization of Time :-
 
 Normalizing time typically involves converting time into a standardized representation, often as a decimal or a specific unit. Here are a couple of common scenarios for normalizing time:
 
