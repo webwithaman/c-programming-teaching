@@ -16,7 +16,7 @@ class Time
     int seconds;
 
 public:
-    // // instance member function to set compelx number
+    // // instance member function to set time
     void setTime(int hr, int min, int sec)
     {
         hours = hr;
@@ -24,7 +24,7 @@ public:
         seconds = sec;
     }
 
-    // // instance member function to display
+    // // instance member function to display time
     void displayTime()
     {
         cout << "\n"
@@ -38,8 +38,8 @@ int main()
     Time t1; // create object of Time
     int hr, min, sec;
 
-    // // Get Time number
-    cout << "\n>>>>>>>> Enter Time <<<<<<<<<\n";
+    // // Get Time
+    cout << "\n>>>>>>>> Enter Time (24 Hour Format) <<<<<<<<<\n";
     cout << "\nEnter Hours => ";
     cin >> hr;
     cout << "\nEnter Minutes => ";

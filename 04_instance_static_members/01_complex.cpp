@@ -38,11 +38,11 @@ public:
     }
 
     // // instance member function to add two complex numbers
-    Complex add(Complex C)
+    Complex add(Complex c)
     {
         Complex temp;
-        temp.a = a + C.a;
-        temp.b = b + C.b;
+        temp.a = a + c.a;
+        temp.b = b + c.b;
         return temp;
     }
 };
@@ -63,7 +63,7 @@ int main()
     cout << "\nEnter Imaginary Part => ";
     cin >> imag;
 
-    c1.setData(real, imag); // set complex number
+    c1.setData(real, imag); // set complex number for c1
 
     // // Get second complex number
     cout << "\n\n>>>>>>>> Enter Second Complex Number <<<<<<<<<\n";
@@ -72,7 +72,7 @@ int main()
     cout << "\nEnter Imaginary Part => ";
     cin >> imag;
 
-    c2.setData(real, imag); // set complex number
+    c2.setData(real, imag); // set complex number for c2
 
     // // display first complex number
     cout << "\n>>>>>>>> First Complex Number <<<<<<<<<\n";
@@ -85,8 +85,9 @@ int main()
     // // add complex numbers
     c3 = c1.add(c2);
 
-    cout << "\n>>>>>>>> Sum of Entered Complex Numbers <<<<<<<<<\n";
-    c3.showData(); // display sum
+    // // display addition of complex numbers
+    cout << "\n>>>>>>>> Addition of Entered Complex Numbers <<<<<<<<<\n";
+    c3.showData();
 
     cout << endl; // Add new line
     getch();
