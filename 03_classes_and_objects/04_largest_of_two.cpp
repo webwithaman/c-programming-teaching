@@ -10,6 +10,8 @@ using namespace std;
 // // define class LargestNumber
 class LargestNumber
 {
+
+private:
     // // instance member variables
     int num1, num2, num3, largest;
 

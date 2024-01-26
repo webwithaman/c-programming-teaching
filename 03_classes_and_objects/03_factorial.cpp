@@ -10,6 +10,8 @@ using namespace std;
 // // define class Factorial
 class Factorial
 {
+
+private:
     // // instance member variable
     int num;
     long long unsigned int factorial;

@@ -10,6 +10,8 @@ using namespace std;
 // // define class Complex
 class Complex
 {
+
+private:
     // // instance member variables
     double real;
     double imag;

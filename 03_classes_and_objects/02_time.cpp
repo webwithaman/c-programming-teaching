@@ -10,6 +10,8 @@ using namespace std;
 // // define class Time
 class Time
 {
+
+private:
     // // instance member variables
     int hours;
     int minutes;

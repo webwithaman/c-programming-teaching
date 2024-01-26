@@ -11,6 +11,8 @@ using namespace std;
 // // define class Shape
 class Shape
 {
+
+private:
     // // instance member variables
     char shape[10];
     double dim1, dim2, area;

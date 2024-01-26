@@ -10,6 +10,8 @@ using namespace std;
 // // define class Circle
 class Circle
 {
+
+private:
     // // instance member variables
     double radius, area;
 

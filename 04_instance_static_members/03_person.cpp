@@ -13,6 +13,8 @@ using namespace std;
 // // define class Person
 class Person
 {
+
+private:
     // // instance member variables
     char name[MAX_CHARS_NAME];
     int age;

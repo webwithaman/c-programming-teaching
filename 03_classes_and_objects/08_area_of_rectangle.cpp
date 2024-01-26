@@ -10,6 +10,8 @@ using namespace std;
 // // define class Rectangle
 class Rectangle
 {
+
+private:
     // // instance member variables
     double length, breadth, area;
 

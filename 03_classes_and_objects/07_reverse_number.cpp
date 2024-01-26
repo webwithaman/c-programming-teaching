@@ -10,6 +10,8 @@ using namespace std;
 // // define class ReverseNumber
 class ReverseNumber
 {
+
+private:
     // // instance member variables
     int num;
     int revOfNum;

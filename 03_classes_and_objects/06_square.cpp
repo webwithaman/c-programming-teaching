@@ -10,6 +10,8 @@ using namespace std;
 // // define class Square
 class Square
 {
+
+private:
     // // instance member variables
     int num;
     long long unsigned int square;
