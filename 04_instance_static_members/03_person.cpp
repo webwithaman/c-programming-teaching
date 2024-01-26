@@ -1,4 +1,4 @@
-// Create a class named Person with instance member variables for name, age Implement functions to set and display the details of a person.
+// // Create a class named Person with instance member variables for name, age Implement functions to set and display the details of a person.
 
 // // Header files
 #include <iostream>
@@ -20,25 +20,25 @@ private:
     int age;
 
 public:
-    // instance member function to set age
+    // // instance member function to set age
     void setAge(int a)
     {
         age = a;
     }
 
-    // instance member function to set name
+    // // instance member function to set name
     void setName(char *nm)
     {
         strcpy(name, nm);
     }
 
-    // instance member function to get age
+    // // instance member function to get age
     int getAge()
     {
         return age;
     }
 
-    // instance member function to get name
+    // // instance member function to get name
     char *getName(char *nm)
     {
         strcpy(nm, name);

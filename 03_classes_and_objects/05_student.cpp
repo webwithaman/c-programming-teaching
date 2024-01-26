@@ -13,32 +13,32 @@ using namespace std;
 // // define class Student
 class Student
 {
-    
+
 private:
     // // instance member variables
     char name[MAX_CHARS_NAME];
     int roll;
 
 public:
-    // instance member function to set roll
+    // // instance member function to set roll
     void setRoll(int r)
     {
         roll = r;
     }
 
-    // instance member function to set name
+    // // instance member function to set name
     void setName(char *nm)
     {
         strcpy(name, nm);
     }
 
-    // instance member function to get roll
+    // // instance member function to get roll
     int getRoll()
     {
         return roll;
     }
 
-    // instance member function to get name
+    // // instance member function to get name
     char *getName(char *nm)
     {
         strcpy(nm, name);
