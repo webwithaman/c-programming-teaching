@@ -4,11 +4,10 @@
 🟢 Topic ➡ Instance And Static Members 
 
 
-1. Define a class Complex to represent a complex number with instance variables a and
-b to store real and imaginary parts. Also define following member functions
-a. void setData(int,int)
-b. void showData()
-c. Complex add(Complex)
+1. Define a class Complex to represent a complex number with instance variables a and b to store real and imaginary parts. Also define following member functions
+- a. void setData(int,int)
+- b. void showData()
+- c. Complex add(Complex)
 
 2. Define a class Time to represent a time with instance variables h,m and s to store
 hour, minute and second. Also define following member functions
