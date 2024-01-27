@@ -13,10 +13,12 @@ using namespace std;
 // // define class Library
 class Library
 {
+public:
+    // // static member variables
+    static const unsigned int MAX_CHARS_IN_TITLE = 31;
 
 private:
-    // static member variables
-    static const unsigned int MAX_CHARS_IN_TITLE = 31;
+    // // static member variables
     static unsigned int totalBooks;
 
     // // instance member variables
@@ -24,6 +26,12 @@ private:
     char bookTitle[MAX_CHARS_IN_TITLE];
 
 public:
+    // // static function to get Total Books
+    static unsigned int getMAX()
+    {
+        return totalBooks;
+    }
+
     // // static function to get Total Books
     static unsigned int getTotalBooks()
     {
@@ -67,6 +75,27 @@ unsigned int Library::totalBooks = 0;
 int main()
 {
     Library b1;
+    int id;
+    char title[Library::MAX_CHARS_IN_TITLE];
+
+    // // show total books in library
+    cout << "\nTotal Books In Library => " << Library::getTotalBooks() << endl;
+
+    // // Get book id
+    cout << "\nEnter Book Id => ";
+    cin >> id;
+
+    // // Get book title
+    cout << "\nEnter Book Title (MAX_CHARS " << Library::MAX_CHARS_IN_TITLE << ") => ";
+    cin.ignore();
+    cin.getline(title, Library::MAX_CHARS_IN_TITLE);
+
+    // // set book details
+    b1.setBookId(id);
+    b1.setBookTitle(title);
+
+    // // show total books in library
+    cout << "\nTotal Books In Library => " << Library::getTotalBooks() << endl;
 
     cout << endl; // Add new line
     getch();
