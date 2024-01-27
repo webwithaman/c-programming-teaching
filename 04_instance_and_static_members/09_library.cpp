@@ -8,13 +8,11 @@
 // // use namespace
 using namespace std;
 
-// #define MAX_CHARS_NAME 31
-
 // // define class Library
 class Library
 {
 public:
-    // // static member variables
+    // // static member variable
     static const unsigned int MAX_CHARS_IN_TITLE = 31;
 
 private:
@@ -86,7 +84,7 @@ int main()
     cin >> id;
 
     // // Get book title
-    cout << "\nEnter Book Title (MAX_CHARS " << Library::MAX_CHARS_IN_TITLE << ") => ";
+    cout << "\nEnter Book Title (MAX_CHARS " << Library::MAX_CHARS_IN_TITLE - 1 << ") => ";
     cin.ignore();
     cin.getline(title, Library::MAX_CHARS_IN_TITLE);
 

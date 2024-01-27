@@ -5,15 +5,16 @@
 #include <conio.h>
 #include <string.h>
 
-#define MAX_CHARS_NAME 31
-#define MAX_SUBS 5
-
 // // use namespace
 using namespace std;
 
 // // define class Student
 class Student
 {
+public:
+    // // static member variables
+    static const unsigned int MAX_CHARS_NAME = 31;
+    static const unsigned int MAX_SUBS = 5;
 
 private:
     // // instance member variables
@@ -77,20 +78,20 @@ public:
 int main()
 {
     Student s1; // create object of Student
-    char name[MAX_CHARS_NAME];
+    char name[Student::MAX_CHARS_NAME];
     int roll;
-    int marks[MAX_SUBS];
+    int marks[Student::MAX_SUBS];
 
     // // Get student's Data
     cout << "\nEnter Student's Roll Number => ";
     cin >> roll;
 
-    cout << "\nEnter Student's Name (MAX_CHARACTERS " << MAX_CHARS_NAME - 1 << ") => ";
+    cout << "\nEnter Student's Name (MAX_CHARACTERS " << Student::MAX_CHARS_NAME - 1 << ") => ";
     cin.ignore();
-    cin.getline(name, MAX_CHARS_NAME);
+    cin.getline(name, Student::MAX_CHARS_NAME);
 
-    cout << "\nEnter Student's Marks in " << MAX_SUBS << " Subjects => ";
-    for (int i = 0; i < MAX_SUBS; i++)
+    cout << "\nEnter Student's Marks in " << Student::MAX_SUBS << " Subjects => ";
+    for (int i = 0; i < Student::MAX_SUBS; i++)
         cin >> marks[i];
 
     // // set students's data

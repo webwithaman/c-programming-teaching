@@ -5,14 +5,16 @@
 #include <conio.h>
 #include <string.h>
 
-#define MAX_CHARS_NAME 31
-
 // // use namespace
 using namespace std;
 
 // // define class Person
 class Person
 {
+
+public:
+    // // static member variable
+    static const int MAX_CHARS_NAME = 31;
 
 private:
     // // instance member variables
@@ -50,16 +52,16 @@ public:
 int main()
 {
     Person p1; // create object of Person
-    char name[MAX_CHARS_NAME];
+    char name[Person::MAX_CHARS_NAME];
     int age;
 
     // // Get person's Data
     cout << "\nEnter Person's Age => ";
     cin >> age;
 
-    cout << "\nEnter Person's Name (MAX_CHARACTERS " << MAX_CHARS_NAME - 1 << ") => ";
+    cout << "\nEnter Person's Name (MAX_CHARACTERS " << Person::MAX_CHARS_NAME - 1 << ") => ";
     cin.ignore();
-    cin.getline(name, MAX_CHARS_NAME);
+    cin.getline(name, Person::MAX_CHARS_NAME);
 
     // // set persons's data
     p1.setAge(age);
