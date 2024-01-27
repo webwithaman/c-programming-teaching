@@ -25,12 +25,6 @@ private:
 
 public:
     // // static function to get Total Books
-    static unsigned int getMAX()
-    {
-        return totalBooks;
-    }
-
-    // // static function to get Total Books
     static unsigned int getTotalBooks()
     {
         return totalBooks;
