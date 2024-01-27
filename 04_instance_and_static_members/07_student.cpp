@@ -21,7 +21,7 @@ private:
     char name[MAX_CHARS_NAME];
     int roll;
     int marks[MAX_SUBS];
-    double avgOfMarks;
+    double avgOfMarks = -1;
 
 public:
     // // instance member function to set roll
@@ -57,7 +57,7 @@ public:
     }
 
     // // instance member function to calculate average of marks
-    void calculateAvgofMarks()
+    double calculateAvgofMarks()
     {
         double sum = 0;
 
@@ -99,13 +99,10 @@ int main()
     s1.setName(name);
     s1.setMarks(marks);
 
-    // // calculate average marks of student
-    s1.calculateAvgofMarks();
-
     // // get and display students's data
     cout << "\nStudent's Roll Number => " << s1.getRoll();
     cout << "\nStudent's Name => " << s1.getName(name);
-    cout << "\nAverage Marks => " << s1.getAvgofMarks();
+    cout << "\nAverage Marks => " << s1.calculateAvgofMarks();
 
     cout << endl; // Add new line
     getch();
