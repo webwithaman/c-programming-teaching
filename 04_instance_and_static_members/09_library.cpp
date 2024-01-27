@@ -7,16 +7,44 @@
 // // use namespace
 using namespace std;
 
+#define MAX_CHARS_NAME 31
+
 // // define class Library
 class Library
 {
 
+private:
+    // static member variables
+    static unsigned int MAX_CHARS_IN_TITLE,
+        totalBooks;
+
+    // // instance member variables
+    unsigned int bookId;
+    char bookTitle[MAX_CHARS_NAME];
+
 public:
-    // // static function to find square of a number
-    static long unsigned int square(int num)
+    // // static function to get Total Books
+    unsigned int getTotalBooks()
     {
-        return num * num;
+        return totalBooks;
     }
+
+    // // instance member function to set Book Id
+    void setBookId(int id)
+    {
+        if (id < 0) // if id is negative make it positive
+            id = -id;
+
+        bookId = id;
+    }
+
+    // // instance member function to get Book Id
+    unsigned int getBookId()
+    {
+        return bookId;
+    }
+
+    
 };
 
 // // Main Function Start
