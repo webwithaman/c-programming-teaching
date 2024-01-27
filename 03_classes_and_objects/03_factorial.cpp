@@ -30,16 +30,12 @@ public:
     }
 
     // // instance member function to calculate factorial of num
-    void calculateFactorial()
+    long long unsigned int calculateFactorial()
     {
         factorial = 1;
         for (int i = 2; i <= num; i++)
             factorial *= i;
-    }
 
-    // // instance member function to get the factorial
-    long long unsigned int getFactorial()
-    {
         return factorial;
     }
 };
@@ -57,9 +53,7 @@ int main()
 
     f1.setNumber(num); // set Number to calculate factorial
 
-    f1.calculateFactorial(); // calculate factorial of n
-
-    fact = f1.getFactorial(); // get factorial
+    fact = f1.calculateFactorial(); // calculate factorial of n
 
     cout << "\nFactorial of " << num << " => " << fact;
 

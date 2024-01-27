@@ -32,13 +32,15 @@ public:
     }
 
     // // instance member function to find largest of 2 numbers
-    void findLargestOfTwo()
+    int findLargestOfTwo()
     {
         largest = num1 > num2 ? num1 : num2;
+
+        return largest;
     }
 
     // // instance member function to find largest among three  numbers
-    void findLargestOfThree()
+    int findLargestOfThree()
     {
         if (num1 > num2)
         {
@@ -51,11 +53,7 @@ public:
             largest = num2;
         else
             largest = num3;
-    }
 
-    // // instance member function to get the largest number
-    int getLargest()
-    {
         return largest;
     }
 };
@@ -70,9 +68,8 @@ int main()
     cout << "\nEnter Two Numbers to Find Largest => ";
     cin >> n1 >> n2;
 
-    l1.setNumbers(n1, n2);     // set numbers to find largest of two numbers
-    l1.findLargestOfTwo();     // find largest of two numbers
-    largest = l1.getLargest(); // get largets number
+    l1.setNumbers(n1, n2);           // set numbers to find largest of two numbers
+    largest = l1.findLargestOfTwo(); // find largest of two numbers
 
     // // display largest number
     cout << "\nLargest Number => " << largest;
@@ -81,9 +78,8 @@ int main()
     cout << "\n\nEnter Three Numbers to Find Largest => ";
     cin >> n1 >> n2 >> n3;
 
-    l1.setNumbers(n1, n2, n3); // set numbers to find largest among three numbers
-    l1.findLargestOfThree();   // find largest of two numbers
-    largest = l1.getLargest(); // get largets number
+    l1.setNumbers(n1, n2, n3);         // set numbers to find largest among three numbers
+    largest = l1.findLargestOfThree(); // find largest of two numbers
 
     // // display largest number
     cout << "\nLargest Number => " << largest;

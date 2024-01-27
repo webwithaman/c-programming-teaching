@@ -13,8 +13,7 @@ class ReverseNumber
 
 private:
     // // instance member variables
-    int num;
-    int revOfNum;
+    int num, revOfNum;
 
 public:
     // // instance member function to set number
@@ -30,7 +29,7 @@ public:
     }
 
     // // instance member function to calculate square of num
-    void findReverse()
+    int findReverse()
     {
         int copyNum = num;
         revOfNum = 0;
@@ -40,11 +39,7 @@ public:
             revOfNum = revOfNum * 10 + copyNum % 10;
             copyNum /= 10;
         }
-    }
 
-    // // instance member function to get the reverse number
-    int getReverseNumber()
-    {
         return revOfNum;
     }
 };
@@ -59,12 +54,10 @@ int main()
     cout << "\nEnter A Number to Find It's Reverse => ";
     cin >> num;
 
-    rev1.setNumber(num); // set number to find it's reverse
-    rev1.findReverse();  // find reverse
+    rev1.setNumber(num);      // set number to find it's reverse
+    rev = rev1.findReverse(); // find reverse
 
-    // // Get and display reverse of num
-    rev = rev1.getReverseNumber();
-
+    // // display reverse of num
     cout << "\nReverse of " << num << " => " << rev;
 
     cout << endl; // Add new line

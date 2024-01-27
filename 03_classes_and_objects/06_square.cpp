@@ -33,15 +33,11 @@ public:
     }
 
     // // instance member function to calculate square of num
-    void calculateSquare()
+    long long unsigned int calculateSquare()
     {
         square = num * num;
         countFunctionCalls++;
-    }
 
-    // // instance member function to get the square
-    long long unsigned int getSquare()
-    {
         return square;
     }
 };
@@ -60,24 +56,20 @@ int main()
     cout << "\nEnter A Number to Calculate Square => ";
     cin >> num;
 
-    sqr1.setNumber(num);    // set number to calculate square
-    sqr1.calculateSquare(); // calculate square
+    sqr1.setNumber(num);             // set number to calculate square
+    square = sqr1.calculateSquare(); // calculate square
 
-    // // Get and display square
-    square = sqr1.getSquare();
-
+    // // display square
     cout << "\nSquare of " << num << " => " << square;
 
     // // Get a number to calculate square of it
     cout << "\n\nEnter A Number to Calculate Square => ";
     cin >> num;
 
-    sqr2.setNumber(num);    // set number to calculate square
-    sqr2.calculateSquare(); // calculate square
+    sqr2.setNumber(num);             // set number to calculate square
+    square = sqr2.calculateSquare(); // calculate square
 
-    // // Get and display square
-    square = sqr2.getSquare();
-
+    // // display square
     cout << "\nSquare of " << num << " => " << square;
 
     // // display number of times the calculateSquare function has called
