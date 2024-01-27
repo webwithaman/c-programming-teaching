@@ -24,7 +24,7 @@ private:
     char bookTitle[MAX_CHARS_IN_TITLE];
 
 public:
-    // // static function to get Total Books
+    // // static member function to get Total Books
     static unsigned int getTotalBooks()
     {
         return totalBooks;

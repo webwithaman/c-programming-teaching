@@ -12,7 +12,7 @@ class MathOperations
 {
 
 public:
-    // // static function to find square of a number
+    // // static member function to find square of a number
     static long unsigned int square(int num)
     {
         return num * num;

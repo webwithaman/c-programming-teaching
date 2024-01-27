@@ -25,7 +25,7 @@ private:
     double salary;
 
 public:
-    // // static function to get Total Employees
+    // // static member function to get Total Employees
     static unsigned int getTotalEmployees()
     {
         return totalEmployees;

@@ -15,7 +15,7 @@ private:
     static int count;
 
 public:
-    // // static function to get count
+    // // static member function to get count
     static int getCount()
     {
         return count;
