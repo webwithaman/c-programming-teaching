@@ -3,11 +3,12 @@
 // // Header files
 #include <iostream>
 #include <conio.h>
+#include <string.h>
 
 // // use namespace
 using namespace std;
 
-#define MAX_CHARS_NAME 31
+// #define MAX_CHARS_NAME 31
 
 // // define class Library
 class Library
@@ -15,16 +16,16 @@ class Library
 
 private:
     // static member variables
-    static unsigned int MAX_CHARS_IN_TITLE,
-        totalBooks;
+    static const unsigned int MAX_CHARS_IN_TITLE = 31;
+    static unsigned int totalBooks;
 
     // // instance member variables
     unsigned int bookId;
-    char bookTitle[MAX_CHARS_NAME];
+    char bookTitle[MAX_CHARS_IN_TITLE];
 
 public:
     // // static function to get Total Books
-    unsigned int getTotalBooks()
+    static unsigned int getTotalBooks()
     {
         return totalBooks;
     }
@@ -36,6 +37,7 @@ public:
             id = -id;
 
         bookId = id;
+        totalBooks++;
     }
 
     // // instance member function to get Book Id
@@ -44,32 +46,27 @@ public:
         return bookId;
     }
 
-    
+    // // instance member function to set Book Title
+    void setBookTitle(char *title)
+    {
+        strcpy(bookTitle, title);
+    }
+
+    // // instance member function to get Book Title
+    char *getBookTitle(char *title)
+    {
+        strcpy(title, bookTitle);
+        return title;
+    }
 };
+
+// // define and initialize static member variables
+unsigned int Library::totalBooks = 0;
 
 // // Main Function Start
 int main()
 {
-    int num;
-    long unsigned sq;
-    cout << "\nEnter A Number to Find Square of it => ";
-    cin >> num;
-
-    // // call static member function (square) using class name and scope resolution
-    sq = Library::square(num);
-
-    // // print square of num
-    cout << "\nSquare of " << num << " => " << sq;
-
-    cout << "\n\nEnter Another Number to Find Square of it => ";
-    cin >> num;
-
-    Library m1;
-    // // call static member function (square) using an object
-    sq = m1.square(num);
-
-    // // print square of num
-    cout << "\nSquare of " << num << " => " << sq;
+    Library b1;
 
     cout << endl; // Add new line
     getch();
