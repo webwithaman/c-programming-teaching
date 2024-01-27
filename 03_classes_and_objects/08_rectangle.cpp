@@ -48,14 +48,10 @@ public:
     }
 
     // // instance member function to calculate area of rectangle
-    void calculateArea()
+    double calculateArea()
     {
         area = length * breadth;
-    }
 
-    // // instance member function to get the area of rectangle
-    double getArea()
-    {
         return area;
     }
 };
@@ -70,12 +66,10 @@ int main()
     cout << "\nEnter Length and Breadth of A Rectangle => ";
     cin >> l >> b;
 
-    rec1.setDimensions(l, b); // set dimensions of rectangle
-    rec1.calculateArea();     // find area
+    rec1.setDimensions(l, b);    // set dimensions of rectangle
+    area = rec1.calculateArea(); // find area
 
-    // // Get and display area of rectangle
-    area = rec1.getArea();
-
+    // // display area of rectangle
     cout << "\nArea of Rectangle => " << area;
 
     cout << endl; // Add new line

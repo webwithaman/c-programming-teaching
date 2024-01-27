@@ -29,14 +29,10 @@ public:
     }
 
     // // instance member function to calculate area of circle
-    void calculateArea()
+    double calculateArea()
     {
         area = 22.0 / 7 * radius * radius;
-    }
 
-    // // instance member function to get the area of circle
-    double getArea()
-    {
         return area;
     }
 };
@@ -51,12 +47,10 @@ int main()
     cout << "\nEnter Radius of A Circle => ";
     cin >> rad;
 
-    cir1.setRadius(rad);  // set radius of circle
-    cir1.calculateArea(); // find area
+    cir1.setRadius(rad);         // set radius of circle
+    area = cir1.calculateArea(); // find area
 
-    // // Get and display area of circle
-    area = cir1.getArea();
-
+    // // display area of circle
     cout << "\nArea of Circle => " << area;
 
     cout << endl; // Add new line

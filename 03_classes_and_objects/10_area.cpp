@@ -40,7 +40,7 @@ public:
     }
 
     // // instance member function to calculate area
-    void calculateArea()
+    double calculateArea()
     {
         if (strcmp(shape, "square") == 0)
             area = dim1 * dim1;
@@ -50,11 +50,7 @@ public:
             area = (dim1 * dim2) / 2;
         else
             area = 22.0 / 7 * dim1 * dim1;
-    }
 
-    // // instance member function to get the area
-    double getArea()
-    {
         return area;
     }
 };
@@ -71,10 +67,9 @@ int main()
 
     square.setShape((char *)"square"); // set shape
     square.setDimensions(dim1);        // set dimensions of square
-    square.calculateArea();            // find area
+    area = square.calculateArea();     // find area
 
-    // // Get and display area of rectangle
-    area = square.getArea();
+    // // display area of rectangle
     cout << "\nArea of Square => " << area;
 
     // // Get length and breadth of a rectangle to find its area
@@ -83,10 +78,9 @@ int main()
 
     rectangle.setShape((char *)"rectangle"); // set shape
     rectangle.setDimensions(dim1, dim2);     // set dimensions of rectangle
-    rectangle.calculateArea();               // find area
+    area = rectangle.calculateArea();        // find area
 
-    // // Get and display area of rectangle
-    area = rectangle.getArea();
+    // // display area of rectangle
     cout << "\nArea of Rectangle => " << area;
 
     // // Get length and breadth of a rectangle to find its area
@@ -95,10 +89,9 @@ int main()
 
     triangle.setShape((char *)"triangle"); // set shape
     triangle.setDimensions(dim1, dim2);    // set dimensions of triangle
-    triangle.calculateArea();              // find area
+    area = triangle.calculateArea();       // find area
 
-    // // Get and display area of rectangle
-    area = triangle.getArea();
+    // // display area of rectangle
     cout << "\nArea of Triangle => " << area;
 
     // // Get radius of a circle to find its area
@@ -107,10 +100,9 @@ int main()
 
     circle.setShape((char *)"circle"); // set shape
     circle.setDimensions(dim1);        // set dimension of circle
-    circle.calculateArea();            // find area
+    area = circle.calculateArea();     // find area
 
-    // // Get and display area of circle
-    area = circle.getArea();
+    // // display area of circle
     cout << "\nArea of Circle => " << area;
 
     cout << endl; // Add new line
