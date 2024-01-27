@@ -45,19 +45,39 @@ public:
     // // instance member function to calculate volume of cube
     double calculateVolume()
     {
-        volume = length * 3;
+        volume = length * length * length;
+
+        return volume;
     }
 
     // // instance member function to get volume of cube
     double getVolume()
     {
-       
+        return volume;
     }
 };
 
 // // Main Function Start
 int main()
 {
+    Cube c1; // create object of Cube
+    double len, vol;
+
+    // // get length of a cube
+    cout << "\nEnter Length of A Cube => ";
+    cin >> len;
+
+    // // set length
+    c1.setLength(len);
+
+    // // get and show length
+    cout << "\nLength of Cube => " << c1.getLength();
+
+    // // calculate volume
+    vol = c1.calculateVolume();
+
+    // // show volume
+    cout << "\n\nVolume of Cube => " << vol;
 
     cout << endl; // Add new line
     getch();
