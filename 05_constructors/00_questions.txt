@@ -6,10 +6,9 @@
 
 1. Define a class Cube and calculate Volume of Cube and initialise it using constructor.
 
-2. Define a class Counter and initialize the Counter using Constructor.
+2. Define a class Counter and initialize the Counter object using Constructor.
 
-3. Define a class Date and write a program to Display Dateand initialise date object
-using Constructors.
+3. Define a class Date and write a program to Display Date and initialize date object using Constructors.
 
 4. Define a class student and write a program to enter student details using constructor and define member function to display all the details.
 
