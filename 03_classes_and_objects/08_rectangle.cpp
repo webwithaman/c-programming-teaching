@@ -13,7 +13,7 @@ class Rectangle
 
 private:
     // // instance member variables
-    double length, breadth, area;
+    double length, breadth, area = 0;
 
 public:
     // // instance member function to set length of rectangle
@@ -52,6 +52,12 @@ public:
     {
         area = length * breadth;
 
+        return area;
+    }
+
+    // // instance member function to get the area of rectangle
+    double getArea()
+    {
         return area;
     }
 };

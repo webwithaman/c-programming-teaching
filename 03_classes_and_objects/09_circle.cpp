@@ -13,7 +13,7 @@ class Circle
 
 private:
     // // instance member variables
-    double radius, area;
+    double radius, area = 0;
 
 public:
     // // instance member function to set radius of circle
@@ -33,6 +33,12 @@ public:
     {
         area = 22.0 / 7 * radius * radius;
 
+        return area;
+    }
+
+    // // instance member function to get the area of circle
+    double getArea()
+    {
         return area;
     }
 };

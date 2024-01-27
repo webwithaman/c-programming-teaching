@@ -13,7 +13,7 @@ class Circle
 
 private:
     // // instance member variables
-    double radius, circumference;
+    double radius, circumference = 0;
 
 public:
     // // instance member function to set radius of circle
@@ -29,7 +29,7 @@ public:
     }
 
     // // instance member function to calculate circumference of circle
-    void calculateCircumference()
+    double calculateCircumference()
     {
         circumference = 2 * (22.0 / 7) * radius;
     }
@@ -51,12 +51,10 @@ int main()
     cout << "\nEnter Radius of A Circle => ";
     cin >> rad;
 
-    cir1.setRadius(rad);           // set radius of circle
-    cir1.calculateCircumference(); // find circumference
+    cir1.setRadius(rad);                           // set radius of circle
+    circumference = cir1.calculateCircumference(); // find circumference
 
-    // // Get and display circumference of circle
-    circumference = cir1.getCircumference();
-
+    // // display circumference of circle
     cout << "\nCircumference of Circle => " << circumference;
 
     cout << endl; // Add new line

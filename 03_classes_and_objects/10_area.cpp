@@ -15,7 +15,7 @@ class Shape
 private:
     // // instance member variables
     char shape[10];
-    double dim1, dim2, area;
+    double dim1, dim2, area = 0;
 
 public:
     // // instance member function to set shape
@@ -51,6 +51,12 @@ public:
         else
             area = 22.0 / 7 * dim1 * dim1;
 
+        return area;
+    }
+
+    // // instance member function to get the area
+    double getArea()
+    {
         return area;
     }
 };
