@@ -11,7 +11,7 @@
 // // use namespace
 using namespace std;
 
-// // define class Person
+// // define class BankAccount
 class BankAccount
 {
 
@@ -71,7 +71,7 @@ int main()
     double money;
 
     // // Get person's name for creating bank account
-    cout << "\nEnter Person's Name (MAX_CHARACTERS " << MAX_CHARS_NAME - 1 << ") => ";
+    cout << "\nEnter BankAccount's Name (MAX_CHARACTERS " << MAX_CHARS_NAME - 1 << ") => ";
     cin.ignore();
     cin.getline(name, MAX_CHARS_NAME);
 

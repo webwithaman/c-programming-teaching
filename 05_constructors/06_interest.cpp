@@ -7,7 +7,7 @@
 // // use namespace
 using namespace std;
 
-// // define class Person
+// // define class Interest
 class Interest
 {
 
