@@ -49,7 +49,7 @@ public:
         id = i;
     }
 
-    Bill(char *nm, int i)
+    Bill(int i, char *nm)
     {
         strcpy(name, nm);
         id = i;
@@ -139,6 +139,33 @@ public:
 // // Main Function Start
 int main()
 {
+    char name[Bill::MAX_CHARS_NAME];
+    int id;
+    double units, billAmount;
+
+    // // Get customer's data
+    cout << "\nEnter Customer's Id => ";
+    cin >> id;
+
+    cout << "\nEnter Customer's Name (MAX_CHARACTERS " << Bill::MAX_CHARS_NAME - 1 << ") => ";
+    cin.ignore();
+    cin.getline(name, Bill::MAX_CHARS_NAME);
+
+    cout << "\nEnter Electricity Units => ";
+    cin >> units;
+
+    Bill b1(name, id); // create object of Bill
+
+    // // set electricity units and calculate bill
+    b1.setElectricityUnits(units);
+    billAmount = b1.calculateBill();
+
+    // // display customer's data
+    cout << "\n>>>>>>>>>>>> Customer's Data With Bill <<<<<<<<<<<\n";
+    cout << "\nName => " << b1.getName(name);
+    cout << "\nId => " << b1.getId();
+    cout << "\nElectricity Units => " << b1.getElectricityUnits();
+    cout << "\nBill Amount => " << billAmount;
 
     cout << endl; // Add new line
     getch();
