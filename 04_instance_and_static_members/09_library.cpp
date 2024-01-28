@@ -66,7 +66,7 @@ unsigned int Library::totalBooks = 0;
 // // Main Function Start
 int main()
 {
-    Library b1;
+    Library b1; // create object of Library
     int id;
     char title[Library::MAX_CHARS_IN_TITLE];
 

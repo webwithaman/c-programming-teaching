@@ -26,7 +26,7 @@ initialise objects using constructor also define member functions to calculate v
 
 9. Define a class Circle with instance member variables radius and area. Implement a parameterized constructor that takes the radius as an argument and calculates the area.
 
-10. Design a class Book with instance member variables for title, author, and publicationYear. Implement a parameterized constructor to initialize these variables during object creation.
+10. Design a class Book with instance member variables for book title and book bookId Implement a parameterized constructor to initialize these variables during object creation.
 
 11. Extend the Circle class from the previous question with another constructor that takes no arguments and sets a default radius. Use this constructor to create a circle object.
 
