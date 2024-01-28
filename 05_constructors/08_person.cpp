@@ -1,4 +1,4 @@
-// // Create a class named Person with instance member variables for name, age Implement functions to set and display the details of a person.
+// // Create a class Person with instance member variables for name and age. Implement a constructor that initializes these variables.
 
 // // Header files
 #include <iostream>
@@ -22,6 +22,31 @@ private:
     int age;
 
 public:
+    // // constructors
+    Person() {}
+
+    Person(int a)
+    {
+        age = a;
+    }
+
+    Person(char *nm)
+    {
+        strcpy(name, nm);
+    }
+
+    Person(char *nm, int a)
+    {
+        strcpy(name, nm);
+        age = a;
+    }
+
+    Person(int a, char *nm)
+    {
+        strcpy(name, nm);
+        age = a;
+    }
+
     // // instance member function to set age
     void setAge(int a)
     {
@@ -51,7 +76,6 @@ public:
 // // Main Function Start
 int main()
 {
-    Person p1; // create object of Person
     char name[Person::MAX_CHARS_NAME];
     int age;
 
@@ -63,9 +87,7 @@ int main()
     cin.ignore();
     cin.getline(name, Person::MAX_CHARS_NAME);
 
-    // // set persons's data
-    p1.setAge(age);
-    p1.setName(name);
+    Person p1(name, age); // create object of Person
 
     // // get and display persons's data
     cout << "\nPerson's Age => " << p1.getAge();
