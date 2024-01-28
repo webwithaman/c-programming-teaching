@@ -32,6 +32,7 @@ public:
     double calculateCircumference()
     {
         circumference = 2 * (22.0 / 7) * radius;
+        return circumference;
     }
 
     // // instance member function to get the circumference of circle

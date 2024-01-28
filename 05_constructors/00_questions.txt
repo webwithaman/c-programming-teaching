@@ -26,14 +26,14 @@ initialise objects using constructor also define member functions to calculate v
 
 9. Define a class Circle with instance member variables radius and area. Implement a parameterized constructor that takes the radius as an argument and calculates the area.
 
-10. Design a class Book with instance member variables for book title and book bookId Implement a parameterized constructor to initialize these variables during object creation.
+10. Use the Circle class from the previous question with another constructor that takes no arguments and sets a default radius. Use this constructor to create a circle object.
 
-11. Use the Circle class from the previous question with another constructor that takes no arguments and sets a default radius. Use this constructor to create a circle object.
+11. Design a class Book with instance member variables for book title and book bookId Implement a parameterized constructor to initialize these variables during object creation.
 
-12. Create a class Rectangle with instance member variables length and width. Implement two constructors - one default constructor that initializes both to 0 and another parameterized constructor that sets them based on user input.
+12. Create a class Rectangle with instance member variables length and nreadth. Implement two constructors - one default constructor that initializes both to 0 and another parameterized constructor that sets them based on user input.
 
-13. Develop a class Person with instance member variables for name and age. Implement a copy constructor that creates a new object with the same values as an existing object.
+13. Use the Rectangle class from a previous question with a constructor that takes only one argument (length) and creates a square (where length and breadth are equal).
 
 14. Create a class ComplexNumber with instance member variables for the real and imaginary parts. Implement multiple constructors, including one default constructor and another that takes the real and imaginary parts separately.
 
-15. Extend the Rectangle class from a previous question with a constructor that takes only one argument (length) and creates a square (where length and width are equal).
+15. Develop a class Person with instance member variables for name and age. Implement a copy constructor that creates a new object with the same values as an existing object.

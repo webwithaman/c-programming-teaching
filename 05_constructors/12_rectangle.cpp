@@ -1,4 +1,4 @@
-// // Define a class Rectangle and define an instance member function to find Reverse of a Number using class.
+// // Create a class Rectangle with instance member variables length and nreadth. Implement two constructors - one default constructor that initializes both to 0 and another parameterized constructor that sets them based on user input.
 
 // // Header files
 #include <iostream>
@@ -16,6 +16,18 @@ private:
     double length, breadth, area = 0;
 
 public:
+    // // constructors
+    Rectangle()
+    {
+        length = breadth = 0;
+    }
+
+    Rectangle(double l, double b)
+    {
+        length = l;
+        breadth = b;
+    }
+
     // // instance member function to set length of rectangle
     void setLength(int l)
     {
@@ -64,14 +76,14 @@ public:
 // // Main Function Start
 int main()
 {
-    Rectangle rec1; // create object of Rectangle
     double l, b, area;
 
     // // Get length and breadth of a rectangle to find its area
     cout << "\nEnter Length and Breadth of A Rectangle => ";
     cin >> l >> b;
 
-    rec1.setDimensions(l, b);    // set dimensions of rectangle
+    Rectangle rec1(l, b); // create object of Rectangle
+
     area = rec1.calculateArea(); // find area
 
     // // display area of rectangle
