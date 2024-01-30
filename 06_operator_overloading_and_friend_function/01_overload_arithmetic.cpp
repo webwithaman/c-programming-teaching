@@ -94,7 +94,7 @@ public:
 // // Main Function Start
 int main()
 {
-    Complex c1, c2, c3; // create objects of Complex
+    Complex c3; // create object of Complex
     double real, imag;
 
     // // Get complex numbers  to add
@@ -107,7 +107,7 @@ int main()
     cout << "\nEnter Imaginary Part => ";
     cin >> imag;
 
-    c1.setData(real, imag); // set complex number for c1
+    Complex c1(real, imag); // create object of Complex
 
     // // Get second complex number
     cout << "\n\n>>>>>>>> Enter Second Complex Number <<<<<<<<<\n";
@@ -116,7 +116,7 @@ int main()
     cout << "\nEnter Imaginary Part => ";
     cin >> imag;
 
-    c2.setData(real, imag); // set complex number for c2
+    Complex c2(real, imag); // create object of Complex
 
     // // display first complex number
     cout << "\n>>>>>>>> First Complex Number <<<<<<<<<\n";
