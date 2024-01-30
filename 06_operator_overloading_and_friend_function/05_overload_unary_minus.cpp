@@ -83,12 +83,12 @@ public:
 int main()
 {
     int a, b, c;
-    Numbers n2; // create object of Numbers
 
     cout << "\nEnter Three Numbers => ";
     cin >> a >> b >> c;
 
     Numbers n1(a, b, c); // create object of Numbers
+    Numbers n2;          // create object of Numbers
 
     cout << "\n>>>>>>>>> Numbers Are <<<<<<<<<<<<<";
     n1.showNumbers();

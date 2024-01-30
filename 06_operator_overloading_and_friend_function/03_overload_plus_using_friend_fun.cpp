@@ -72,7 +72,6 @@ Complex operator+(Complex c1, Complex c2)
 // // Main Function Start
 int main()
 {
-    Complex c3; // create object of Complex
     double real, imag;
 
     // // Get complex numbers  to add
@@ -95,6 +94,7 @@ int main()
     cin >> imag;
 
     Complex c2(real, imag); // create object of Complex
+    Complex c3;             // create object of Complex
 
     // // display first complex number
     cout << "\n>>>>>>>> First Complex Number <<<<<<<<<\n";

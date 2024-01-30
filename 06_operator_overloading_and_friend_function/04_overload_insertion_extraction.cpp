@@ -65,7 +65,7 @@ public:
         cout << "\nSeconds => " << seconds;
     }
 
-    // // overload  relational equality (==) operator
+    // // overload relational equality (==) operator
     bool operator==(Time t)
     {
         if (hours == t.hours && minutes == t.minutes && seconds == t.seconds)
