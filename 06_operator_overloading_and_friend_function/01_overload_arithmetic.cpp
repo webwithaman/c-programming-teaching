@@ -150,7 +150,7 @@ int main()
     // // check equality of complex numbers
     bool isEqual = c1 == c2;
 
-    // // display multiplication of complex numbers
+    // // display equality of complex numbers
     cout << "\n>>>>>>>> Entered Complex Numbers Are Equal or Not <<<<<<<<<\n";
     if (isEqual)
         cout << "\nEntered Complex Numbers Are Equal";
