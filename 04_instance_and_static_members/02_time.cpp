@@ -35,9 +35,7 @@ class Time
 
 private:
     // // instance member variables
-    int h;
-    int m;
-    int s;
+    int h, m, s;
 
 public:
     // // instance member function to set time

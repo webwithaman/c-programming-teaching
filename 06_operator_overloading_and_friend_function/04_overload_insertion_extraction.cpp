@@ -20,9 +20,7 @@ class Time
 
 private:
     // // instance member variables
-    int hours;
-    int minutes;
-    int seconds;
+    int hours, minutes, seconds;
 
 public:
     // // constructors
