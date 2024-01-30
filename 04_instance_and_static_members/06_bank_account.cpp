@@ -72,8 +72,9 @@ int main()
 
     // // Get person's name for creating bank account
     cout << "\nEnter BankAccount's Name (MAX_CHARACTERS " << MAX_CHARS_NAME - 1 << ") => ";
-    cin.ignore();
     cin.getline(name, MAX_CHARS_NAME);
+
+    cout<<name<<endl;
 
     // // set persons's name
     b1.setName(name);
