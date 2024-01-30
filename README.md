@@ -11,6 +11,9 @@ The repository is structured based on different topics, with each topic having i
 - /03_classes_and_objects
 - /04_instance_static_members
 - /05_constructors
+- /06_operator_overloading_and_friend_function
+- /07_this_pointer
+
 
 ## Clone this Repository
 
