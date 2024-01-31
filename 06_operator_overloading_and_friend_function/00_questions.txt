@@ -62,7 +62,7 @@ Overload operator “!” to reverse the case of each alphabet in the string (Up
 
 10.Class Matrix
 {
-  int a[3][3];
+  int matrix[3][3],rows=3,cols=3;
 };
 Let m1 and m2 are two matrices. Find out m3=m1+m2 (use operator
 overloading).
