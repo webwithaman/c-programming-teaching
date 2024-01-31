@@ -4,8 +4,8 @@
 🟢 Topic ➡ this Pointer
 
 
-1. Define a class Complex with appropriate instance variables and member functions.
+01. Define a class Complex with appropriate instance variables and member functions.
 One of the functions should be setData() to set the properties of the object. Make
 sure the names of formal arguments are the same as names of instance variables.
 
-2. Create a class book with the data members id and price. Implement a constructor to initialize these attributes. Create an object of the class using dynamic memory allocation and access the object's members using pointers.
+02. Use this pointer to get the address of calling object. define a class A and a member function that returns the address of calling object.
