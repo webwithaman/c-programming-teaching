@@ -66,6 +66,12 @@ public:
         return s;
     }
 
+    // // instance member function print string
+    void printString()
+    {
+        cout << str;
+    }
+
     // // overload binary addition operator (+) to concate two strings
     CString operator+(CString str1)
     {

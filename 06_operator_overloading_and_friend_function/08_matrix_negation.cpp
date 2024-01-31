@@ -12,7 +12,6 @@ Overload the - (Unary) should negate the numbers stored in the object.
 // // Header files
 #include <iostream>
 #include <conio.h>
-#include <stdlib.h>
 #include <iomanip>
 
 // // use namespace
