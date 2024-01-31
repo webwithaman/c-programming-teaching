@@ -1,5 +1,33 @@
 // // Overload subscript operator [] that will be useful when we want to check for an index out of bound.
 
+/*
+
+In C++, the use of const after the parenthesis of a member function indicates that the function is a const member function. This means that the function does not modify the state of the object on which it is called. The const qualifier is part of the method's signature and is used to enforce the const-correctness of your code.
+
+Here's an explanation of how const is used in the context of member functions:
+
+Const Member Function:
+
+If a member function is declared as const, it means that the function promises not to modify the state of the object on which it is called. This is particularly useful when you have a constant object or a pointer/reference to a constant object.
+Const After Parenthesis:
+
+When you see const after the parenthesis, like in void someFunction() const, it indicates that the member function is a const member function.
+
+class MyClass {
+
+public:
+    void modifyState() {
+        // This function can modify the state of the object
+    }
+
+    void readState() const {
+        // This function is a const member function and cannot modify the state
+    }
+};
+
+
+*/
+
 // // Header files
 #include <iostream>
 #include <conio.h>
