@@ -9,3 +9,5 @@ One of the functions should be setData() to set the properties of the object. Ma
 sure the names of formal arguments are the same as names of instance variables.
 
 02. Use this pointer to get the address of calling object. define a class A and a member function that returns the address of calling object.
+
+03. 
