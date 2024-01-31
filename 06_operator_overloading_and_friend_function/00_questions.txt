@@ -49,7 +49,7 @@ b. Overload as friend functions: operators << and >>.
 8. Consider a class Matrix
 Class Matrix
 {
-  int a[3][3];
+     int matrix[3][3], rows = 3, cols = 3;
 };
 Overload the - (Unary) should negate the numbers stored in the object.
 
