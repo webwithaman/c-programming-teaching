@@ -34,7 +34,7 @@ a. Overload the + operator to concatenate two strings.
 b. == to compare 2 strings.
 
 7. Define a class fraction
-class fraction
+class Fraction
 {
   long numerator;
   long denominator;

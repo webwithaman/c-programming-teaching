@@ -5,6 +5,41 @@ Create a class Time which contains hours,minutes and seconds as data members. Wr
 2. >> : To accept the time.
 3. << : To display the time.
 
+output should be :-
+
+>>>>>>>> Enter Two Time Periods to Check Equality <<<<<<<<<
+
+>>>>>>>> Enter First Time Period (24 Hour Format) <<<<<<<<<
+
+Enter Hours => 5
+
+Enter Minutes => 7
+
+Enter Seconds => 3
+
+>>>>>>>> Enter Second Time Period (24 Hour Format) <<<<<<<<<
+
+Enter Hours => 3
+
+Enter Minutes => 6
+
+Enter Seconds => 3
+
+
+>>>>>>>> First Time Period <<<<<<<<<
+
+Hours => 5
+Minutes => 7
+Seconds => 3
+
+>>>>>>>> Second Time Period <<<<<<<<<
+
+Hours => 3
+Minutes => 6
+Seconds => 3
+
+Time Periods Are Not Equal
+
 */
 
 // // Header files
