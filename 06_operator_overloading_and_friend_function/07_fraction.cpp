@@ -14,6 +14,41 @@ Overload the following operators as member or friend:
 a. Unary ++ (pre and post both)
 b. Overload as friend functions: operators << and >>.
 
+output should be :-
+
+>>>>>>>> Enter Two Fraction to Perform Operations <<<<<<<<<
+
+>>>>>>>> Enter First Fraction (f1) <<<<<<<<<
+
+Enter Numerator => 3
+
+Enter Denominator => 4
+
+>>>>>>>> Enter Second Fraction (f2) <<<<<<<<<
+
+Enter Numerator => 2
+
+Enter Denominator => 6
+
+
+First Fraction => 3/4
+
+Second Fraction => 2/6
+
+++f1 => 4/5
+
+f1++ => 5/6
+
+f2 = ++f1
+
+f1 => 6/7
+f2 => 6/7
+
+f2 = f1++
+
+f1 => 7/8
+f2 => 6/7
+
 */
 
 // // Header files
@@ -111,8 +146,7 @@ public:
 // // overload insertion (<<) operator
 Fraction operator<<(ostream &temp, Fraction &f)
 {
-    cout << "\nNumberator => " << f.numerator;
-    cout << "\nDenominator => " << f.denominator;
+    cout << f.numerator << "/" << f.denominator;
     return f;
 }
 
@@ -136,48 +170,38 @@ int main()
     cout << "\n>>>>>>>> Enter Two Fraction to Perform Operations <<<<<<<<<\n";
 
     // // Get 1st fraction
-    cout << "\n>>>>>>>> Enter First Fraction <<<<<<<<<\n";
+    cout << "\n>>>>>>>> Enter First Fraction (f1) <<<<<<<<<\n";
     cin >> f1;
 
     // // Get 2nd fraction
-    cout << "\n>>>>>>>> Enter Second Fraction <<<<<<<<<\n";
+    cout << "\n>>>>>>>> Enter Second Fraction (f2) <<<<<<<<<\n";
     cin >> f2;
 
     // // display first fraction
-    cout << "\n\n>>>>>>>> First Fraction  <<<<<<<<<\n";
-    cout << f1;
+    cout << "\n\nFirst Fraction => " << f1;
 
     // // display second fraction
-    cout << "\n\n>>>>>>>> Second Fraction  <<<<<<<<<\n";
-    cout << f2;
+    cout << "\n\nSecond Fraction => " << f2;
 
-    // // pre-increment (++a)
-    ++c1;
+    // // pre-increment (++a) on f1
+    f1++;
+    cout << "\n\n++f1 => " << f1;
 
-    // // display complex number
-    cout << "\n>>>>>>>> Complex Number After Performing Pre-Increment (++a) <<<<<<<<<\n";
-    c1.showData();
+    // // post-increment (a++) on f1
+    f1++;
+    cout << "\n\nf1++ => " << f1;
 
-    // // post-increment (a++)
-    c1++;
+    // // pre-increment (++a) on f1 and assign to f2
+    f2 = ++f1;
+    cout << "\n\nf2 = ++f1\n";
+    cout << "\nf1 => " << f1;
+    cout << "\nf2 => " << f2;
 
-    // // display complex number
-    cout << "\n>>>>>>>> Complex Number After Performing Post-Increment (a++) <<<<<<<<<\n";
-    c1.showData();
-
-    // // pre-decrement (--a)
-    --c1;
-
-    // // display complex number
-    cout << "\n>>>>>>>> Complex Number After Performing Pre-Decrement (--a) <<<<<<<<<\n";
-    c1.showData();
-
-    // // post-decrement (a--)
-    c1--;
-
-    // // display complex number
-    cout << "\n>>>>>>>> Complex Number After Performing Post-Decrement (a--) <<<<<<<<<\n";
-    c1.showData();
+    // // post-increment (a++) on f1 and assign to f2
+    f2 = f1++;
+    cout << "\n\nf2 = f1++\n";
+    cout << "\nf1 => " << f1;
+    cout << "\nf2 => " << f2;
 
     cout << endl; // Add new line
     getch();
