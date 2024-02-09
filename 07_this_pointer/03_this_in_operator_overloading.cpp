@@ -20,7 +20,8 @@ public:
     // // constructors
     Complex()
     {
-        real = imag = 0;
+        real = imag
+         = 0;
     }
 
     Complex(double r)
