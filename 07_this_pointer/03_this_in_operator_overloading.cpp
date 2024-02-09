@@ -28,7 +28,6 @@ public:
         real = imag = r;
     }
 
-
     Complex(double r, double i)
     {
         real = r;
