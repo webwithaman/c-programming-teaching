@@ -36,7 +36,7 @@ public:
 
     // // instance member function to set compelx number
     void setData(double r, double i)
-    {
+    { 
         
         real = r;
         imag = i;
