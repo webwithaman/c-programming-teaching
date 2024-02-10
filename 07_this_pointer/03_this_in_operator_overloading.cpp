@@ -40,6 +40,7 @@ public:
         real = r;
         imag = i;
     }
+    
 
     // // instance member function to display compelx number
     void showData()
