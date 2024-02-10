@@ -31,7 +31,6 @@ public:
     Complex(double r, double i)
     {
         real = r;
-
         imag = i;
     }
 
