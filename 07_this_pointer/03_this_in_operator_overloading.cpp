@@ -32,7 +32,6 @@ public:
     {
         real = r;
 
-        
         imag = i;
     }
 
