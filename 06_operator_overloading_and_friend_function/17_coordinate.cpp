@@ -28,23 +28,23 @@ public:
         this->z = z;
     }
 
-    // // instance memebr function to get value
-    void setValues(int x, int y, int z)
+    // // instance memebr function to set coordinates
+    void setCoordinates(int x, int y, int z)
     {
         this->x = x;
         this->y = y;
         this->z = z;
     }
 
-    // // instance memebr function to get value
-    int showValues()
+    // // instance memebr function to show coordinates
+    int showCoordinates()
     {
         cout << "\nx => " << x;
         cout << "\ny => " << y;
         cout << "\nz => " << z;
     }
 
-    // overload logical comma (,) operator
+    // overload comma (,) operator
     Coordinate operator,(Coordinate p)
     {
         return p;
@@ -59,11 +59,11 @@ int main()
     c3 = (c1, c2);
 
     cout << "\n\n>>>>>>>>>>> Coordinates of c1 <<<<<<<<<<<";
-    c1.showValues();
+    c1.showCoordinates();
     cout << "\n\n>>>>>>>>>>> Coordinates of c2 <<<<<<<<<<<";
-    c2.showValues();
+    c2.showCoordinates();
     cout << "\n\n>>>>>>>>>>> Coordinates of c3 <<<<<<<<<<<";
-    c3.showValues();
+    c3.showCoordinates();
 
     cout << endl; // Add new line
     getch();

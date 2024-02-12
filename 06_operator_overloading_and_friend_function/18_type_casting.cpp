@@ -26,7 +26,7 @@ public:
         value = val;
     }
 
-    // // instance memebr function to get value
+    // // instance memebr function to set value
     void setValue(int val)
     {
         value = val;
@@ -38,7 +38,7 @@ public:
         return value;
     }
 
-    // overload logical NOT (!) operator
+    // overload typecast operator
     operator int()
     {
         return value;
