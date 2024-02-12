@@ -15,7 +15,7 @@ private:
     int x, y, z;
 
 public:
-    // // Constructor
+    // // constructors
     Coordinate()
     {
         x = y = z = 0;

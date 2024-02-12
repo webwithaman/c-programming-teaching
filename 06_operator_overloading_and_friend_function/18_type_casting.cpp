@@ -15,7 +15,7 @@ private:
     int value;
 
 public:
-    // // Constructor
+    // // constructors
     Integer()
     {
         value = 0;

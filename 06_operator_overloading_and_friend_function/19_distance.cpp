@@ -15,7 +15,7 @@ private:
     double feet, inches;
 
 public:
-    // // Constructor
+    // // constructors
     Distance()
     {
         feet = inches = 0;
