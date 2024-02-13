@@ -33,8 +33,9 @@ public:
     }
 
     // // overload member access operator (->)
-    void operator->()
+    Marks *operator->()
     {
+        return this;
     }
 };
 
@@ -42,6 +43,8 @@ int main()
 {
 
     Marks m1(445); // create an object of Marks class
+
+    m1->printMarks();
 
     cout << endl; // Add new line
     getch();
