@@ -9,45 +9,9 @@ class Fraction
   Public:
   fraction (long n=0, long d=0);
 };
-
 Overload the following operators as member or friend:
 a. Unary ++ (pre and post both)
 b. Overload as friend functions: operators << and >>.
-
-output should be :-
-
->>>>>>>> Enter Two Fraction to Perform Operations <<<<<<<<<
-
->>>>>>>> Enter First Fraction (f1) <<<<<<<<<
-
-Enter Numerator => 3
-
-Enter Denominator => 4
-
->>>>>>>> Enter Second Fraction (f2) <<<<<<<<<
-
-Enter Numerator => 2
-
-Enter Denominator => 6
-
-
-First Fraction => 3/4
-
-Second Fraction => 2/6
-
-++f1 => 4/5
-
-f1++ => 5/6
-
-f2 = ++f1
-
-f1 => 6/7
-f2 => 6/7
-
-f2 = f1++
-
-f1 => 7/8
-f2 => 6/7
 
 */
 
