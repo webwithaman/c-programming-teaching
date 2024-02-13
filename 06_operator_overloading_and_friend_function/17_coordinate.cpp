@@ -47,7 +47,11 @@ public:
     // overload comma (,) operator
     Coordinate operator,(Coordinate p)
     {
-        return p;
+        Coordinate temp;
+        temp.x = p.x;
+        temp.y = p.y;
+        temp.z = p.z;
+        return temp;
     }
 };
 
