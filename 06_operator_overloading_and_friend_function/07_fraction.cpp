@@ -13,6 +13,42 @@ Overload the following operators as member or friend:
 a. Unary ++ (pre and post both)
 b. Overload as friend functions: operators << and >>.
 
+
+Output :-
+
+>>>>>>>> Enter Two Fraction to Perform Operations <<<<<<<<<
+
+>>>>>>>> Enter First Fraction (f1) <<<<<<<<<
+
+Enter Numerator => 6
+
+Enter Denominator => 23
+
+>>>>>>>> Enter Second Fraction (f2) <<<<<<<<<
+
+Enter Numerator => 8
+
+Enter Denominator => 6
+
+
+First Fraction => 6/23
+
+Second Fraction => 8/6
+
+++f1 => 7/24
+
+f1++ => 8/25
+
+f2 = ++f1
+
+f1 => 9/26
+f2 => 9/26
+
+f2 = f1++
+
+f1 => 10/27
+f2 => 9/26
+
 */
 
 // // Header files
