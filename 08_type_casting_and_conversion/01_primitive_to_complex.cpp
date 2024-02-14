@@ -66,16 +66,12 @@ public:
 // // Main Function Start
 int main()
 {
-    int r;
-    cout << "\nEnter A Number to Convert it into Complex Number => ";
-    cin >> r;
+    Complex c1;
 
-    // // primitive to complex
-    Complex c = r;
+    int x = 5;
 
-    // // display complex number
-    cout << "\n>>>>>>>> Complex Number <<<<<<<<<\n";
-    c.showData();
+    // // primitive to Complex
+    c1 = x;
 
     cout << endl; // Add new line
     getch();
