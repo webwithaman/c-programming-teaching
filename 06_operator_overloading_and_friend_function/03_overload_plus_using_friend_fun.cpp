@@ -1,13 +1,4 @@
-/*
-
-1. Define a class Complex with appropriate instance variables and member functions.
-Define following operators in the class :-
-- a. +
-- b. -
-- c. *
-- d. ==
-
-*/
+// // Write a C++ program to add two complex numbers using operator overloaded by a friend function.
 
 // // Header files
 #include <iostream>

@@ -1,6 +1,6 @@
 /*
 
-1. Define a class Complex with appropriate instance variables and member functions.
+Define a class Complex with appropriate instance variables and member functions.
 Define following operators in the class :-
 - a. +
 - b. -

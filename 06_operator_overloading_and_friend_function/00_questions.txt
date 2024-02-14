@@ -4,24 +4,24 @@
 🟢 Topic ➡ Operator Overload And Friend Function
 
 
-1. Define a class Complex with appropriate instance variables and member functions.
+01. Define a class Complex with appropriate instance variables and member functions.
 Define following operators in the class :-
 - a. +
 - b. -
 - c. *
 - d. ==
 
-2. Write a C++ program to overload unary operators that is increment and decrement.
+02. Write a C++ program to overload unary operators that is increment and decrement.
 
-3. Write a C++ program to add two complex numbers using operator overloaded by a
+03. Write a C++ program to add two complex numbers using operator overloaded by a
 friend function.
 
-4. Create a class Time which contains hours,minutes and seconds as data members. Write a C++ program using operator overloading for the following :-
+04. Create a class Time which contains hours,minutes and seconds as data members. Write a C++ program using operator overloading for the following :-
 1. == : To check whether two Times are the same or not.
 2. >> : To accept the time.
 3. << : To display the time.
 
-5. Consider following :-
+05. Consider following :-
 class Numbers
 {
   int x,y,z;
@@ -29,11 +29,11 @@ class Numbers
 };
 Overload the operator unary minus (-) to negate the numbers.
 
-6. Create a class CString to represent a string and define following
+06. Create a class CString to represent a string and define following
 a. Overload the + operator to concatenate two strings.
 b. == to compare 2 strings.
 
-7. Define a class fraction
+07. Define a class fraction
 class Fraction
 {
   long numerator;
@@ -46,14 +46,14 @@ Overload the following operators as member or friend:
 a. Unary ++ (pre and post both)
 b. Overload as friend functions: operators << and >>.
 
-8. Consider a class Matrix
+08. Consider a class Matrix
 Class Matrix
 {
      int matrix[3][3], rows = 3, cols = 3;
 };
 Overload the - (Unary) should negate the numbers stored in the object.
 
-9. Consider the following class mystring
+09. Consider the following class mystring
 Class mystring
 {
   char str [100];
