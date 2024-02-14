@@ -25,7 +25,7 @@
      return 0;
     }
 
-03. Create a Product class and convert Product type to Item type using constructor.
+03. Create Product and Item class and convert Product type to Item type using constructor.
     Example :-
     int main()
     {
