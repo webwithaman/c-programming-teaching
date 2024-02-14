@@ -4,13 +4,12 @@
 🟢 Topic ➡ Exception Handling
 
 
-1. Write a C++ program to demonstrate the use of try, catch block with the argument as an 
-integer and string using multiple catch blocks.
+1. Write a simple C++ program to demonstrate try, throw and catch statements.
 
-2. Write a C++ program to demonstrate try, throw and catch statements.
+2. Write a C++ program to demonstrate the use multiple catch blocks.
 
 3. Write a C++ program to perform arithmetic operations on two numbers and throw an 
-exception if the dividend is zero or does not contain an operator.
+exception if the divisor is zero.
 
 4. Write a C++ program to accept an email address and throw an exception if it does not 
 contain @ symbol.
