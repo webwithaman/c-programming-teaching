@@ -1,14 +1,16 @@
 /*
 
 Write a C++ program to convert Primitive type to Complex type.
-   Example :-
-   int main()
-   {
-    Complex c1;
-    Int x=5;
-    c1=x;
-    return 0;
-   }
+
+Example :-
+
+int main()
+{
+  Complex c1;
+  Int x=5;
+  c1=x;
+  return 0;
+}
 
 */
 
@@ -25,58 +27,55 @@ class Complex
 
 private:
     // // instance member variables
-    double a;
-    double b;
+    int real;
+    int imag;
 
 public:
     // // constructors
     Complex()
     {
-        a = b = 0;
+        real = imag = 0;
     }
 
-    Complex(double r)
+    Complex(int r)
     {
-        a = b = r;
+        real = imag = r;
     }
 
-    Complex(double r, double i)
+    Complex(int r, int i)
     {
-        a = r;
-        b = i;
+        real = r;
+        imag = i;
     }
 
     // // instance member function to set compelx number
-    void setData(double r, double i)
+    void setData(int r, int i)
     {
-        a = r;
-        b = i;
+        real = r;
+        imag = i;
     }
 
     // // instance member function to display compelx number
     void showData()
     {
         cout << "\n"
-             << a << " + " << b << "i" << endl;
+             << real << " + " << imag << "i" << endl;
     }
 };
 
 // // Main Function Start
 int main()
 {
-    double real, imag;
+    int r;
+    cout << "\nEnter A Number to Convert it into Complex Number => ";
+    cin >> r;
 
-    // // Get complex number
-    cout << "\nEnter Real Part => ";
-    cin >> real;
-    cout << "\nEnter Imaginary Part => ";
-    cin >> imag;
-
-    Complex c1(real, imag); // create objects of Complex
+    // // primitive to complex
+    Complex c = r;
 
     // // display complex number
     cout << "\n>>>>>>>> Complex Number <<<<<<<<<\n";
-    c1.showData();
+    c.showData();
 
     cout << endl; // Add new line
     getch();
