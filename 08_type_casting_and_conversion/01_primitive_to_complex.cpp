@@ -1,6 +1,6 @@
 /*
 
-0. Write a C++ program to convert Primitive type to Complex type.
+Write a C++ program to convert Primitive type to Complex type.
    Example :-
    int main()
    {
