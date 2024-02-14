@@ -10,4 +10,4 @@ sure the names of formal arguments are the same as names of instance variables.
 
 02. Use this pointer to get the address of calling object. define a class A and a member function that returns the address of calling object.
 
-03. 
+03. Define a class Complex with appropriate instance variables and member functions. Overload binary (+) to add two complex numbers and use this pointer to access members
