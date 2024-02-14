@@ -30,7 +30,7 @@
     int main()
     {
       Item i1;
-      Item p1;
+      Product p1;
       p1.setProductId(15);
       i1=p1;
       return 0;
@@ -51,7 +51,7 @@
     Example :-
     int main()
     {
-     Invent1 s1=(4,5);
+     Invent1 s1=(4);
      Invent2 d1;
      float tv;
      tv=s1;

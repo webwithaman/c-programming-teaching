@@ -7,7 +7,7 @@ Example :-
 int main()
 {
   Item i1;
-  Item p1;
+  Product p1;
   p1.setProductId(15);
   i1=p1;
   return 0;
