@@ -1,4 +1,4 @@
-// // Write a simple C++ program to demonstrate try, throw and catch statements.
+// // Write a C++ program to demonstrate the use multiple catch blocks.
 
 // // Header files
 #include <iostream>
@@ -10,25 +10,45 @@ using namespace std;
 // // Main Function Start
 int main()
 {
-    int tempRoll, roll;
+    int num;
+
+    cout << "\nPress 1. To Throw Exception Using Instance of int";
+    cout << "\nPress 2. To Throw Exception Using Instance of double";
+    cout << "\nPress 3. To Throw Exception Using Instance of string";
 
     try
     {
-        cout << "\nEnter Roll Number of a Student (Must be Positive) => ";
-        cin >> tempRoll;
+        cout << "\n\nEnter Your Choice => ";
+        cin >> num;
 
-        if (tempRoll < 1)
-            throw tempRoll; // throw exception
-
-        roll = tempRoll; // set roll number
-        cout << "\nEntered Roll Number is Valid..." << endl;
+        if (num == 1)
+            throw 1;
+        else if (num == 2)
+            throw 1.1;
+        else if (num == 3)
+            throw "string";
+        else
+            throw exception();
     }
-    catch (int ex)
+    catch (int e)
     {
-        cout << "\n!!! Invalid Roll Number, Roll Number Must be Positive !!! Try Again..." << endl;
+        cout << "\nInstance of int";
+    }
+    catch (double e)
+    {
+        cout << "\nInstance of double";
+    }
+    catch (const char *e)
+    {
+        cout << "\nInstance of string";
+    }
+    catch (...)
+    {
+        cout << "\nInvalid Choice";
     }
 
-    cout << endl; // Add new line
+    cout
+        << endl; // Add new line
     getch();
     return 0;
 }
