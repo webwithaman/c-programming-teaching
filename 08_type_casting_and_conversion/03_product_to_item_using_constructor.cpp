@@ -101,7 +101,7 @@ int main()
 
     p1.setProductId(15);
 
-    // // Product to Item
+    // // Product to Item constructor
     i1 = p1;
 
     cout
