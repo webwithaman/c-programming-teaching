@@ -8,7 +8,7 @@ int main()
 {
   Item i1;
   Item p1;
-  p1.setData(3,4);
+  p1.setProductId(15);
   i1=p1;
   return 0;
 }
@@ -96,14 +96,13 @@ public:
 // // Main Function Start
 int main()
 {
-    // // object of Product
-    Product p1 = 15;
+    Item i1;
+    Product p1;
+
+    p1.setProductId(15);
 
     // // Product to Item
-    Item i1 = p1;
-
-    cout << "\nProduct Id => " << p1.getProductId();
-    cout << "\nItem Id => " << i1.getItemId();
+    i1 = p1;
 
     cout
         << endl; // Add new line

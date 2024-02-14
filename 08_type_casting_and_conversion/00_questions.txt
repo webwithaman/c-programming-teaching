@@ -29,11 +29,11 @@
     Example :-
     int main()
     {
-     Item i1;
-     Product p1;
-     p1.setData(3,4);
-     i1=p1;
-     return 0;
+      Item i1;
+      Item p1;
+      p1.setProductId(15);
+      i1=p1;
+      return 0;
     }
 
 04. Create Product class and convert Product type to Item type using casting operator.
