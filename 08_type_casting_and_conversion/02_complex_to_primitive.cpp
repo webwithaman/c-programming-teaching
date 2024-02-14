@@ -73,21 +73,14 @@ public:
 // // Main Function Start
 int main()
 {
-    int r, sum;
-    cout << "\nEnter A Number to Convert it into Complex Number => ";
-    cin >> r;
+    Complex c1;
 
-    // // primitive to complex
-    Complex c = r;
+    c1.setData(3, 4);
 
-    // // display complex number
-    cout << "\n>>>>>>>> Complex Number <<<<<<<<<\n";
-    c.showData();
+    int x;
 
-    // // Complex to int
-    sum = c;
-
-    cout << "\nSum of Real and Imaginary Part => " << sum;
+    // // Complex to primitive
+    x = c1;
 
     cout << endl; // Add new line
     getch();
