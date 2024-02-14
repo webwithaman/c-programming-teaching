@@ -10,6 +10,4 @@ Write a C++ program to convert Primitive type to Complex type.
     return 0;
    }
 
-
-
 */
