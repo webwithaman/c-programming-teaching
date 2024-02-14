@@ -63,11 +63,11 @@
     Example :-
     int main()
     {
-     int duration;
-     cout<<”Enter time duration in minutes”;
+     int seconds;
+     cout<<”Enter time duration in seconds”;
      cin>>duration;
-     Time t1 = duration;
-     t1.display();
+     Time t1 = seconds;
+     t1.showTime();
      return 0;
     }
 
