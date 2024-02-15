@@ -18,7 +18,7 @@ int main()
         char email[MAX_CHARS];
         int found = 0;
 
-        cout << "\nEnter Your Email Address (MAX_CHAR " << MAX_CHARS - 1 << ") => ";
+        cout << "\nEnter Email Address Must have '@' Symbol (MAX_CHAR " << MAX_CHARS - 1 << ") => ";
         cin.getline(email, MAX_CHARS);
 
         for (int i = 0; email[i]; i++)
