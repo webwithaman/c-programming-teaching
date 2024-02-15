@@ -22,13 +22,13 @@ int main()
         cin >> num;
 
         if (num == 1)
-            throw 1;
+            throw 1; // throw instance of int
         else if (num == 2)
-            throw 1.1;
+            throw 1.1; // throw instance of double
         else if (num == 3)
-            throw "string";
+            throw "string"; // throw instance of string
         else
-            throw exception();
+            throw exception(); // throw any exception
     }
     catch (int e)
     {
