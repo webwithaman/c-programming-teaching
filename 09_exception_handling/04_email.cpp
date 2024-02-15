@@ -17,6 +17,7 @@ int main()
     {
         char email[MAX_CHARS];
         int found = 0;
+
         cout << "\nEnter Your Email Address (MAX_CHAR " << MAX_CHARS - 1 << ") => ";
         cin.getline(email, MAX_CHARS);
 
@@ -30,7 +31,7 @@ int main()
         }
 
         if (!found)
-            throw "Email Address is Invalid, Does not contains '@' symbol";
+            throw "Email Address is Invalid, Don't have '@' symbol";
 
         cout << "\nEmail is Valid...";
     }
