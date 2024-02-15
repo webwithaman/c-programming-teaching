@@ -3,11 +3,14 @@
 // // Header files
 #include <iostream>
 #include <conio.h>
+#include <cstring>
 
 // // use namespace
 using namespace std;
 
 #define MAX_CHARS 31
+#define TRUE 1
+#define FALSE 0
 
 // // Main Function Start
 int main()
@@ -15,23 +18,39 @@ int main()
 
     try
     {
-        char email[MAX_CHARS];
-        int found = 0;
+        char email[MAX_CHARS], substr[] = "gmail.com";
+        int isValid = FALSE, haveSymbol = FALSE, haveSubStr = FALSE;
 
-        cout << "\nEnter Email Address Must have '@' Symbol (MAX_CHAR " << MAX_CHARS - 1 << ") => ";
+        cout << "\nEnter Email Address Must have '@' Symbol and \"gmail.com\" (MAX_CHAR " << MAX_CHARS - 1 << ") => ";
         cin.getline(email, MAX_CHARS);
+
+        int j = 0;
 
         for (int i = 0; email[i]; i++)
         {
-            if (email[i] == '@')
+            if (!haveSymbol && email[i] == '@')
+                haveSymbol = TRUE;
+
+            if (!haveSubStr && email[i] == substr[j])
             {
-                found = 1;
+                j++;
+                if (j == strlen(substr))
+                {
+                    haveSubStr = TRUE;
+                }
+            }
+            else
+                j = 0;
+
+            if (haveSymbol && haveSubStr)
+            {
+                isValid = TRUE;
                 break;
             }
         }
 
-        if (!found)
-            throw "Email Address is Invalid, Don't have '@' symbol";
+        if (!isValid)
+            throw "Email Address is Invalid";
 
         cout << "\nEmail is Valid...";
     }

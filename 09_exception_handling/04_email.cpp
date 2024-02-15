@@ -8,6 +8,8 @@
 using namespace std;
 
 #define MAX_CHARS 31
+#define TRUE 1
+#define FALSE 0
 
 // // Main Function Start
 int main()
@@ -16,7 +18,7 @@ int main()
     try
     {
         char email[MAX_CHARS];
-        int found = 0;
+        int isValid = FALSE;
 
         cout << "\nEnter Email Address Must have '@' Symbol (MAX_CHAR " << MAX_CHARS - 1 << ") => ";
         cin.getline(email, MAX_CHARS);
@@ -25,12 +27,12 @@ int main()
         {
             if (email[i] == '@')
             {
-                found = 1;
+                isValid = TRUE;
                 break;
             }
         }
 
-        if (!found)
+        if (!isValid)
             throw "Email Address is Invalid, Don't have '@' symbol";
 
         cout << "\nEmail is Valid...";
