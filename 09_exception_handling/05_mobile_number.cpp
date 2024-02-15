@@ -8,6 +8,7 @@
 using namespace std;
 
 #define MAX_CHARS 11
+#define VALID_LENGTH 10
 
 // // Main Function Start
 int main()
@@ -16,23 +17,23 @@ int main()
     try
     {
         char mobileNumber[MAX_CHARS];
-        int count = 0;
+        int length = 0;
 
-        cout << "\nEnter Your Mobile Number (Must Be of 10 Digits , MAX_DIGITS " << MAX_CHARS - 1 << ") => ";
+        cout << "\nEnter Your Mobile Number (Must Be of " << VALID_LENGTH << " Digits , MAX_DIGITS " << MAX_CHARS - 1 << ") => ";
         cin.getline(mobileNumber, MAX_CHARS);
 
-        while (mobileNumber[count])
+        while (mobileNumber[length])
         {
-            if (mobileNumber[count] < '0' || mobileNumber[count] > '9')
+            if (mobileNumber[length] < '0' || mobileNumber[length] > '9')
             {
-                count = 0;
+                length = 0;
                 break;
             }
 
-            count++;
+            length++;
         }
 
-        if (count != 10)
+        if (length != VALID_LENGTH)
             throw "Mobile Number is Invalid";
 
         cout << "\nMobile Number is Valid...";

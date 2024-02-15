@@ -8,6 +8,7 @@
 using namespace std;
 
 #define MAX_CHARS 7
+#define VALID_LENGTH 6
 
 // // Main Function Start
 int main()
@@ -16,23 +17,23 @@ int main()
     try
     {
         char pinCode[MAX_CHARS];
-        int count = 0;
+        int length = 0;
 
-        cout << "\nEnter Pin Code (Must Be of 6 Digits , MAX_DIGITS " << MAX_CHARS - 1 << ") => ";
+        cout << "\nEnter Pin Code (Must Be of " << VALID_LENGTH << " Digits , MAX_DIGITS " << MAX_CHARS - 1 << ") => ";
         cin.getline(pinCode, MAX_CHARS);
 
-        while (pinCode[count])
+        while (pinCode[length])
         {
-            if (pinCode[count] < '0' || pinCode[count] > '9')
+            if (pinCode[length] < '0' || pinCode[length] > '9')
             {
-                count = 0;
+                length = 0;
                 break;
             }
 
-            count++;
+            length++;
         }
 
-        if (count != 6)
+        if (length != VALID_LENGTH)
             throw "Pin Code is Invalid";
 
         cout << "\nPin Code is Valid...";

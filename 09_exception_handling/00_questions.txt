@@ -20,8 +20,7 @@ contain 10 digits.
 6. Write a C++ program to accept area pin code and throw an exception if it does not 
 contain 6 digits.
 
-7. Write a C++ program to accept a username if the username has less than 6 characters 
-or does contain any digit or special symbol.
+7. Write a C++ program to accept a username, throw exception if the username has less than 6 characters or does contain any digit or special symbol.
 
 8. Write a C++ program to accept a password and throw an exception if the password has 
 less than 6 characters or does not contain a digit or does not contain any special 
