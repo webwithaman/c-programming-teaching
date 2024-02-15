@@ -18,7 +18,7 @@ int main()
         char mobileNumber[MAX_CHARS];
         int count = 0;
 
-        cout << "\nEnter Your Mobile Number (MAX_DIGITS " << MAX_CHARS - 1 << ") => ";
+        cout << "\nEnter Your Mobile Number (Must Be of 10 Digits , MAX_DIGITS " << MAX_CHARS - 1 << ") => ";
         cin.getline(mobileNumber, MAX_CHARS);
 
         while (mobileNumber[count])
