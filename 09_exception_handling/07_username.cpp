@@ -21,7 +21,7 @@ int main()
         char username[MAX_CHARS];
         int length = 0, isValid = TRUE;
 
-        cout << "\nEnter Your Name, Should Not Have Any Digit Or Special Symbol (MIN_CHARS " << MIN_CHARS << " , MAX_CHARS " << MAX_CHARS - 1 << ") => ";
+        cout << "\nEnter Username, Should Not Have Any Digit Or Special Symbol (MIN_CHARS " << MIN_CHARS << " , MAX_CHARS " << MAX_CHARS - 1 << ") => ";
 
         cin.getline(username, MAX_CHARS);
 
