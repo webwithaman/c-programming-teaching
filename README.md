@@ -14,6 +14,7 @@ The repository is structured based on different topics, with each topic having i
 - /06_operator_overloading_and_friend_function
 - /07_this_pointer
 - /08_type_casting_and_conversion
+- /09_exception_handling
 
 ## Clone this Repository
 
