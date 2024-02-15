@@ -29,5 +29,5 @@ character or does not contain any capital letter.
 9. Write a C++ program to accept Gmail id only and throw an exception if the id does not 
 contain @ and gmail.com.
 
-10. Write a C++ program to accept Nickname and throw an exception if it has greater than 8 
+10. Write a C++ program to accept Nickname and throw an exception if it is greater than 8 
 characters or does contain a digit or special symbol or space.
