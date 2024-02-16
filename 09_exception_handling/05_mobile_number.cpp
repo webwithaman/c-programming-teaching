@@ -35,7 +35,6 @@ int main()
 
         if (length != VALID_LENGTH)
             throw "Mobile Number is Invalid";
-            
 
         cout << "\nMobile Number is Valid...";
     }
