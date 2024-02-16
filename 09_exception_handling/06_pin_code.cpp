@@ -5,7 +5,6 @@
 #include <conio.h>
 
 // // use namespace
-
 using namespace std;
 
 #define MAX_CHARS 7
