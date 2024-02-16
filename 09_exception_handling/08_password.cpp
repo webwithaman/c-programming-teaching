@@ -26,7 +26,6 @@ int main()
         cin.getline(password, MAX_CHARS);
 
         while (password[length])
-        
         {
             if (!haveCapitalLetter && password[length] >= 'A' && password[length] <= 'Z')
                 haveCapitalLetter = TRUE;
