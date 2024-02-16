@@ -30,7 +30,6 @@ int main()
             if (!haveCapitalLetter && password[length] >= 'A' && password[length] <= 'Z')
                 haveCapitalLetter = TRUE;
 
-
             if (!haveDigit && password[length] >= '0' && password[length] <= '9')
                 haveDigit = TRUE;
 
