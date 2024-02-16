@@ -18,6 +18,7 @@ int main()
         cout << "\nEnter Numerator => ";
         cin >> numerator;
         cout << "\nEnter Denominator => ";
+        
         cin >> denominator;
 
         if (denominator == 0)
