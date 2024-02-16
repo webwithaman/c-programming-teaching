@@ -20,6 +20,7 @@ int main()
     {
         cout << "\n\nEnter Your Choice => ";
         cin >> num;
+        
 
         if (num == 1)
             throw 1; // throw instance of int
