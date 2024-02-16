@@ -20,7 +20,6 @@ int main()
         cout << "\nEnter Denominator => ";
         cin >> denominator;
 
-
         if (denominator == 0)
             throw "Denominator Cannot be 0";
 
