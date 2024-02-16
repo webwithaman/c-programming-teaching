@@ -7,7 +7,6 @@
 // // use namespace
 using namespace std;
 
-
 #define MAX_CHARS 7
 #define VALID_LENGTH 6
 
