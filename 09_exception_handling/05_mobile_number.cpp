@@ -31,7 +31,6 @@ int main()
             }
 
             length++;
-            
         }
 
         if (length != VALID_LENGTH)
