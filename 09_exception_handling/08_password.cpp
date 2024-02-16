@@ -36,7 +36,6 @@ int main()
             if (!haveSpecialChar && (password[length] < '0' || password[length] > '9') && (password[length] < 'A' || password[length] > 'Z') && (password[length] < 'a' || password[length] > 'z'))
                 haveSpecialChar = TRUE;
 
-
             length++;
 
             if (length > MIN_CHARS - 1 && haveCapitalLetter && haveDigit && haveSpecialChar)
