@@ -38,7 +38,6 @@ int main()
 
         cout << "\nMobile Number is Valid...";
     }
-    
     catch (const char *e)
     {
         cout << e;
