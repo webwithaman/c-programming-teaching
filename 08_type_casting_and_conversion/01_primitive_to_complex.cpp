@@ -48,7 +48,6 @@ public:
         imag = i;
     }
 
-
     // // instance member function to set compelx number
     void setData(int r, int i)
     {
