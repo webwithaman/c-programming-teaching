@@ -25,7 +25,6 @@ int main()
             throw 1; // throw instance of int
         else if (num == 2)
             throw 1.1; // throw instance of double
-            
         else if (num == 3)
             throw "string"; // throw instance of string
         else
