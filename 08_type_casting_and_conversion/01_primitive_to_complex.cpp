@@ -35,7 +35,6 @@ public:
     Complex()
     {
         real = imag = 0;
-        
     }
 
     Complex(int r)
