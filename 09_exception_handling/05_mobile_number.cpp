@@ -45,7 +45,6 @@ int main()
 
     cout
         << endl; // Add new line
-        
     getch();
     return 0;
 }
