@@ -30,7 +30,6 @@ private:
     // // instance member variables
     int itemId;
 
-
 public:
     // // constructors
     Item()
