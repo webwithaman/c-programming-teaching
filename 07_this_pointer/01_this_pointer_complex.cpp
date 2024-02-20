@@ -20,6 +20,7 @@ class Complex
 {
 
 private:
+
     // // instance member variables
     double real;
     double imag;
