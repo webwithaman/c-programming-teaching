@@ -25,7 +25,6 @@ private:
     double imag;
 
 public:
-
     // // constructors
     Complex()
     {
