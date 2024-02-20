@@ -26,10 +26,10 @@ using namespace std;
 class Item
 {
 
-
 private:
     // // instance member variables
     int itemId;
+
 
 public:
     // // constructors
