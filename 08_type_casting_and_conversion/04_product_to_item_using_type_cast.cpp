@@ -34,7 +34,6 @@ public:
     // // constructors
     Item()
     {
-        
         itemId = 0;
     }
 
