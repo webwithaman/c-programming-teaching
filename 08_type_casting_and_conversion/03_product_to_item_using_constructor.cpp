@@ -99,7 +99,6 @@ int main()
     Item i1;
     Product p1;
 
-
     p1.setProductId(15);
 
     // // Product to Item constructor
