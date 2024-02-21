@@ -43,6 +43,9 @@ int main()
 
     cout << "\n\nSum of Numbers => " << sum;
 
+    // // deallocate dynamically allocated memory
+    delete[] nums;
+
     cout << endl; // Add new line
     getch();
     return 0;
