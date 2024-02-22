@@ -3,7 +3,6 @@
 
 void mergeSort(int *, int, int);
 void mergeArrays(int *, int, int, int);
-void swap(int *, int *);
 
 int main()
 {
