@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <conio.h>
 
-// void mergeSort(int *, int);
+void mergeSort(int *, int, int);
+void mergeArrays(int *, int, int, int);
 void swap(int *, int *);
 
 int main()
@@ -20,7 +21,7 @@ int main()
     for (int i = 0; i < size; i++)
         printf("%d ", arr[i]);
 
-    // mergeSort(arr, size);
+    mergeSort(arr, 0, size - 1);
 
     printf("\n\n>>>>>>>> Elements After Sorting <<<<<<<<<\n");
     for (int i = 0; i < size; i++)
@@ -42,28 +43,25 @@ void mergeSort(int *ptr, int beg, int end)
 
 void mergeArrays(int *arr, int beg, int mid, int end)
 {
-    int i = beg, j = mid + 1, copy[100], k = 0;
+    int i = beg, j = mid + 1, k = beg;
 
     while (i <= mid && j <= end)
     {
         if (arr[i] < arr[j])
-            copy[k++] = arr[i++];
+            arr[k++] = arr[i++];
         else
-            copy[k++] = arr[j++];
+            arr[k++] = arr[j++];
     }
 
     while (i <= mid)
     {
-        copy[k++] = arr[i++];
+        arr[k++] = arr[i++];
     }
 
     while (j <= end)
     {
-        copy[k++] = arr[j++];
+        arr[k++] = arr[j++];
     }
-
-    for (int i = beg; i < mid; i++)
-        arr[i] = copy[i - beg];
 }
 
 void swap(int *num1, int *num2)
