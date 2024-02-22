@@ -35,7 +35,7 @@ void mergeSort(int *ptr, int beg, int end)
     if (beg < end)
     {
         int mid = (beg + end) / 2;
-        mergeSort(ptr, beg, mid - 1);
+        mergeSort(ptr, beg, mid);
         mergeSort(ptr, mid + 1, end);
         mergeArrays(ptr, beg, mid, end);
     }
@@ -43,31 +43,51 @@ void mergeSort(int *ptr, int beg, int end)
 
 void mergeArrays(int *arr, int beg, int mid, int end)
 {
-    int i = beg, j = mid + 1, k = beg;
+    // int i = beg, j = mid + 1, k = beg;
 
-    while (i <= mid && j <= end)
+    // while (i <= mid && j <= end)
+    // {
+    //     if (arr[i] <= arr[j])
+    //         arr[k++] = arr[i++];
+    //     else
+    //         arr[k++] = arr[j++];
+    // }
+
+    // while (i <= mid)
+    // {
+    //     arr[k++] = arr[i++];
+    // }
+
+    // while (j <= end)
+    // {
+    //     arr[k++] = arr[j++];
+    // }
+
+    int size1 = mid - beg + 1, size2 = end - mid, k = beg, i = 0, j = 0;
+
+    int arr1[size1], arr2[size2];
+
+    for (int i = 0; i < size1; i++)
+        arr1[i] = arr[beg + i];
+
+    for (int i = 0; i < size2; i++)
+        arr2[i] = arr[mid + 1 + i];
+
+    while (i < size1 && j < size2)
     {
-        if (arr[i] < arr[j])
-            arr[k++] = arr[i++];
+        if (arr1[i] <= arr2[j])
+            arr[k++] = arr1[i++];
         else
-            arr[k++] = arr[j++];
+            arr[k++] = arr2[j++];
     }
 
-    while (i <= mid)
+    while (i < size1)
     {
-        arr[k++] = arr[i++];
+        arr[k++] = arr1[i++];
     }
 
-    while (j <= end)
+    while (j < size2)
     {
-        arr[k++] = arr[j++];
+        arr[k++] = arr2[j++];
     }
-}
-
-void swap(int *num1, int *num2)
-{
-
-    int temp = *num1;
-    *num1 = *num2;
-    *num2 = temp;
 }
