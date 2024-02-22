@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void selectionSort(int *, int);
+void bubbleSort(int *, int);
 void swap(int *, int *);
 
 int main()
@@ -21,7 +21,7 @@ int main()
     for (int i = 0; i < size; i++)
         printf("%d ", arr[i]);
 
-    selectionSort(arr, size);
+    bubbleSort(arr, size);
 
     printf("\n\n>>>>>>>> Elements After Sorting <<<<<<<<<\n");
     for (int i = 0; i < size; i++)
@@ -30,21 +30,15 @@ int main()
     return 0;
 }
 
-void selectionSort(int *ptr, int size)
+void bubbleSort(int *ptr, int size)
 {
-    int index_of_min;
-
     for (int i = 0; i < size - 1; i++)
     {
-        index_of_min = i;
-
-        for (int j = i + 1; j < size; j++)
+        for (int j = 0; j < size - 1 - i; j++)
         {
-            if (ptr[j] < ptr[index_of_min])
-                index_of_min = j;
+            if (ptr[j] > ptr[j + 1])
+                swap(&ptr[j], &ptr[j + 1]);
         }
-
-        swap(&ptr[i], &ptr[index_of_min]);
     }
 }
 
