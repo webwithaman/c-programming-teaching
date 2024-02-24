@@ -46,22 +46,21 @@ class Derived : public Base
 public:
     void displaySum()
     {
-        cout << "\nSum of Numbers => " <<sum;
+        cout << "\nSum of Numbers => " << sum;
     }
 };
 
 // // Main Function Start
 int main()
 {
-    // // create an instance of Base class
-    Base b1;
-
-    // // set numbers
-    b1.setNumbers(5, 15);
-    b1.addNumbers();
-
     // // create an instance of Derived class
     Derived d1;
+
+    // // set numbers
+    d1.setNumbers(5, 15);
+
+    // // add numbers
+    d1.addNumbers();
 
     // // display sum of numbers
     d1.displaySum();
