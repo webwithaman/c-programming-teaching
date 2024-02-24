@@ -84,7 +84,21 @@ public:
 // // Main Function Start
 int main()
 {
-    
+
+    // // create an instance of Employee class
+    Employee e1;
+
+    // // set details
+    e1.setName("Aman Kumar");
+    e1.setAge(20);
+    e1.setEmpId(01);
+    e1.setSalary(20000000);
+
+    // // get and display details
+    cout << "\nEmployee Name => " << e1.getName();
+    cout << "\nEmployee Age => " << e1.getAge();
+    cout << "\nEmployee Id => " << e1.getEmpId();
+    cout << "\nEmployee Salary => " << e1.getSalary();
 
     cout << endl; // Add new line
     getch();
