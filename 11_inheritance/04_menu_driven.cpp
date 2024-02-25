@@ -175,13 +175,8 @@ public:
     {
         int length = strlen(departmentName);
 
-        cout << "\nlen done";
-
         this->departmentName = new char[length > MAX_CHARS_IN_DEPARTMENT_NAME - 1 ? MAX_CHARS_IN_DEPARTMENT_NAME : length + 1];
 
-        cout << "\nmemeory done";
-
-        cout << "\ncopy done done";
 
         if (length > MAX_CHARS_IN_DEPARTMENT_NAME - 1)
         {
@@ -289,25 +284,16 @@ int main()
         managers[i].setEmpId(empId);
         managers[i].setName(name);
         managers[i].setAddress(address);
-        cout << "\naddress";
-
         managers[i].setDesignation(designation);
-        cout << "\ndesignatio";
-
-        // managers[i].setDepartmentName(departmentName);
-
-        cout << "\ndepartment";
-
+        managers[i].setDepartmentName(departmentName);
         managers[i].setBasicSalary(basicSalary);
-
-        cout << "\nslaray";
     }
 
-    cout << "\n>>>>>>>>> Details of " << n << "Managers <<<<<<<<<<<\n";
+    cout << "\n>>>>>>>>> Details of " << n << " Managers <<<<<<<<<<<\n";
 
     for (int i = 0; i < n; i++)
     {
-        cout << "\n\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
+        cout << "\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
         cout << "\nEmployee Id => " << managers[i].getEmpId();
         cout << "\nName => " << managers[i].getName();
         cout << "\nAddress => " << managers[i].getAddress();
@@ -318,7 +304,7 @@ int main()
 
     int highestIndex = highestSalary(managers, n);
 
-    cout << "\nManager with the Highest Salary => " << managers[highestIndex].getBasicSalary();
+    cout << "\n\nManager with the Highest Salary => " << managers[highestIndex].getBasicSalary();
     cout << "\nManager Name => " << managers[highestIndex].getName();
 
     cout << endl; // Add new line
