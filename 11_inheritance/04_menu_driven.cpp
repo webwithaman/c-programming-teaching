@@ -125,10 +125,25 @@ public:
 
 private:
     // // instance member variables
-    char designation[MAX_CHARS_IN_DESIGNATION], departmentName[MAX_CHARS_IN_DEPARTMENT_NAME];
+    char *designation, *departmentName;
     double basicSalary;
 
 public:
+    // // instance member function to set designation
+    void setDesignation(const char *designation)
+    {
+        int length = strlen(designation);
+
+        this->designation = new char[length > MAX_CHARS_IN_DESIGNATION - 1 ? MAX_CHARS_IN_DESIGNATION : length + 1];
+
+        strncpy(this->designation, designation, MAX_CHARS_IN_DESIGNATION - 1);
+
+        if (length > MAX_CHARS_IN_DESIGNATION - 1)
+        {
+            this->designation[MAX_CHARS_IN_DESIGNATION - 1] = 0; // // terminate with null character
+        }
+    }
+
     // // instance member function to set basicSalary
     void setBasicSalary(double basicSalary)
     {
