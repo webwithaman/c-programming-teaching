@@ -115,7 +115,7 @@ public:
     }
 };
 
-// // define class Employee
+// // define class Manage
 class Manage : public Employee
 {
 public:
@@ -125,19 +125,20 @@ public:
 
 private:
     // // instance member variables
-    int empNumber;
+    char designation[MAX_CHARS_IN_DESIGNATION], departmentName[MAX_CHARS_IN_DEPARTMENT_NAME];
+    double basicSalary;
 
 public:
-    // // instance member function to set empNumber
-    void setEmpNumber(int empNumber)
+    // // instance member function to set basicSalary
+    void setBasicSalary(double basicSalary)
     {
-        this->empNumber = empNumber;
+        this->basicSalary = basicSalary;
     }
 
-    // // instance member function to set salary
-    int getEmpNumber() const
+    // // instance member function to set basicSalary
+    int getBasicSalary() const
     {
-        return empNumber;
+        return basicSalary;
     }
 };
 
