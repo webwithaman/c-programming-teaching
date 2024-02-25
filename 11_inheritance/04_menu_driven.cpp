@@ -1,8 +1,6 @@
 /*
 
-Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, department name, basic-salary) from Employee. Write a menu driven program to:
-a. Accept all details of 'n' managers.
-b. Display manager having highest salary
+Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, department name, basic-salary) from Employee. Now, Accept all details of 'n' managers and  display manager having highest salary
 
 Output :-
 
@@ -39,11 +37,14 @@ public:
 
         this->name = new char[length > MAX_CHARS_IN_NAME - 1 ? MAX_CHARS_IN_NAME : length + 1];
 
-        strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
-
         if (length > MAX_CHARS_IN_NAME - 1)
         {
+            strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
             this->name[MAX_CHARS_IN_NAME - 1] = 0; // // terminate with null character
+        }
+        else
+        {
+            strcpy(this->name, name);
         }
     }
 
@@ -60,11 +61,14 @@ public:
 
         this->address = new char[length > MAX_CHARS_IN_ADDRESS - 1 ? MAX_CHARS_IN_ADDRESS : length + 1];
 
-        strncpy(this->address, address, MAX_CHARS_IN_ADDRESS - 1);
-
         if (length > MAX_CHARS_IN_ADDRESS - 1)
         {
+            strncpy(this->address, address, MAX_CHARS_IN_ADDRESS - 1);
             this->address[MAX_CHARS_IN_ADDRESS - 1] = 0; // // terminate with null character
+        }
+        else
+        {
+            strcpy(this->address, address);
         }
     }
 
@@ -80,11 +84,15 @@ public:
 
         this->phoneNumber = new char[MAX_DIGITS_IN_NUMBER];
 
-        strncpy(this->phoneNumber, phoneNumber, MAX_DIGITS_IN_NUMBER - 1);
-
         if (strlen(phoneNumber) > MAX_DIGITS_IN_NUMBER - 1)
         {
+            strncpy(this->phoneNumber, phoneNumber, MAX_DIGITS_IN_NUMBER - 1);
+
             this->phoneNumber[MAX_DIGITS_IN_NUMBER - 1] = 0; // // terminate with null character
+        }
+        else
+        {
+            strcpy(this->phoneNumber, phoneNumber);
         }
     }
 
@@ -145,11 +153,14 @@ public:
 
         this->designation = new char[length > MAX_CHARS_IN_DESIGNATION - 1 ? MAX_CHARS_IN_DESIGNATION : length + 1];
 
-        strncpy(this->designation, designation, MAX_CHARS_IN_DESIGNATION - 1);
-
         if (length > MAX_CHARS_IN_DESIGNATION - 1)
         {
+            strncpy(this->designation, designation, MAX_CHARS_IN_DESIGNATION - 1);
             this->designation[MAX_CHARS_IN_DESIGNATION - 1] = 0; // // terminate with null character
+        }
+        else
+        {
+            strcpy(this->designation, designation);
         }
     }
 
@@ -170,13 +181,17 @@ public:
 
         cout << "\nmemeory done";
 
-        strncpy(this->departmentName, departmentName, MAX_CHARS_IN_DEPARTMENT_NAME - 1);
-
         cout << "\ncopy done done";
 
         if (length > MAX_CHARS_IN_DEPARTMENT_NAME - 1)
         {
+            strncpy(this->departmentName, departmentName, MAX_CHARS_IN_DEPARTMENT_NAME - 1);
+
             this->departmentName[MAX_CHARS_IN_DEPARTMENT_NAME - 1] = 0; // // terminate with null character
+        }
+        else
+        {
+            strcpy(this->departmentName, departmentName);
         }
     }
 
