@@ -39,7 +39,7 @@ public:
 
         strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
 
-        if (length > MAX_CHARS_IN_NAME)
+        if (length > MAX_CHARS_IN_NAME - 1)
         {
             this->name[MAX_CHARS_IN_NAME - 1] = 0; // // terminate with null character
         }
@@ -60,7 +60,7 @@ public:
 
         strncpy(this->address, address, MAX_CHARS_IN_ADDRESS - 1);
 
-        if (length > MAX_CHARS_IN_ADDRESS)
+        if (length > MAX_CHARS_IN_ADDRESS - 1)
         {
             this->address[MAX_CHARS_IN_ADDRESS - 1] = 0; // // terminate with null character
         }
@@ -73,17 +73,16 @@ public:
     }
 
     // // instance member function to set phoneNumber
-    void setName(const char *name)
+    void setPhoneNumber(const char *phoneNumber)
     {
-        int length = strlen(name);
 
-        this->name = new char[length > MAX_CHARS_IN_NAME - 1 ? MAX_CHARS_IN_NAME : length + 1];
+        this->phoneNumber = new char[MAX_DIGITS_IN_NUMBER];
 
-        strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
+        strncpy(this->phoneNumber, phoneNumber, MAX_DIGITS_IN_NUMBER - 1);
 
-        if (length > MAX_CHARS_IN_NAME)
+        if (strlen(phoneNumber) > MAX_DIGITS_IN_NUMBER - 1)
         {
-            this->name[MAX_CHARS_IN_NAME - 1] = 0; // // terminate with null character
+            this->name[MAX_DIGITS_IN_NUMBER - 1] = 0; // // terminate with null character
         }
     }
 
