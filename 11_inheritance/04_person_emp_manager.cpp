@@ -1,4 +1,4 @@
-// // Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, department name, basic-salary) from Employee. Now, Accept all details of 'n' managers and  display manager having highest salary
+// // Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, departmentName, basicSalary) from Employee. Now, Accept all details of 'n' managers and display manager having highest salary.
 
 // // Header files
 #include <iostream>
@@ -276,6 +276,7 @@ int main()
 
         managers[i].setEmpId(empId);
         managers[i].setName(name);
+        managers[i].setPhoneNumber(phoneNumber);
         managers[i].setAddress(address);
         managers[i].setDesignation(designation);
         managers[i].setDepartmentName(departmentName);
@@ -289,6 +290,7 @@ int main()
         cout << "\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
         cout << "\nEmployee Id => " << managers[i].getEmpId();
         cout << "\nName => " << managers[i].getName();
+        cout << "\nPhone Number => " << managers[i].getPhoneNumber();
         cout << "\nAddress => " << managers[i].getAddress();
         cout << "\nDesignation => " << managers[i].getDesignation();
         cout << "\nDepartment Name => " << managers[i].getDepartmentName();
