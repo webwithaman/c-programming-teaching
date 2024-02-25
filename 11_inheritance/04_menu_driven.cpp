@@ -1,4 +1,5 @@
 /*
+
 Write a C++ program to design a base class Person (name, address, phone_no). Derive a class Employee (eno, ename) from Person. Derive a class Manage (designation, department name, basic-salary) from Employee. Write a menu driven program to:
 a. Accept all details of 'n' managers.
 b. Display manager having highest salary
@@ -114,10 +115,30 @@ public:
     }
 };
 
+// // define class Employee
+class Manage : public Employee
+{
+private:
+    // // instance member variables
+    int empNumber;
+
+public:
+    // // instance member function to set empNumber
+    void setEmpNumber(int empNumber)
+    {
+        this->empNumber = empNumber;
+    }
+
+    // // instance member function to set salary
+    int getEmpNumber() const
+    {
+        return empNumber;
+    }
+};
+
 // // Main Function Start
 int main()
 {
-
     // // create an instance of Employee class
     // Employee e1;
 
