@@ -1,6 +1,6 @@
 /*
 
-Write a C++ program to design a base class Person (name, address, phone_no). Derive a class Employee (eno, ename) from Person. Derive a class Manage (designation, department name, basic-salary) from Employee. Write a menu driven program to:
+Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, department name, basic-salary) from Employee. Write a menu driven program to:
 a. Accept all details of 'n' managers.
 b. Display manager having highest salary
 
@@ -12,6 +12,7 @@ Output :-
 #include <iostream>
 #include <conio.h>
 #include <string.h>
+#include <stdlib.h>
 
 // // use namespace
 using namespace std;
@@ -99,29 +100,29 @@ class Employee : public Person
 {
 private:
     // // instance member variables
-    int empNumber;
+    int empId;
 
 public:
-    // // instance member function to set empNumber
-    void setEmpNumber(int empNumber)
+    // // instance member function to set empId
+    void setEmpId(int empId)
     {
-        this->empNumber = empNumber;
+        this->empId = empId;
     }
 
-    // // instance member function to set salary
-    int getEmpNumber() const
+    // // instance member function to get empId
+    int getEmpId() const
     {
-        return empNumber;
+        return empId;
     }
 };
 
-// // define class Manage
-class Manage : public Employee
+// // define class Manager
+class Manager : public Employee
 {
 public:
     // // static member variable
-    static const int MAX_CHARS_IN_DESIGNATION = 31;
-    static const int MAX_CHARS_IN_DEPARTMENT_NAME = 31;
+    static const int MAX_CHARS_IN_DESIGNATION = 51;
+    static const int MAX_CHARS_IN_DEPARTMENT_NAME = 51;
 
 private:
     // // instance member variables
@@ -144,36 +145,140 @@ public:
         }
     }
 
+    // // instance member function to get designation
+    const char *getDesignation() const
+    {
+        return designation;
+    }
+
+    // // instance member function to set departmentName
+    void setDepartmentName(const char *departmentName)
+    {
+        int length = strlen(departmentName);
+
+        this->departmentName = new char[length > MAX_CHARS_IN_DEPARTMENT_NAME - 1 ? MAX_CHARS_IN_DEPARTMENT_NAME : length + 1];
+
+        strncpy(this->departmentName, departmentName, MAX_CHARS_IN_DEPARTMENT_NAME - 1);
+
+        if (length > MAX_CHARS_IN_DEPARTMENT_NAME - 1)
+        {
+            this->departmentName[MAX_CHARS_IN_DEPARTMENT_NAME - 1] = 0; // // terminate with null character
+        }
+    }
+
+    // // instance member function to get departmentName
+    const char *getDepartmentName() const
+    {
+        return departmentName;
+    }
+
     // // instance member function to set basicSalary
     void setBasicSalary(double basicSalary)
     {
         this->basicSalary = basicSalary;
     }
 
-    // // instance member function to set basicSalary
-    int getBasicSalary() const
+    // // instance member function to get basicSalary
+    double getBasicSalary() const
     {
         return basicSalary;
     }
+
+    // // friend function to find manager with the highest salary
+    friend int highestSalary(Manager[], int);
 };
+
+// // friend function to find manager with the highest salary
+int highestSalary(Manager managers[], int size)
+{
+    int highestIndex = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (managers[i].basicSalary > managers[highestIndex].basicSalary)
+            highestIndex = i;
+    }
+
+    return highestIndex;
+}
 
 // // Main Function Start
 int main()
 {
-    // // create an instance of Employee class
-    // Employee e1;
+    int n;
+    cout << "\nHow Many Managers Details You Want to Enter => ";
+    cin >> n;
 
-    // // // set details
-    // e1.setName("Aman Kumar");
-    // e1.setAge(20);
-    // e1.setEmpId(01);
-    // e1.setSalary(20000000);
+    // // invalid input
+    if (n < 1)
+    {
+        cout << "\n!!! Invalid Input...";
+        exit(0);
+    }
 
-    // // // get and display details
-    // cout << "\nEmployee Name => " << e1.getName();
-    // cout << "\nEmployee Age => " << e1.getAge();
-    // cout << "\nEmployee Id => " << e1.getEmpId();
-    // cout << "\nEmployee Salary => " << e1.getSalary();
+    // // create an array of instances of Manager
+    Manager managers[n];
+    char name[Manager::MAX_CHARS_IN_NAME], address[Manager::MAX_CHARS_IN_ADDRESS], phoneNumber[Manager::MAX_DIGITS_IN_NUMBER], designation[Manager::MAX_CHARS_IN_DESIGNATION], departmentName[Manager::MAX_CHARS_IN_DEPARTMENT_NAME];
+    int empId;
+    double basicSalary;
+
+    cout << "\n>>>>>>>>> Enter Details of " << n << " Managers <<<<<<<<<<<\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\n>>>>>>>> Enter Details of Manager-" << i + 1 << " <<<<<<<<<<\n";
+
+        cout << "\nEnter Employee Id => ";
+        cin >> empId;
+
+        cout << "\nEnter Name (MAX_CHARS " << Manager::MAX_CHARS_IN_NAME - 1 << ") => ";
+        cin.ignore();
+        cin.getline(name, Manager::MAX_CHARS_IN_NAME);
+
+        cout << "\nEnter Address (MAX_CHARS " << Manager::MAX_CHARS_IN_ADDRESS - 1 << ") => ";
+        cin.ignore();
+        cin.getline(address, Manager::MAX_CHARS_IN_ADDRESS);
+
+        cout << "\nEnter Phone Number (MAX_CHARS " << Manager::MAX_DIGITS_IN_NUMBER - 1 << ") => ";
+        cin.ignore();
+        cin.getline(phoneNumber, Manager::MAX_CHARS_IN_ADDRESS);
+
+        cout << "\nEnter Designation (MAX_CHARS " << Manager::MAX_CHARS_IN_DESIGNATION - 1 << ") => ";
+        cin.ignore();
+        cin.getline(designation, Manager::MAX_CHARS_IN_DESIGNATION);
+
+        cout << "\nEnter Department Name (MAX_CHARS " << Manager::MAX_CHARS_IN_DEPARTMENT_NAME - 1 << ") => ";
+        cin.ignore();
+        cin.getline(departmentName, Manager::MAX_CHARS_IN_DEPARTMENT_NAME);
+
+        cout << "\nEnter Basic Salary => ";
+        cin >> basicSalary;
+
+        managers[i].setEmpId(empId);
+        managers[i].setName(name);
+        managers[i].setAddress(address);
+        managers[i].setDesignation(designation);
+        managers[i].setDepartmentName(departmentName);
+        managers[i].setBasicSalary(basicSalary);
+    }
+
+    cout << "\n>>>>>>>>> Details of " << n << "Managers <<<<<<<<<<<\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\n\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
+        cout << "\nEmployee Id => " << managers[i].getEmpId();
+        cout << "\nName => " << managers[i].getName();
+        cout << "\nAddress => " << managers[i].getAddress();
+        cout << "\nDesignation => " << managers[i].getDesignation();
+        cout << "\nDepartment Name => " << managers[i].getDepartmentName();
+        cout << "\nBasic Salary => " << managers[i].getBasicSalary();
+    }
+
+    int highestIndex = highestSalary(managers, n);
+
+    cout << "\nManager with the Highest Salary => " << managers[highestIndex].getBasicSalary();
+    cout << "\nManager Name => " << managers[highestIndex].getName();
 
     cout << endl; // Add new line
     getch();
