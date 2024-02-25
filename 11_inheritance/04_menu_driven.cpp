@@ -118,6 +118,11 @@ public:
 // // define class Employee
 class Manage : public Employee
 {
+public:
+    // // static member variable
+    static const int MAX_CHARS_IN_DESIGNATION = 31;
+    static const int MAX_CHARS_IN_DEPARTMENT_NAME = 31;
+
 private:
     // // instance member variables
     int empNumber;
