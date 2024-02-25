@@ -1,10 +1,4 @@
-/*
-
-Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, department name, basic-salary) from Employee. Now, Accept all details of 'n' managers and  display manager having highest salary
-
-Output :-
-
-*/
+// // Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, department name, basic-salary) from Employee. Now, Accept all details of 'n' managers and  display manager having highest salary
 
 // // Header files
 #include <iostream>
@@ -176,7 +170,6 @@ public:
         int length = strlen(departmentName);
 
         this->departmentName = new char[length > MAX_CHARS_IN_DEPARTMENT_NAME - 1 ? MAX_CHARS_IN_DEPARTMENT_NAME : length + 1];
-
 
         if (length > MAX_CHARS_IN_DEPARTMENT_NAME - 1)
         {
