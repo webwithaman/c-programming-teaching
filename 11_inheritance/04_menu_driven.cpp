@@ -97,9 +97,9 @@ public:
     // // destructor
     ~Person()
     {
-        delete name;
-        delete address;
-        delete phoneNumber;
+        delete[] name;
+        delete[] address;
+        delete[] phoneNumber;
     }
 };
 
@@ -201,8 +201,8 @@ public:
     // // destructor
     ~Manager()
     {
-        delete designation;
-        delete departmentName;
+        delete[] designation;
+        delete[] departmentName;
     }
 
     // // friend function to find manager with the highest salary
@@ -279,7 +279,7 @@ int main()
         managers[i].setDesignation(designation);
         cout << "\ndesignatio";
 
-        managers[i].setDepartmentName(departmentName);
+        // managers[i].setDepartmentName(departmentName);
 
         cout << "\ndepartment";
 
