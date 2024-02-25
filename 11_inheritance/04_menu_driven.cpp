@@ -84,7 +84,7 @@ public:
 
         if (strlen(phoneNumber) > MAX_DIGITS_IN_NUMBER - 1)
         {
-            this->name[MAX_DIGITS_IN_NUMBER - 1] = 0; // // terminate with null character
+            this->phoneNumber[MAX_DIGITS_IN_NUMBER - 1] = 0; // // terminate with null character
         }
     }
 
@@ -92,6 +92,14 @@ public:
     const char *getPhoneNumber() const
     {
         return phoneNumber;
+    }
+
+    // // destructor
+    ~Person()
+    {
+        delete name;
+        delete address;
+        delete phoneNumber;
     }
 };
 
@@ -156,9 +164,15 @@ public:
     {
         int length = strlen(departmentName);
 
+        cout << "\nlen done";
+
         this->departmentName = new char[length > MAX_CHARS_IN_DEPARTMENT_NAME - 1 ? MAX_CHARS_IN_DEPARTMENT_NAME : length + 1];
 
+        cout << "\nmemeory done";
+
         strncpy(this->departmentName, departmentName, MAX_CHARS_IN_DEPARTMENT_NAME - 1);
+
+        cout << "\ncopy done done";
 
         if (length > MAX_CHARS_IN_DEPARTMENT_NAME - 1)
         {
@@ -182,6 +196,13 @@ public:
     double getBasicSalary() const
     {
         return basicSalary;
+    }
+
+    // // destructor
+    ~Manager()
+    {
+        delete designation;
+        delete departmentName;
     }
 
     // // friend function to find manager with the highest salary
@@ -236,19 +257,15 @@ int main()
         cin.getline(name, Manager::MAX_CHARS_IN_NAME);
 
         cout << "\nEnter Address (MAX_CHARS " << Manager::MAX_CHARS_IN_ADDRESS - 1 << ") => ";
-        cin.ignore();
         cin.getline(address, Manager::MAX_CHARS_IN_ADDRESS);
 
         cout << "\nEnter Phone Number (MAX_CHARS " << Manager::MAX_DIGITS_IN_NUMBER - 1 << ") => ";
-        cin.ignore();
         cin.getline(phoneNumber, Manager::MAX_CHARS_IN_ADDRESS);
 
         cout << "\nEnter Designation (MAX_CHARS " << Manager::MAX_CHARS_IN_DESIGNATION - 1 << ") => ";
-        cin.ignore();
         cin.getline(designation, Manager::MAX_CHARS_IN_DESIGNATION);
 
         cout << "\nEnter Department Name (MAX_CHARS " << Manager::MAX_CHARS_IN_DEPARTMENT_NAME - 1 << ") => ";
-        cin.ignore();
         cin.getline(departmentName, Manager::MAX_CHARS_IN_DEPARTMENT_NAME);
 
         cout << "\nEnter Basic Salary => ";
@@ -257,9 +274,18 @@ int main()
         managers[i].setEmpId(empId);
         managers[i].setName(name);
         managers[i].setAddress(address);
+        cout << "\naddress";
+
         managers[i].setDesignation(designation);
+        cout << "\ndesignatio";
+
         managers[i].setDepartmentName(departmentName);
+
+        cout << "\ndepartment";
+
         managers[i].setBasicSalary(basicSalary);
+
+        cout << "\nslaray";
     }
 
     cout << "\n>>>>>>>>> Details of " << n << "Managers <<<<<<<<<<<\n";
