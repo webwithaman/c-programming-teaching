@@ -98,32 +98,19 @@ class Employee : public Person
 {
 private:
     // // instance member variables
-    int empId;
-    double salary;
+    int empNumber;
 
 public:
-    // // instance member function to set empId
-    void setEmpId(int empId)
+    // // instance member function to set empNumber
+    void setEmpNumber(int empNumber)
     {
-        this->empId = empId;
+        this->empNumber = empNumber;
     }
 
     // // instance member function to set salary
-    void setSalary(double salary)
+    int getEmpNumber() const
     {
-        this->salary = salary;
-    }
-
-    // // instance member function to get empId
-    int getEmpId() const
-    {
-        return empId;
-    }
-
-    // // instance member function to get salary
-    double getSalary()
-    {
-        return salary;
+        return empNumber;
     }
 };
 
