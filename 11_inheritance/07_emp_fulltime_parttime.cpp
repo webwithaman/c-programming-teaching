@@ -263,10 +263,11 @@ int main()
     // // create an array of pointers to instances of Employees
     Employee *emps[n] = {nullptr};
 
+    // // get details
     cout << "\n>>>>>>>>> Enter Details of " << n << " Employees <<<<<<<<<<<\n";
-
     for (int i = 0; i < n; i++)
     {
+        cout << "\n>>>>>>>> Enter Details of Employee-" << i + 1 << " <<<<<<<<<<\n";
 
         char empType;
 
@@ -289,25 +290,27 @@ int main()
         else
             emps[i] = new PartTime;
 
-        cout << "\n>>>>>>>> Enter Details of Employee-" << i + 1 << " <<<<<<<<<<\n";
         emps[i]->setDetails();
     }
 
+    // // show details
     cout << "\n>>>>>>>>> Details of " << n << " Full Time Employees <<<<<<<<<<<\n";
-
     for (int i = 0; i < n; i++)
     {
         cout << "\n\n>>>>>>>> Details of Employee-" << i + 1 << " <<<<<<<<<<";
         emps[i]->showDetails();
     }
 
+    // // get employee id to search an employee
     cout << "\n\nEnter Employee Id to Search An Employee => ";
     cin >> empId;
 
+    // // search employee by its id
     indexOfFoundEmp = searchByEmpid(emps, n, empId);
 
+    // // show if employee found
     if (indexOfFoundEmp == -1)
-        cout << "\n\nEmployee Not Found Having Employee Id " << empId;
+        cout << "\n\nThere is No Employee Having Id " << empId;
     else
     {
         cout << "\n\n>>>>>>>>>> Employee Found <<<<<<<<<<<\n";

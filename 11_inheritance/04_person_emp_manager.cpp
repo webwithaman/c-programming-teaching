@@ -315,24 +315,26 @@ int main()
     // // create an array of instances of Manager
     Manager managers[n];
 
+    // // get details
     cout << "\n>>>>>>>>> Enter Details of " << n << " Managers <<<<<<<<<<<\n";
-
     for (int i = 0; i < n; i++)
     {
         cout << "\n>>>>>>>> Enter Details of Manager-" << i + 1 << " <<<<<<<<<<\n";
         managers[i].setDetails();
     }
 
+    // // show details
     cout << "\n>>>>>>>>> Details of " << n << " Managers <<<<<<<<<<<\n";
-
     for (int i = 0; i < n; i++)
     {
         cout << "\n\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
         managers[i].showDetails();
     }
 
+    // // find employee with highest salary
     int highestIndex = highestSalary(managers, n);
 
+    // // show employee with highest salary
     cout << "\n\nManager with the Highest Salary => " << managers[highestIndex].getBasicSalary();
     cout << "\nManager Name => " << managers[highestIndex].getName();
 

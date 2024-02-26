@@ -175,12 +175,13 @@ int main()
 
     // // create an array of instances of DiscountedItem
     DiscountedItem discountedItems[n];
+
     char name[DiscountedItem::MAX_CHARS_IN_NAME];
     int itemNumber;
     double price, discountPercent, discountedPrice, totalPrice = 0, totalDiscount = 0;
 
+    // // get details
     cout << "\n>>>>>>>>> Enter Details of " << n << " Items <<<<<<<<<<<\n";
-
     for (int i = 0; i < n; i++)
     {
         cout << "\n>>>>>>>> Enter Details of Item-" << i + 1 << " <<<<<<<<<<\n";
@@ -191,14 +192,15 @@ int main()
         totalDiscount += discountedItems[i].getPrice() - discountedItems[i].getDiscountedPrice();
     }
 
+    // // show details
     cout << "\n>>>>>>>>> Details of " << n << " Items <<<<<<<<<<<\n";
-
     for (int i = 0; i < n; i++)
     {
         cout << "\n>>>>>>>> Details of Item-" << i + 1 << " <<<<<<<<<<";
         discountedItems[i].showDetails();
     }
 
+    // // show total price and total discount
     cout << "\n\nTotal Price => " << totalPrice;
     cout << "\nTotal Discount => " << totalDiscount;
 
