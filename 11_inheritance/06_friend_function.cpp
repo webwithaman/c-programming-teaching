@@ -7,6 +7,7 @@
 // // use namespace
 using namespace std;
 
+// // forward declaration of class B
 class B;
 
 // // define class A
