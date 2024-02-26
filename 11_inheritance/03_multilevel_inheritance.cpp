@@ -26,7 +26,7 @@ public:
     }
 };
 
-// // define class Derived
+// // define class Derived by inheriting class AcceptNumbers
 class TotalMarks : public AcceptNumbers
 {
 protected:
@@ -42,7 +42,7 @@ public:
     }
 };
 
-// // define class Percentage
+// // define class Percentage by inheriting class TotalMarks
 class Percentage : public TotalMarks
 {
 private:

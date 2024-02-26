@@ -26,7 +26,7 @@ public:
     }
 
     // // instance member function to get data
-    int getData()
+    int getData() const
     {
         return a;
     }
@@ -51,7 +51,7 @@ public:
     }
 
     // // instance member function to get data
-    int getData()
+    int getData() const
     {
         return b;
     }

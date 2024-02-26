@@ -9,6 +9,9 @@
 // // use namespace
 using namespace std;
 
+// // define Macro
+#define MAX_MANAGERS 20
+
 // // define class Person
 class Person
 {
@@ -111,12 +114,12 @@ public:
         setAddress(address);
 
         cout << "\nEnter Phone Number (MAX_CHARS " << MAX_DIGITS_IN_NUMBER - 1 << ") => ";
-        cin.getline(phoneNumber, MAX_CHARS_IN_ADDRESS);
+        cin.getline(phoneNumber, MAX_DIGITS_IN_NUMBER);
         setPhoneNumber(phoneNumber);
     }
 
     // // instance member function to show details
-    void showDetails()
+    void showDetails() const
     {
         cout << "\nName => " << name;
         cout << "\nPhone Number => " << phoneNumber;
@@ -132,7 +135,7 @@ public:
     }
 };
 
-// // define class Employee
+// // define class Employee by inheriting class Person
 class Employee : public Person
 {
 private:
@@ -168,7 +171,7 @@ public:
     }
 };
 
-// // define class Manager
+// // define class Manager by inheriting class Employee
 class Manager : public Employee
 {
 public:
@@ -302,11 +305,11 @@ int highestSalary(Manager managers[], int size)
 int main()
 {
     int n;
-    cout << "\nHow Many Managers Details You Want to Enter => ";
+    cout << "\nHow Many Managers Details You Want to Enter (MAX " << MAX_MANAGERS << " ) => ";
     cin >> n;
 
     // // invalid input
-    if (n < 1)
+    if (n < 1 || n > MAX_MANAGERS)
     {
         cout << "\n!!! Invalid Input...";
         exit(0);

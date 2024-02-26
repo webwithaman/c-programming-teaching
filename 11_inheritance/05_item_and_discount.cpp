@@ -9,6 +9,9 @@
 // // use namespace
 using namespace std;
 
+// // define Macro
+#define MAX_ITEMS 20
+
 // // define class Item
 class Item
 {
@@ -67,7 +70,7 @@ public:
     }
 
     // // instance member function to get price
-    double getPrice()
+    double getPrice() const
     {
         return price;
     }
@@ -90,7 +93,7 @@ public:
     }
 
     // // instance member function to input and show details
-    void showDetails()
+    void showDetails() const
     {
         cout << "\nName => " << name;
         cout << "\nItem Number => " << itemNumber;
@@ -104,7 +107,7 @@ public:
     }
 };
 
-// // define class DiscountedItem
+// // define class DiscountedItem by inheriting class DiscountedItem
 class DiscountedItem : public Item
 {
 private:
@@ -119,7 +122,7 @@ public:
     }
 
     // // instance member function to get discountPercent
-    double getDiscountPercent()
+    double getDiscountPercent() const
     {
         return discountPercent;
     }
@@ -131,7 +134,7 @@ public:
     }
 
     // // instance member function to get discountedPrice
-    double getDiscountedPrice()
+    double getDiscountedPrice() const
     {
         return discountedPrice;
     }
@@ -163,11 +166,11 @@ public:
 int main()
 {
     int n;
-    cout << "\nHow Many Items You Want to Enter => ";
+    cout << "\nHow Many Items You Want to Enter (MAX " << MAX_ITEMS << ")=> ";
     cin >> n;
 
     // // invalid input
-    if (n < 1)
+    if (n < 1 || n > MAX_ITEMS)
     {
         cout << "\n!!! Invalid Input...";
         exit(0);

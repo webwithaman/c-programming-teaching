@@ -47,7 +47,7 @@ public:
     }
 };
 
-// // define class Employee
+// // define class Employee by inheriting class Person
 class Employee : public Person
 {
 private:

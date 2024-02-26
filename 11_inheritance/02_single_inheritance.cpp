@@ -33,7 +33,7 @@ public:
     }
 };
 
-// // define class Derived
+// // define class Derived by inheriting class Base
 class Derived : public Base
 {
 

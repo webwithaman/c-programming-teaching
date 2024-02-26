@@ -1,13 +1,4 @@
-/*
- Write class declarations and member function definitions for a C++ base
-class to represent an Employee (empId, name). Derive two classes as Fulltime (dailyRate, numberOfDays, salary) and Parttime (numberOfHours, hourlyRate, salary).
-Write a menu driven program to:
-1. Accept the details of ‘n’ employees.
-2. Display the details of ‘n’ employees.
-3. Search a given Employee by emp-code.
-Output :-
-
-*/
+// // Write class declarations and member function definitions for a C++ base class to represent an Employee (empId, name). Derive two classes as Fulltime (dailyRate, numberOfDays, salary) and Parttime (numberOfHours, hourlyRate, salary).
 
 // // Header files
 #include <iostream>
@@ -17,6 +8,9 @@ Output :-
 
 // // use namespace
 using namespace std;
+
+// // define Macro
+#define MAX_EMPS 20
 
 // // define class Employee
 class Employee
@@ -83,7 +77,7 @@ public:
     }
 
     // // instance member function to show details
-    virtual void showDetails()
+    virtual void showDetails() const
     {
         cout << "\nName => " << name;
         cout << "\nEmployee Id => " << empId;
@@ -99,7 +93,7 @@ public:
     }
 };
 
-// // define class FullTime
+// // define class FullTime by inheriting class Employee
 class FullTime : public Employee
 {
 private:
@@ -117,7 +111,7 @@ public:
     }
 
     // // instance member function to get numberOfDays
-    int getNumberOfDays()
+    int getNumberOfDays() const
     {
         return numberOfDays;
     }
@@ -129,7 +123,7 @@ public:
     }
 
     // // instance member function to get dailyRate
-    int getDailyRate()
+    int getDailyRate() const
     {
         return dailyRate;
     }
@@ -166,7 +160,7 @@ public:
 // // define static member variables of class FullTime
 const char FullTime::status[] = "Full Time";
 
-// // define class PartTime
+// // define class PartTime by inheriting class Employee
 class PartTime : public Employee
 {
 private:
@@ -184,7 +178,7 @@ public:
     }
 
     // // instance member function to get numberOfHours
-    int getNumberOfHours()
+    int getNumberOfHours() const
     {
         return numberOfHours;
     }
@@ -196,7 +190,7 @@ public:
     }
 
     // // instance member function to get hourlyRate
-    int getHourlyRate()
+    int getHourlyRate() const
     {
         return hourlyRate;
     }
@@ -250,11 +244,11 @@ int main()
 {
 
     int n, empId, indexOfFoundEmp;
-    cout << "\nHow Many Employees Details You Want to Enter => ";
+    cout << "\nHow Many Employees Details You Want to Enter (MAX " << MAX_EMPS << ") => ";
     cin >> n;
 
     // // invalid input
-    if (n < 1)
+    if (n < 1 || n > MAX_EMPS)
     {
         cout << "\n!!! Invalid Input...";
         exit(0);
