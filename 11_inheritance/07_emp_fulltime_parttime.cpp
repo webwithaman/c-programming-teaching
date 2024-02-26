@@ -1,6 +1,6 @@
 /*
  Write class declarations and member function definitions for a C++ base
-class to represent an Employee (emp-code, name). Derive two classes as Fulltime (daily rate, number of days, salary) and Parttime (number of working hours, hourly rate, salary).
+class to represent an Employee (empId, name). Derive two classes as Fulltime (dailyRate, numberOfDays, salary) and Parttime (numberOfHours, hourlyRate, salary).
 Write a menu driven program to:
 1. Accept the details of ‘n’ employees.
 2. Display the details of ‘n’ employees.
@@ -18,19 +18,18 @@ Output :-
 // // use namespace
 using namespace std;
 
-// // define class Person
-class Person
+// // define class Employee
+class Employee
 {
 
 public:
     // // static member variable
     static const int MAX_CHARS_IN_NAME = 31;
-    static const int MAX_CHARS_IN_ADDRESS = 21;
-    static const int MAX_DIGITS_IN_NUMBER = 11;
 
 private:
     // // instance member variables
-    char *name, *address, *phoneNumber;
+    char *name;
+    int empId;
 
 public:
     // // instance member function to set name
@@ -57,71 +56,6 @@ public:
         return name;
     }
 
-    // // instance member function to set address
-    void setAddress(const char *address)
-    {
-        int length = strlen(address);
-
-        this->address = new char[length > MAX_CHARS_IN_ADDRESS - 1 ? MAX_CHARS_IN_ADDRESS : length + 1];
-
-        if (length > MAX_CHARS_IN_ADDRESS - 1)
-        {
-            strncpy(this->address, address, MAX_CHARS_IN_ADDRESS - 1);
-            this->address[MAX_CHARS_IN_ADDRESS - 1] = 0; // // terminate with null character
-        }
-        else
-        {
-            strcpy(this->address, address);
-        }
-    }
-
-    // // instance member function to get address
-    const char *getAddress() const
-    {
-        return address;
-    }
-
-    // // instance member function to set phoneNumber
-    void setPhoneNumber(const char *phoneNumber)
-    {
-
-        this->phoneNumber = new char[MAX_DIGITS_IN_NUMBER];
-
-        if (strlen(phoneNumber) > MAX_DIGITS_IN_NUMBER - 1)
-        {
-            strncpy(this->phoneNumber, phoneNumber, MAX_DIGITS_IN_NUMBER - 1);
-
-            this->phoneNumber[MAX_DIGITS_IN_NUMBER - 1] = 0; // // terminate with null character
-        }
-        else
-        {
-            strcpy(this->phoneNumber, phoneNumber);
-        }
-    }
-
-    // // instance member function to get phoneNumber
-    const char *getPhoneNumber() const
-    {
-        return phoneNumber;
-    }
-
-    // // destructor
-    ~Person()
-    {
-        delete[] name;
-        delete[] address;
-        delete[] phoneNumber;
-    }
-};
-
-// // define class Employee
-class Employee : public Person
-{
-private:
-    // // instance member variables
-    int empId;
-
-public:
     // // instance member function to set empId
     void setEmpId(int empId)
     {
@@ -133,113 +67,205 @@ public:
     {
         return empId;
     }
-};
 
-// // define class Manager
-class Manager : public Employee
-{
-public:
-    // // static member variable
-    static const int MAX_CHARS_IN_DESIGNATION = 51;
-    static const int MAX_CHARS_IN_DEPARTMENT_NAME = 51;
-
-private:
-    // // instance member variables
-    char *designation, *departmentName;
-    double basicSalary;
-
-public:
-    // // instance member function to set designation
-    void setDesignation(const char *designation)
+    // // instance member function to input and set details
+    void setDetails()
     {
-        int length = strlen(designation);
+        char name[MAX_CHARS_IN_NAME];
 
-        this->designation = new char[length > MAX_CHARS_IN_DESIGNATION - 1 ? MAX_CHARS_IN_DESIGNATION : length + 1];
+        cout << "\nEnter Name (MAX_CHARS " << MAX_CHARS_IN_NAME - 1 << ") => ";
+        cin.ignore();
+        cin.getline(name, MAX_CHARS_IN_NAME);
+        setName(name);
 
-        if (length > MAX_CHARS_IN_DESIGNATION - 1)
-        {
-            strncpy(this->designation, designation, MAX_CHARS_IN_DESIGNATION - 1);
-            this->designation[MAX_CHARS_IN_DESIGNATION - 1] = 0; // // terminate with null character
-        }
-        else
-        {
-            strcpy(this->designation, designation);
-        }
+        cout << "\nEnter Employee Id => ";
+        cin >> empId;
     }
 
-    // // instance member function to get designation
-    const char *getDesignation() const
+    // // instance member function to show details
+    void showDetails()
     {
-        return designation;
+        cout << "\nName => " << name;
+        cout << "\nEmployee Id => " << empId;
     }
 
-    // // instance member function to set departmentName
-    void setDepartmentName(const char *departmentName)
-    {
-        int length = strlen(departmentName);
-
-        this->departmentName = new char[length > MAX_CHARS_IN_DEPARTMENT_NAME - 1 ? MAX_CHARS_IN_DEPARTMENT_NAME : length + 1];
-
-        if (length > MAX_CHARS_IN_DEPARTMENT_NAME - 1)
-        {
-            strncpy(this->departmentName, departmentName, MAX_CHARS_IN_DEPARTMENT_NAME - 1);
-
-            this->departmentName[MAX_CHARS_IN_DEPARTMENT_NAME - 1] = 0; // // terminate with null character
-        }
-        else
-        {
-            strcpy(this->departmentName, departmentName);
-        }
-    }
-
-    // // instance member function to get departmentName
-    const char *getDepartmentName() const
-    {
-        return departmentName;
-    }
-
-    // // instance member function to set basicSalary
-    void setBasicSalary(double basicSalary)
-    {
-        this->basicSalary = basicSalary;
-    }
-
-    // // instance member function to get basicSalary
-    double getBasicSalary() const
-    {
-        return basicSalary;
-    }
+    // // friend function to search employee by id
+    friend int searchByEmpid(Employee ptr[], int size, int empId);
 
     // // destructor
-    ~Manager()
+    ~Employee()
     {
-        delete[] designation;
-        delete[] departmentName;
+        delete[] name;
     }
-
-    // // friend function to find manager with the highest salary
-    friend int highestSalary(Manager[], int);
 };
 
-// // friend function to find manager with the highest salary
-int highestSalary(Manager managers[], int size)
+// // define class FullTime
+class FullTime : public Employee
 {
-    int highestIndex = 0;
+private:
+    // // instance member variables
+    int numberOfDays, dailyRate, salary;
 
-    for (int i = 0; i < size; i++)
+public:
+    // // static member variable
+    static const char status[];
+
+    // // instance member function to set numberOfDays
+    void setNumberOfDays(int numberOfDays)
     {
-        if (managers[i].basicSalary > managers[highestIndex].basicSalary)
-            highestIndex = i;
+        this->numberOfDays = numberOfDays;
     }
 
-    return highestIndex;
+    // // instance member function to get numberOfDays
+    int getNumberOfDays()
+    {
+        return numberOfDays;
+    }
+
+    // // instance member function to set dailyRate
+    void setDailyRate(int dailyRate)
+    {
+        this->dailyRate = dailyRate;
+    }
+
+    // // instance member function to get dailyRate
+    int getDailyRate()
+    {
+        return dailyRate;
+    }
+
+    // // instance member function to set salary
+    void setSalary(int salary)
+    {
+        this->salary = salary;
+    }
+
+    // // instance member function to get salary
+    int getSalary()
+    {
+        return salary;
+    }
+
+    // // instance member function to input and set details
+    void setDetails()
+    {
+        Employee::setDetails();
+
+        cout << "\nEnter Daily Rate => ";
+        cin >> dailyRate;
+
+        cout << "\nEnter Number of Days => ";
+        cin >> numberOfDays;
+
+        salary = dailyRate * numberOfDays;
+    }
+
+    // // instance member function to show details
+    void showDetails()
+    {
+        Employee::showDetails();
+        cout << "\nDaily Rate => " << dailyRate;
+        cout << "\nNumber of Days => " << numberOfDays;
+        cout << "\nSalary => " << salary;
+        cout << "\nStatus => " << status;
+    }
+};
+
+// // define static member variables of class FullTime
+const char FullTime::status[] = "Full Time";
+
+// // define class PartTime
+class PartTime : public Employee
+{
+private:
+    // // instance member variables
+    int numberOfHours, hourlyRate, salary;
+
+public:
+    // // static member variable
+    static const char status[];
+
+    // // instance member function to set numberOfHours
+    void setNumberOfHours(int numberOfHours)
+    {
+        this->numberOfHours = numberOfHours;
+    }
+
+    // // instance member function to get numberOfHours
+    int getNumberOfHours()
+    {
+        return numberOfHours;
+    }
+
+    // // instance member function to set hourlyRate
+    void setHourlyRate(int hourlyRate)
+    {
+        this->hourlyRate = hourlyRate;
+    }
+
+    // // instance member function to get hourlyRate
+    int getHourlyRate()
+    {
+        return hourlyRate;
+    }
+
+    // // instance member function to set salary
+    void setSalary(int salary)
+    {
+        this->salary = salary;
+    }
+
+    // // instance member function to get salary
+    int getSalary()
+    {
+        return salary;
+    }
+
+    // // instance member function to input and set details
+    void setDetails()
+    {
+        Employee::setDetails();
+
+        cout << "\nEnter Hourly Rate => ";
+        cin >> hourlyRate;
+
+        cout << "\nEnter Number of Hours => ";
+        cin >> numberOfHours;
+
+        salary = hourlyRate * numberOfHours;
+    }
+
+    // // instance member function to show details
+    void showDetails()
+    {
+        Employee::showDetails();
+        cout << "\nHourly Rate => " << hourlyRate;
+        cout << "\nNumber of Hours => " << numberOfHours;
+        cout << "\nSalary => " << salary;
+        cout << "\nStatus => " << status;
+    }
+};
+// // define static member variables of class PartTime
+const char PartTime::status[] = "Part Time";
+
+// // friend function to search employee by id
+int searchByEmpid(Employee ptr[], int size, int empId)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (ptr[i].empId == empId)
+            return i;
+    }
+
+    return -1;
 }
 
 // // Main Function Start
 int main()
 {
-    int n;
-    cout << "\nHow Many Managers Details You Want to Enter => ";
+
+    int n, empId, indexOfFoundEmp;
+    cout << "\nHow Many Full Time Employees Details You Want to Enter => ";
     cin >> n;
 
     // // invalid input
@@ -249,67 +275,37 @@ int main()
         exit(0);
     }
 
-    // // create an array of instances of Manager
-    Manager managers[n];
-    char name[Manager::MAX_CHARS_IN_NAME], address[Manager::MAX_CHARS_IN_ADDRESS], phoneNumber[Manager::MAX_DIGITS_IN_NUMBER], designation[Manager::MAX_CHARS_IN_DESIGNATION], departmentName[Manager::MAX_CHARS_IN_DEPARTMENT_NAME];
-    int empId;
-    double basicSalary;
+    // // create an array of instances of Employees
+    FullTime fullTimeEmps[n];
 
-    cout << "\n>>>>>>>>> Enter Details of " << n << " Managers <<<<<<<<<<<\n";
+    cout << "\n>>>>>>>>> Enter Details of " << n << " Full Time Employees <<<<<<<<<<<\n";
 
     for (int i = 0; i < n; i++)
     {
-        cout << "\n>>>>>>>> Enter Details of Manager-" << i + 1 << " <<<<<<<<<<\n";
-
-        cout << "\nEnter Employee Id => ";
-        cin >> empId;
-
-        cout << "\nEnter Name (MAX_CHARS " << Manager::MAX_CHARS_IN_NAME - 1 << ") => ";
-        cin.ignore();
-        cin.getline(name, Manager::MAX_CHARS_IN_NAME);
-
-        cout << "\nEnter Address (MAX_CHARS " << Manager::MAX_CHARS_IN_ADDRESS - 1 << ") => ";
-        cin.getline(address, Manager::MAX_CHARS_IN_ADDRESS);
-
-        cout << "\nEnter Phone Number (MAX_CHARS " << Manager::MAX_DIGITS_IN_NUMBER - 1 << ") => ";
-        cin.getline(phoneNumber, Manager::MAX_CHARS_IN_ADDRESS);
-
-        cout << "\nEnter Designation (MAX_CHARS " << Manager::MAX_CHARS_IN_DESIGNATION - 1 << ") => ";
-        cin.getline(designation, Manager::MAX_CHARS_IN_DESIGNATION);
-
-        cout << "\nEnter Department Name (MAX_CHARS " << Manager::MAX_CHARS_IN_DEPARTMENT_NAME - 1 << ") => ";
-        cin.getline(departmentName, Manager::MAX_CHARS_IN_DEPARTMENT_NAME);
-
-        cout << "\nEnter Basic Salary => ";
-        cin >> basicSalary;
-
-        managers[i].setEmpId(empId);
-        managers[i].setName(name);
-        managers[i].setPhoneNumber(phoneNumber);
-        managers[i].setAddress(address);
-        managers[i].setDesignation(designation);
-        managers[i].setDepartmentName(departmentName);
-        managers[i].setBasicSalary(basicSalary);
+        cout << "\n>>>>>>>> Enter Details of Employee-" << i + 1 << " <<<<<<<<<<\n";
+        fullTimeEmps[i].setDetails();
     }
 
-    cout << "\n>>>>>>>>> Details of " << n << " Managers <<<<<<<<<<<\n";
+    cout << "\n>>>>>>>>> Details of " << n << " Full Time Employees <<<<<<<<<<<\n";
 
     for (int i = 0; i < n; i++)
     {
-        cout << "\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
-        cout << "\nEmployee Id => " << managers[i].getEmpId();
-        cout << "\nName => " << managers[i].getName();
-        cout << "\nPhone Number => " << managers[i].getPhoneNumber();
-        cout << "\nAddress => " << managers[i].getAddress();
-        cout << "\nDesignation => " << managers[i].getDesignation();
-        cout << "\nDepartment Name => " << managers[i].getDepartmentName();
-        cout << "\nBasic Salary => " << managers[i].getBasicSalary();
+        cout << "\n\n>>>>>>>> Details of Employee-" << i + 1 << " <<<<<<<<<<";
+        fullTimeEmps[i].showDetails();
     }
 
-    int highestIndex = highestSalary(managers, n);
+    cout << "\n\nEnter Employee Id to Search An Employee => ";
+    cin >> empId;
 
-    cout << "\n\nManager with the Highest Salary => " << managers[highestIndex].getBasicSalary();
-    cout << "\nManager Name => " << managers[highestIndex].getName();
+    indexOfFoundEmp = searchByEmpid(fullTimeEmps, n, empId);
+
+    if (indexOfFoundEmp == -1)
+        cout << "\n\nEmployee Not Found Having Employee Id " << empId;
+    else
+    {
+        cout << "\n\n>>>>>>>>>> Employee Found <<<<<<<<<<<\n";
+        fullTimeEmps[indexOfFoundEmp].showDetails();
+    }
 
     cout << endl; // Add new line
     getch();
