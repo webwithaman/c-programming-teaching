@@ -27,5 +27,4 @@ inheritance. Accept the marks of three subjects in base class. A class will be d
 
 09. Write a C++ program to implement the following class hierarchy : Student(roll, name) and StudentExam(derived from Student) containing Marks of 6 subjects and StudentResult(derived from StudentExam) with data member percentage. Define appropriate functions to accept and display details.Create 'n' objects of the StudentResult class and display the marklist.
 
-10. Consider two base classes worker(int code, char name, float salary), officer(float DA, HRA) class manger(float TA(is 10% of salary), gross salary) is derived from both base classes. Write necessary member functions.
-Output :-
+10. Consider two base classes worker(int code, char name, float salary), officer(float DA, HRA) class manager(float TA(is 10% of salary), grossSalary) is derived from both base classes. Write necessary member functions.
