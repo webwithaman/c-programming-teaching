@@ -10,10 +10,10 @@
 using namespace std;
 
 // // define Macro
-#define MAX_STUDENTS 20
+#define MAX_MANAGERS 20
 
-// // define class Student
-class Student
+// // define class Worker
+class Worker
 {
 
 public:
@@ -23,7 +23,8 @@ public:
 private:
     // // instance member variables
     char *name;
-    int roll;
+    int code;
+    double salary;
 
 public:
     // // instance member function to set name
@@ -50,20 +51,32 @@ public:
         return name;
     }
 
-    // // instance member function to set empId
-    void setRoll(int roll)
+    // // instance member function to set code
+    void setCode(int code)
     {
-        this->roll = roll;
+        this->code = code;
     }
 
-    // // instance member function to get roll
-    int getRoll() const
+    // // instance member function to get code
+    int getCode() const
     {
-        return roll;
+        return code;
+    }
+
+    // // instance member function to set salary
+    void setSalary(double salary)
+    {
+        this->salary = salary;
+    }
+
+    // // instance member function to get salary
+    double getSalary() const
+    {
+        return salary;
     }
 
     // // instance member function to input and set details
-    virtual void setDetails()
+    void setDetails()
     {
         char name[MAX_CHARS_IN_NAME];
 
@@ -72,100 +85,114 @@ public:
         cin.getline(name, MAX_CHARS_IN_NAME);
         setName(name);
 
-        cout << "\nEnter Roll Number => ";
-        cin >> roll;
+        cout << "\nEnter Code => ";
+        cin >> code;
+
+        cout << "\nEnter Salary => ";
+        cin >> salary;
     }
 
     // // instance member function to show details
-    virtual void showDetails() const
+    void showDetails() const
     {
         cout << "\nName => " << name;
-        cout << "\nRoll Number => " << roll;
+        cout << "\nCode => " << code;
+        cout << "\nSalary => " << salary;
     }
 
     // // destructor
-    ~Student()
+    ~Worker()
     {
         delete[] name;
     }
 };
 
-// // define class FullTime by inheriting class Student
-class StudentExam : public Student
+// // define class Officer
+class Officer
 {
-
-public:
-    // // static member variable
-    static const int MAX_SUBS = 6;
-    static const int TOTAL_MARKS = 6 * 100;
 
 private:
     // // instance member variables
-    double marks[MAX_SUBS];
-    double totalObtainedMarks;
+    double DA, HRA;
 
 public:
-    // // instance member function to input and set marks
-    void
-    inputAndSetMarks()
+    // // instance member function to set DA
+    void setDA(double DA)
     {
-        for (int i = 0; i < MAX_SUBS; i++)
-        {
-            cout << "\nEnter Marks of Subject-" << i + 1 << " (Out of 100) => ";
-            cin >> marks[i];
-        }
+        this->DA = DA;
     }
 
-    // // instance member function to show marks
-    void showMarks() const
+    // // instance member function to get DA
+    double getDA()
     {
-        for (int i = 0; i < MAX_SUBS; i++)
-        {
-            cout << "\nMarks of Subject-" << i + 1 << " => " << marks[i];
-        }
+        return DA;
     }
 
-    // // instance member function to calculate total obtained marks
-    double calculateTotalObtainedMarks()
+    // // instance member function to set HRA
+    void setHRA(double HRA)
     {
-        totalObtainedMarks = 0;
-        for (int i = 0; i < MAX_SUBS; i++)
-        {
-            totalObtainedMarks += marks[i];
-        }
+        this->HRA = HRA;
+    }
 
-        return totalObtainedMarks;
+    // // instance member function to get HRA
+    double getHRA()
+    {
+        return HRA;
     }
 
     // // instance member function to input and set details
     void setDetails()
     {
-        Student::setDetails();
-        inputAndSetMarks();
+        cout << "\nEnter DA => ";
+        cin >> DA;
+
+        cout << "\nEnter HRA => ";
+        cin >> HRA;
+    }
+
+    // // instance member function to show details
+    void showDetails() const
+    {
+        cout << "\nDA => " << DA;
+        cout << "\nHRA => " << HRA;
+    }
+};
+
+// // define class FullTime by inheriting class Worker and class Officer
+class Manager : public Worker, public Officer
+{
+
+private:
+    // // instance member variables
+    double TA, grossSalary;
+
+public:
+    // // instance member function to input and set details
+    void setDetails()
+    {
+        Worker::setDetails();
+        Officer::setDetails();
     }
 
     // // instance member function to show details
     void showDetails()
     {
-        Student::showDetails();
-        showMarks();
+        Worker::showDetails();
+        Officer::showDetails();
+        cout << "\nTA => " << calculateTA();
+        cout << "\nGross Salary => " << calculateGrossSalary();
     }
-};
 
-// // define class FullTime by inheriting class StudentExam
-class StudentResult : public StudentExam
-{
-
-private:
-    // // instance member variables
-    double percent;
-
-public:
-    // // instance member function to calculate percent
-    double calculatePercent()
+    // // instance member function to calculate grossSalary
+    double calculateGrossSalary()
     {
-        percent = calculateTotalObtainedMarks() / TOTAL_MARKS * 100;
-        return percent;
+        return grossSalary = calculateTA() + getSalary() + getDA() + getHRA();
+    }
+
+    // // instance member function to calculate TA
+    double calculateTA()
+    {
+        return TA = 10.0 / 100 * getSalary();
     }
 };
 
@@ -173,35 +200,33 @@ public:
 int main()
 {
     int n;
-    cout << "\nHow Many Students Details You Want to Enter (MAX " << MAX_STUDENTS << ") => ";
+    cout << "\nHow Many Managers Details You Want to Enter (MAX " << MAX_MANAGERS << ") => ";
     cin >> n;
 
     // // invalid input
-    if (n < 1 || n > MAX_STUDENTS)
+    if (n < 1 || n > MAX_MANAGERS)
     {
         cout << "\n!!! Invalid Input...";
         exit(0);
     }
 
-    // // create an array of pointers to instances of Students
-    StudentResult students[n];
+    // // create an array of pointers to instances of Manager
+    Manager managers[n];
 
     // // get details
-    cout << "\n>>>>>>>>> Enter Details of " << n << " Students <<<<<<<<<<<\n";
+    cout << "\n>>>>>>>>> Enter Details of " << n << " Managers <<<<<<<<<<<\n";
     for (int i = 0; i < n; i++)
     {
-        cout << "\n>>>>>>>> Enter Details of Student-" << i + 1 << " <<<<<<<<<<\n";
-        students[i].setDetails();
+        cout << "\n>>>>>>>> Enter Details of Manager-" << i + 1 << " <<<<<<<<<<\n";
+        managers[i].setDetails();
     }
 
     // // show details
-    cout << "\n>>>>>>>>> Details of " << n << " Students <<<<<<<<<<<\n";
+    cout << "\n>>>>>>>>> Details of " << n << " Managers <<<<<<<<<<<\n";
     for (int i = 0; i < n; i++)
     {
-        cout << "\n\n>>>>>>>> Details of Student-" << i + 1 << " <<<<<<<<<<";
-        students[i].showDetails();
-        cout << "\nTotal Percentage => " << students[i].calculatePercent();
-        cout << "\nTotal Marks => " << students[i].calculateTotalObtainedMarks();
+        cout << "\n\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
+        managers[i].showDetails();
     }
 
     cout << endl; // Add new line
