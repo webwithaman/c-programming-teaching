@@ -16,11 +16,6 @@ private:
     int num1, num2;
 
 protected:
-    // // instance member function to get sum
-    // int getSum() const
-    // {
-    //     return sum;
-    // }
     int sum;
 
 public:

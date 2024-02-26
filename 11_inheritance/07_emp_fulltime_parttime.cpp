@@ -1,4 +1,13 @@
-// // Write a C++ program to design a base class Person (name, address, phoneNumber). Derive a class Employee (empId) from Person. Derive a class Manager (designation, departmentName, basicSalary) from Employee. Now, Accept all details of 'n' managers and display manager having highest salary.
+/*
+ Write class declarations and member function definitions for a C++ base
+class to represent an Employee (emp-code, name). Derive two classes as Fulltime (daily rate, number of days, salary) and Parttime (number of working hours, hourly rate, salary).
+Write a menu driven program to:
+1. Accept the details of ‘n’ employees.
+2. Display the details of ‘n’ employees.
+3. Search a given Employee by emp-code.
+Output :-
+
+*/
 
 // // Header files
 #include <iostream>
@@ -96,28 +105,6 @@ public:
         return phoneNumber;
     }
 
-    // // instance member function to input and set details
-    void setDetails()
-    {
-        cout << "\nEnter Name (MAX_CHARS " << Manager::MAX_CHARS_IN_NAME - 1 << ") => ";
-        cin.ignore();
-        cin.getline(name, Manager::MAX_CHARS_IN_NAME);
-
-        cout << "\nEnter Address (MAX_CHARS " << Manager::MAX_CHARS_IN_ADDRESS - 1 << ") => ";
-        cin.getline(address, Manager::MAX_CHARS_IN_ADDRESS);
-
-        cout << "\nEnter Phone Number (MAX_CHARS " << Manager::MAX_DIGITS_IN_NUMBER - 1 << ") => ";
-        cin.getline(phoneNumber, Manager::MAX_CHARS_IN_ADDRESS);
-    }
-
-    // // instance member function to show details
-    void showDetails()
-    {
-        cout << "\nName => " << name;
-        cout << "\nPhone Number => " << phoneNumber;
-        cout << "\nAddress => " << address;
-    }
-
     // // destructor
     ~Person()
     {
@@ -145,21 +132,6 @@ public:
     int getEmpId() const
     {
         return empId;
-    }
-
-    // // instance member function to input and set details
-    void setDetails()
-    {
-        Person::setDetails();
-        cout << "\nEnter Employee Id => ";
-        cin >> empId;
-    }
-
-    // // instance member function to show details
-    void showDetails()
-    {
-        Person::showDetails();
-        cout << "\nEmployee Id => " << empId;
     }
 };
 
@@ -238,30 +210,6 @@ public:
         return basicSalary;
     }
 
-    // // instance member function to input and set details
-    void setDetails()
-    {
-        Employee::setDetails();
-
-        cout << "\nEnter Designation (MAX_CHARS " << Manager::MAX_CHARS_IN_DESIGNATION - 1 << ") => ";
-        cin.getline(designation, Manager::MAX_CHARS_IN_DESIGNATION);
-
-        cout << "\nEnter Department Name (MAX_CHARS " << Manager::MAX_CHARS_IN_DEPARTMENT_NAME - 1 << ") => ";
-        cin.getline(departmentName, Manager::MAX_CHARS_IN_DEPARTMENT_NAME);
-
-        cout << "\nEnter Basic Salary => ";
-        cin >> basicSalary;
-    }
-
-    // // instance member function to show details
-    void showDetails()
-    {
-        Person::showDetails();
-        cout << "\nDesignation => " << designation;
-        cout << "\nDepartment Name => " << departmentName;
-        cout << "\nBasic Salary => " << basicSalary;
-    }
-
     // // destructor
     ~Manager()
     {
@@ -313,6 +261,9 @@ int main()
     {
         cout << "\n>>>>>>>> Enter Details of Manager-" << i + 1 << " <<<<<<<<<<\n";
 
+        cout << "\nEnter Employee Id => ";
+        cin >> empId;
+
         cout << "\nEnter Name (MAX_CHARS " << Manager::MAX_CHARS_IN_NAME - 1 << ") => ";
         cin.ignore();
         cin.getline(name, Manager::MAX_CHARS_IN_NAME);
@@ -322,9 +273,6 @@ int main()
 
         cout << "\nEnter Phone Number (MAX_CHARS " << Manager::MAX_DIGITS_IN_NUMBER - 1 << ") => ";
         cin.getline(phoneNumber, Manager::MAX_CHARS_IN_ADDRESS);
-
-        cout << "\nEnter Employee Id => ";
-        cin >> empId;
 
         cout << "\nEnter Designation (MAX_CHARS " << Manager::MAX_CHARS_IN_DESIGNATION - 1 << ") => ";
         cin.getline(designation, Manager::MAX_CHARS_IN_DESIGNATION);
@@ -349,10 +297,10 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout << "\n>>>>>>>> Details of Manager-" << i + 1 << " <<<<<<<<<<";
+        cout << "\nEmployee Id => " << managers[i].getEmpId();
         cout << "\nName => " << managers[i].getName();
         cout << "\nPhone Number => " << managers[i].getPhoneNumber();
         cout << "\nAddress => " << managers[i].getAddress();
-        cout << "\nEmployee Id => " << managers[i].getEmpId();
         cout << "\nDesignation => " << managers[i].getDesignation();
         cout << "\nDepartment Name => " << managers[i].getDepartmentName();
         cout << "\nBasic Salary => " << managers[i].getBasicSalary();
