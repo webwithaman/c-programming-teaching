@@ -69,7 +69,7 @@ public:
     }
 
     // // instance member function to input and set details
-    void setDetails()
+    virtual void setDetails()
     {
         char name[MAX_CHARS_IN_NAME];
 
@@ -83,14 +83,14 @@ public:
     }
 
     // // instance member function to show details
-    void showDetails()
+    virtual void showDetails()
     {
         cout << "\nName => " << name;
         cout << "\nEmployee Id => " << empId;
     }
 
     // // friend function to search employee by id
-    friend int searchByEmpid(Employee *, int, int);
+    friend int searchByEmpid(Employee **, int, int);
 
     // // destructor
     ~Employee()
@@ -134,16 +134,10 @@ public:
         return dailyRate;
     }
 
-    // // instance member function to set salary
-    void setSalary(int salary)
+    // // instance member function to calculate salary
+    int calculateSalary()
     {
-        this->salary = salary;
-    }
-
-    // // instance member function to get salary
-    int getSalary()
-    {
-        return salary;
+        return this->salary = dailyRate * numberOfDays;
     }
 
     // // instance member function to input and set details
@@ -156,8 +150,6 @@ public:
 
         cout << "\nEnter Number of Days => ";
         cin >> numberOfDays;
-
-        salary = dailyRate * numberOfDays;
     }
 
     // // instance member function to show details
@@ -166,7 +158,7 @@ public:
         Employee::showDetails();
         cout << "\nDaily Rate => " << dailyRate;
         cout << "\nNumber of Days => " << numberOfDays;
-        cout << "\nSalary => " << salary;
+        cout << "\nSalary => " << calculateSalary();
         cout << "\nStatus => " << status;
     }
 };
@@ -209,16 +201,10 @@ public:
         return hourlyRate;
     }
 
-    // // instance member function to set salary
-    void setSalary(int salary)
+    // // instance member function to calculate salary
+    int calculateSalary()
     {
-        this->salary = salary;
-    }
-
-    // // instance member function to get salary
-    int getSalary()
-    {
-        return salary;
+        return this->salary = hourlyRate * numberOfHours;
     }
 
     // // instance member function to input and set details
@@ -231,8 +217,6 @@ public:
 
         cout << "\nEnter Number of Hours => ";
         cin >> numberOfHours;
-
-        salary = hourlyRate * numberOfHours;
     }
 
     // // instance member function to show details
@@ -241,7 +225,7 @@ public:
         Employee::showDetails();
         cout << "\nHourly Rate => " << hourlyRate;
         cout << "\nNumber of Hours => " << numberOfHours;
-        cout << "\nSalary => " << salary;
+        cout << "\nSalary => " << calculateSalary();
         cout << "\nStatus => " << status;
     }
 };
@@ -249,14 +233,13 @@ public:
 const char PartTime::status[] = "Part Time";
 
 // // friend function to search employee by id
-int searchByEmpid(FullTime *ptr, int size, int empId)
+int searchByEmpid(Employee **ptr, int size, int empId)
 {
 
     for (int i = 0; i < size; i++)
     {
-        // if (ptr[i].empId == empId)
-        //     return i;
-        cout << "\nId => " << ptr[i].getEmpId();
+        if (ptr[i]->empId == empId)
+            return i;
     }
 
     return -1;
@@ -267,7 +250,7 @@ int main()
 {
 
     int n, empId, indexOfFoundEmp;
-    cout << "\nHow Many Full Time Employees Details You Want to Enter => ";
+    cout << "\nHow Many Employees Details You Want to Enter => ";
     cin >> n;
 
     // // invalid input
@@ -277,15 +260,37 @@ int main()
         exit(0);
     }
 
-    // // create an array of instances of Employees
-    FullTime fullTimeEmps[n];
+    // // create an array of pointers to instances of Employees
+    Employee *emps[n] = {nullptr};
 
-    cout << "\n>>>>>>>>> Enter Details of " << n << " Full Time Employees <<<<<<<<<<<\n";
+    cout << "\n>>>>>>>>> Enter Details of " << n << " Employees <<<<<<<<<<<\n";
 
     for (int i = 0; i < n; i++)
     {
+
+        char empType;
+
+        while (true)
+        {
+            cout << "\nEnter Employee Type Full Time or Part Time (Press F for Full Time or P for Part Time) => ";
+            cin.ignore();
+            cin >> empType;
+
+            if (empType == 'F' || empType == 'f' || empType == 'P' || empType == 'p')
+                break;
+            else
+            {
+                cout << "\n!!!Invalid Employee Type, Please Enter Valid Type. Try Again...\n";
+            }
+        }
+
+        if (empType == 'F' || empType == 'f')
+            emps[i] = new FullTime;
+        else
+            emps[i] = new PartTime;
+
         cout << "\n>>>>>>>> Enter Details of Employee-" << i + 1 << " <<<<<<<<<<\n";
-        fullTimeEmps[i].setDetails();
+        emps[i]->setDetails();
     }
 
     cout << "\n>>>>>>>>> Details of " << n << " Full Time Employees <<<<<<<<<<<\n";
@@ -293,20 +298,20 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout << "\n\n>>>>>>>> Details of Employee-" << i + 1 << " <<<<<<<<<<";
-        fullTimeEmps[i].showDetails();
+        emps[i]->showDetails();
     }
 
     cout << "\n\nEnter Employee Id to Search An Employee => ";
     cin >> empId;
 
-    indexOfFoundEmp = searchByEmpid(fullTimeEmps, n, empId);
+    indexOfFoundEmp = searchByEmpid(emps, n, empId);
 
     if (indexOfFoundEmp == -1)
         cout << "\n\nEmployee Not Found Having Employee Id " << empId;
     else
     {
         cout << "\n\n>>>>>>>>>> Employee Found <<<<<<<<<<<\n";
-        fullTimeEmps[indexOfFoundEmp].showDetails();
+        emps[indexOfFoundEmp]->showDetails();
     }
 
     cout << endl; // Add new line
