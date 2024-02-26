@@ -23,19 +23,9 @@ inheritance. Accept the marks of three subjects in base class. A class will be d
 
 07. Write class declarations and member function definitions for a C++ base class to represent an Employee (empId, name). Derive two classes as Fulltime (dailyRate, numberOfDays, salary) and Parttime (numberOfHours, hourlyRate, salary).
 
-08.In a bank, different customers have savings account. Some customers may
-have taken a loan from the bank. So bank always maintain information about
-bank depositors and borrowers.
-Design a Base class Customer (name, phone-number). Derive a class
-Depositor(accno, balance) from Customer.
-Again, derive a class Borrower (loan-no, loan-amt) from Depositor.
-Write necessary member functions to read and display the details of ‘n’
-customers.
-Output :-
+08. In a bank, different customers have savings account. Some customers may have taken a loan from the bank. So bank always maintain information about bank depositors and borrowers. Design a Base class Customer (name, phoneNumber). Derive a class Depositor(accountNumber, balance) from Customer. Again, derive a class Borrower (loanNumber, loanAmount) from Depositor. Write necessary member functions to read and display the details of ‘n’ customers.
 
-09. Write a C++ program to implement the following class hierarchy:
-Student: id, name StudentExam (derived from Student): Marks of 6 subjects StudentResult (derived from StudentExam) : percentage Define appropriate functions to accept and display details. Create 'n' objects of the StudentResult class and display the marklist.
-Output :-
+09. Write a C++ program to implement the following class hierarchy : Student(roll, name) and StudentExam(derived from Student) containing Marks of 6 subjects and StudentResult(derived from StudentExam) with data member percentage. Define appropriate functions to accept and display details.Create 'n' objects of the StudentResult class and display the marklist.
 
 10. Consider two base classes worker(int code, char name, float salary), officer(float DA, HRA) class manger(float TA(is 10% of salary), gross salary) is derived from both base classes. Write necessary member functions.
 Output :-
