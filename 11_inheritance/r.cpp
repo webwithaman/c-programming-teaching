@@ -185,30 +185,10 @@ int main()
     {
         cout << "\n>>>>>>>> Enter Details of Item-" << i + 1 << " <<<<<<<<<<\n";
 
-        cout << "\nItem Number => ";
-        cin >> itemNumber;
-
-        cout << "\nItem Name (MAX_CHARS " << DiscountedItem::MAX_CHARS_IN_NAME - 1 << ") => ";
-        cin.ignore();
-        cin.getline(name, DiscountedItem::MAX_CHARS_IN_NAME);
-
-        cout << "\nItem Price => ";
-        cin >> price;
-
-        cout << "\nDiscount Percent => ";
-        cin >> discountPercent;
-
-        cout << "\nDiscounted Price => ";
-        cin >> discountedPrice;
-
-        discountedItems[i].setItemNumber(itemNumber);
-        discountedItems[i].setName(name);
-        discountedItems[i].setPrice(price);
-        discountedItems[i].setDiscountPercent(discountPercent);
-        discountedItems[i].setDiscountedPrice(discountedPrice);
+        discountedItems[i].setDetails();
 
         totalPrice += discountedItems[i].getPrice();
-        totalDiscount += discountedItems[i].getDiscountPercent() / 100 * totalPrice;
+        totalDiscount += discountedItems[i].getPrice() - discountedItems[i].getDiscountedPrice();
     }
 
     cout << "\n>>>>>>>>> Details of " << n << " Items <<<<<<<<<<<\n";
@@ -216,11 +196,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout << "\n>>>>>>>> Details of Item-" << i + 1 << " <<<<<<<<<<";
-        cout << "\nItem Number => " << discountedItems[i].getItemNumber();
-        cout << "\nName => " << discountedItems[i].getName();
-        cout << "\nPrice => " << discountedItems[i].getPrice();
-        cout << "\nDiscount Percent => " << discountedItems[i].getDiscountPercent();
-        cout << "\nDiscounted Price => " << discountedItems[i].getDiscountedPrice();
+        discountedItems[i].showDetails();
     }
 
     cout << "\n\nTotal Price => " << totalPrice;
