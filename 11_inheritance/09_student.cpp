@@ -126,13 +126,15 @@ public:
     }
 
     // // instance member function to calculate total obtained marks
-    int calculateTotalObtainedMarks()
+    double calculateTotalObtainedMarks()
     {
         totalObtainedMarks = 0;
         for (int i = 0; i < MAX_SUBS; i++)
         {
             totalObtainedMarks += marks[i];
         }
+
+        return totalObtainedMarks;
     }
 
     // // instance member function to input and set details
