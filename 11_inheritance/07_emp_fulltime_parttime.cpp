@@ -90,7 +90,7 @@ public:
     }
 
     // // friend function to search employee by id
-    friend int searchByEmpid(Employee ptr[], int size, int empId);
+    friend int searchByEmpid(Employee *, int , int );
 
     // // destructor
     ~Employee()
@@ -249,12 +249,14 @@ public:
 const char PartTime::status[] = "Part Time";
 
 // // friend function to search employee by id
-int searchByEmpid(Employee ptr[], int size, int empId)
+int searchByEmpid(Employee *ptr, int size, int empId)
 {
+
     for (int i = 0; i < size; i++)
     {
-        if (ptr[i].empId == empId)
-            return i;
+        // if (ptr[i].empId == empId)
+        //     return i;
+        cout << "\nId => " << ptr[i].empId;
     }
 
     return -1;
