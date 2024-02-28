@@ -12,10 +12,11 @@ The repository is structured based on different topics, with each topic having i
 - /04_instance_static_members
 - /05_constructors
 - /06_operator_overloading_and_friend_function
-- /07_type_casting_and_conversion
-- /08_exception_handling
-- /09_this_pointer
-- /10_new_and_delete
+- /07_inheritance
+- /08_type_casting_and_conversion
+- /09_exception_handling
+- /10_this_pointer
+- /11_new_and_delete
 
 ## Clone this Repository
 
