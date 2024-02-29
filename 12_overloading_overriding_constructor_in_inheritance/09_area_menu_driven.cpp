@@ -111,7 +111,7 @@ int main()
         }
     } while (choice != 4);
 
-    
-
+    cout << endl; // Add new line
+    getch();
     return 0;
 }
