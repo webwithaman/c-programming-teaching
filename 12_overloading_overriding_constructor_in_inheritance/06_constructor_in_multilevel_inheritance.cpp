@@ -8,55 +8,111 @@
 // // use namespace
 using namespace std;
 
-// // define class A
-class A
+// // define class Person
+class Person
 {
+public:
+    // // static member variable
+    static const int MAX_CHARS_IN_NAME = 31;
+
 private:
-    int a;
+    char *name;
 
 public:
     // // constructors
-    A()
+    Person()
     {
-        cout << "\nDefault Constructor of Class A";
+        name = new char[1];
+        name[0] = '\0'; // // terminate with null char
+        cout << "\nDefault Constructor of Class Person";
     }
 
-    A(int a)
+    Person(const char *name)
     {
-        this->a = a;
-        cout << "\nParametrized Constructor of Class A";
+        int length = strlen(name);
+
+        this->name = new char[length > MAX_CHARS_IN_NAME - 1 ? MAX_CHARS_IN_NAME : length + 1];
+
+        if (length > MAX_CHARS_IN_NAME - 1)
+        {
+            strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
+            this->name[MAX_CHARS_IN_NAME - 1] = 0; // // terminate with null character
+        }
+        else
+        {
+            strcpy(this->name, name);
+        }
+
+        cout << "\nParametrized Constructor of Class Person";
     }
 
-    // // instance member function to get a
-    int getA()
+    // // instance member function to set name
+    void setName(const char *name)
     {
-        return a;
+        int length = strlen(name);
+
+        this->name = new char[length > MAX_CHARS_IN_NAME - 1 ? MAX_CHARS_IN_NAME : length + 1];
+
+        if (length > MAX_CHARS_IN_NAME - 1)
+        {
+            strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
+            this->name[MAX_CHARS_IN_NAME - 1] = 0; // // terminate with null character
+        }
+        else
+        {
+            strcpy(this->name, name);
+        }
+    }
+
+    // // instance member function to get name
+    const char *getName() const
+    {
+        return name;
+    }
+
+    // // destructor
+    ~Person()
+    {
+        delete[] name;
     }
 };
 
-// // define class B by Inheriting class A
-class B : public A
+// // define class Student by Inheriting class Person
+class Student : public Person
 {
 private:
-    int b;
+    int roll;
 
 public:
     // // constructors
-    B() : A()
+    Student() : Person()
     {
-        cout << "\nDefault Constructor of Class B";
+        roll = -1;
+        cout << "\nDefault Constructor of Class Student";
     }
 
-    B(int b) : A(b)
+    Student(const char *name, int roll) : Person(name)
     {
-        this->b = b;
-        cout << "\nParametrized Constructor of Class B";
+        if (roll < 0) // if roll is negative, then make it positive
+            roll = -roll;
+
+        this->roll = roll;
+        cout << "\nParametrized Constructor of Class Student";
     }
 
-    // // instance member function to get b
-    int getB()
+    // // instance member function to set roll
+    void setRoll(int roll)
     {
-        return b;
+        if (roll < 0) // if roll is negative, then make it positive
+            roll = -roll;
+
+        this->roll = roll;
+    }
+
+    // // instance member function to get roll
+    int setRoll() const
+    {
+        return roll;
     }
 };
 
