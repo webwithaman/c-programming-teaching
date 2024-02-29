@@ -6,7 +6,7 @@
 
 01. Create a base class called shape. Use this class to store two double type values that could be used to compute the area of figures. Derive two specific classes called triangle and rectangle from the base shape. Add to the base class, a member function setData(double,double) to initialise base class data members and another member function displayArea() to compute and display the area of figures. Make displayArea() as a virtual function and redefine this function in the derived classes to suit their requirements. Using these three classes, design a program that will accept dimensions of a triangle or a rectangle interactively, and display the area. Remember the two values given as input will be treated as lengths of two sides in the case of rectangles, and as base and height in the case of the triangles.
 
-02. Extend the above program to display the area of circles. This requires the addition of a new derived class 'circle' that computes the area of a circle. Remember, for a circle we need only one value, its radius, but the get_data() function in the base class requires two values to be passed. (Hint: Make the second argument of get_data() function as a default one with zero value.)
+02. Extend the above program to display the area of circles. This requires the addition of a new derived class 'Circle' that computes the area of a circle. Remember, for a circle we need only one value, its radius, but the setData() function in the base class requires two values to be passed. (Hint: Make the second argument of setData() function as a default one with zero value.)
 
 03. Using the concept of pointers, write a function that swaps the private data values of two objects of the same class type.
 
