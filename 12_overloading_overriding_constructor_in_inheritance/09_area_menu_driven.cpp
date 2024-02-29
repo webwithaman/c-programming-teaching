@@ -53,12 +53,12 @@ int main()
     do
     {
         system("cls");
-        cout << ">>>>>>>> Choose A Shape To Calculate Area <<<<<<<<<<<" << endl;
+        cout << "\n>>>>>>>> Choose A Shape To Calculate Area <<<<<<<<<<<";
         cout << "\nPress 1. Triangle";
         cout << "\nPress 2. Rectangle";
         cout << "\nPress 3. Circle";
         cout << "\nPress 4. Exit";
-        cout << "\nEnter Your Choice => ";
+        cout << "\n\nEnter Your Choice => ";
         cin >> choice;
 
         switch (choice)
