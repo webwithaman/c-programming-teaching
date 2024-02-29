@@ -13,7 +13,7 @@ class Rectangle
 
 private:
     // // instance member variables
-    double length, breadth, area;
+    double length, breadth;
 
 public:
     // // constructors
@@ -22,54 +22,47 @@ public:
         length = breadth = 0;
     }
 
-    Rectangle(double l, double b)
+    Rectangle(double length, double breadth)
     {
-        length = l;
-        breadth = b;
+        this->length = length;
+        this->breadth = breadth;
     }
 
-    // // instance member function to set length of rectangle
-    void setLength(int l)
+    // // instance member function to set dimensions
+    void setDimensions(double length, double breadth)
     {
-        length = l;
+        this->length = length;
+        this->breadth = breadth;
     }
 
-    // // instance member function to set breadth of rectangle
-    void setBreadth(int b)
+    // // instance member function to show dimensions
+    void showDimensions()
     {
-        breadth = b;
+        cout << "\nlength => " << length << ", Breadth => " << breadth;
     }
 
-    // // instance member function to set dimensions of rectangle
-    void setDimensions(int l, int b)
+    // // ooverloaded instance member function to calculate area
+    double area() const
     {
-        setLength(l);
-        setBreadth(b);
+        return length * breadth;
     }
 
-    // // instance member function to get length of rectangle
-    double getLength(int l)
+    // // ooverloaded instance member function to calculate area of rectangle
+    double calculateArea(const Rectangle &rectange) const
     {
-        return length;
+        return rectange.area();
     }
 
-    // // instance member function to get breadth of rectangle
-    double getBreadth(int b)
+    // // ooverloaded instance member function to calculate area of rectangle
+    double calculateArea(double length) const
     {
-        return breadth;
+        return length * length;
     }
 
-    // // instance member function to calculate area of rectangle
-    double calculateArea()
+    // // ooverloaded instance member function to calculate area of rectangle
+    double calculateArea(double length, double breadth) const
     {
-        area = length * breadth;
-        return area;
-    }
-
-    // // instance member function to get the area of rectangle
-    double getArea()
-    {
-        return area;
+        return length * breadth;
     }
 };
 
