@@ -19,7 +19,7 @@ public:
     }
 };
 
-// // define class Dog
+// // define class Dog by inheriting class Animal
 class Dog
 {
 public:
