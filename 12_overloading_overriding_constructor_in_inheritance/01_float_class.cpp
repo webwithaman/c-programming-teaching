@@ -35,24 +35,47 @@ public:
     {
         return data;
     }
+
+    // // overload arithmetic plus (+) operator
+    Float operator+(Float f)
+    {
+        f.data = data + f.data;
+        return f;
+    }
+
+    // // overload arithmetic binary subtraction (-) operator
+    Float operator-(Float f)
+    {
+        f.data = data - f.data;
+        return f;
+    }
+
+    // // overload arithmetic divison (/) operator
+    Float operator/(Float f)
+    {
+        f.data = data / f.data;
+        return f;
+    }
 };
 
 // // Main Function Start
 int main()
 {
-    double real, imag;
+    Float f1 = 2.5f, f2, result;
 
-    // // Get complex number
-    cout << "\nEnter Real Part => ";
-    cin >> real;
-    cout << "\nEnter Imaginary Part => ";
-    cin >> imag;
+    f2.setData(5.3);
 
-    Complex c1(real, imag); // create objects of Complex
+    // // addition
+    result = f1 + f2;
+    cout << "f1 + f2 => " << result.getData();
 
-    // // display complex number
-    cout << "\n>>>>>>>> Complex Number <<<<<<<<<\n";
-    c1.showData();
+    // // subtraction
+    result = f1 - f2;
+    cout << "f1 - f2 => " << result.getData();
+
+    // // division
+    result = f1 / f2;
+    cout << "f1 / f2 => " << result.getData();
 
     cout << endl; // Add new line
     getch();
