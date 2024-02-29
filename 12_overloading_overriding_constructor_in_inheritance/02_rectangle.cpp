@@ -22,6 +22,12 @@ public:
         length = breadth = 0;
     }
 
+    Rectangle(double length)
+    {
+        this->length = length;
+        this->breadth = length;
+    }
+
     Rectangle(double length, double breadth)
     {
         this->length = length;
@@ -29,6 +35,12 @@ public:
     }
 
     // // instance member function to set dimensions
+    void setDimensions(double length)
+    {
+        this->length = length;
+        this->breadth = length;
+    }
+
     void setDimensions(double length, double breadth)
     {
         this->length = length;
@@ -48,19 +60,19 @@ public:
     }
 
     // // ooverloaded instance member function to calculate area of rectangle
-    double calculateArea(double length) const
+    double area(double length) const
     {
         return length * length;
     }
 
     // // ooverloaded instance member function to calculate area of rectangle
-    double calculateArea(double length, double breadth) const
+    double area(double length, double breadth) const
     {
         return length * breadth;
     }
 
     // // ooverloaded instance member function to calculate area of rectangle
-    double calculateArea(const Rectangle &rectange) const
+    double area(const Rectangle &rectange) const
     {
         return rectange.area();
     }
@@ -69,20 +81,21 @@ public:
 // // Main Function Start
 int main()
 {
-    double length, breadth, area;
-
-    // // Get length and breadth of a rectangle to find its area
-    cout << "\nEnter Length and Breadth of A Rectangle => ";
-    cin >> length >> breadth;
+    double area;
 
     // // create object of Rectangle
-    Rectangle rect1(length, breadth);
+    Rectangle rect1(4.5, 8);
 
-    // // find area
+    // // find area of rect1
     area = rect1.area();
 
-    // // display area of 
-    cout << "\nArea of Rectangle => " << area;
+    // // display area of rect1
+    cout << "\nArea of Rectangle Having Dimensions 4.5 and 8 => " << area;
+
+    // // find area of rect2
+    area = rect1.area(5, 9);
+
+    cout << "\nArea of Rectangle Having Dimensions 5 and 9 => " << area;
 
     cout << endl; // Add new line
     getch();
