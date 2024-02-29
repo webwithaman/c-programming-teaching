@@ -12,8 +12,7 @@
 
 04. Create an abstract class Vehicle with a pure virtual function start() and another pure virtual function stop(). Derive two classes Car and Motorcycle from Vehicle and implement the start() and stop() functions in each class. Create objects of both classes and call the start() and stop() functions to demonstrate the use of pure virtual functions.
 
-05. Create a base class called Photon. Use this class to store double type value of
-wavelength that could be used to calculate photon energy. Create class calculate_photonEnergy which will photon energy. Using these classes, calculate photon energy.
+05. Design a class hierarchy for a banking system with a base class Account and two derived classes SavingsAccount and CurrentAccount. Each class should have data members for account balance, account number, and an interest rate (for savings account). Implement virtual functions for deposit, withdraw, and display account details. Demonstrate the use of these classes by creating objects and performing transactions.
 
 06. Extend above to display the area of circles. For a circle,only one value is needed i.e. radius but in get_data() function 2 values are passed.
 
