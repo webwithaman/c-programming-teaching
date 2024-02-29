@@ -21,7 +21,7 @@ function overloading.
 
 07. C++ Program to illustrate the use of Constructors in single inheritance of your choice.
 
-08. Write a C++ program to find the factorial of a number using copy constructor.
+08. C++ Program to illustrate the use of Constructors in multiple inheritance of your choice.
 
 09. Write a C++ program to calculate the area of triangle, rectangle and circle using
 constructor overloading. The program should be menu driven.
