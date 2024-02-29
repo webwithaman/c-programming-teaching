@@ -33,9 +33,11 @@ public:
 // // Main Function Start
 int main()
 {
+    // // instance of Animal
     Animal a1;
     a1.sound();
 
+    //  // instance of Dog
     Dog d1;
     d1.sound();
 
