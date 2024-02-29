@@ -51,7 +51,7 @@ public:
 
 int main()
 {
-    // // create an instances of Integer
+    // // create instances of Integer
     Integer i1(2), i2(6);
 
     cout << "\n>>>>>>> Before Swapping <<<<<<<<";
