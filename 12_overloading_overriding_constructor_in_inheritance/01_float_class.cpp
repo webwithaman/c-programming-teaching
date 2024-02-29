@@ -61,21 +61,22 @@ public:
 // // Main Function Start
 int main()
 {
-    Float f1 = 2.5f, f2, result;
+    Float f1 = 15.5f, f2, result;
 
+    // // set data for f2
     f2.setData(5.3);
 
     // // addition
     result = f1 + f2;
-    cout << "f1 + f2 => " << result.getData();
+    cout << "f1 + f2 => " << result.getData() << endl;
 
     // // subtraction
     result = f1 - f2;
-    cout << "f1 - f2 => " << result.getData();
+    cout << "f1 - f2 => " << result.getData() << endl;
 
     // // division
     result = f1 / f2;
-    cout << "f1 / f2 => " << result.getData();
+    cout << "f1 / f2 => " << result.getData() << endl;
 
     cout << endl; // Add new line
     getch();
