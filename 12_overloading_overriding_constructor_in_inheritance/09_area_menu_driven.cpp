@@ -2,7 +2,6 @@
 
 // // Header files
 #include <iostream>
-#include <cmath>
 #include <conio.h>
 
 // // use namespace
