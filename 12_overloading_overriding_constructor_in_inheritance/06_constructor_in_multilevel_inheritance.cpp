@@ -87,7 +87,7 @@ public:
     // // constructors
     Student() : Person()
     {
-        roll = -1;
+        roll = 0;
         cout << "\nDefault Constructor of Class Student";
     }
 
@@ -190,10 +190,9 @@ int main()
     // // instance of Player
     Player p1("Aman", 7022, "Cricket");
 
-    cout<<"\nName => "<<p1.getName();
-    cout<<"\nRoll => "<<p1.getRoll();
-    cout<<"\nGame => "<<p1.getGame();
-
+    cout << "\nName => " << p1.getName();
+    cout << "\nRoll => " << p1.getRoll();
+    cout << "\nGame => " << p1.getGame();
 
     cout << endl; // Add new line
     getch();
