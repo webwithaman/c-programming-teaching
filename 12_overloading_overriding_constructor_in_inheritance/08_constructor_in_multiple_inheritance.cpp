@@ -175,8 +175,24 @@ public:
     // Function to display details
     void displayDetails()
     {
-        std::cout << "\nName => " << Student::getName();
-        std::cout << "\nEmployee Id =>" << getEmpId();
-        std::cout << "\nStudent Roll =>  " << getRoll();
+        cout << "\nName => " << Student::getName();
+        cout << "\nEmployee Id => " << getEmpId();
+        cout << "\nStudent Roll =>  " << getRoll();
     }
 };
+
+// // Main Function Start
+int main()
+{
+
+    // // create an instance of EmployeeStudent
+    EmployeeStudent empStu1("Aman", 234, 103);
+
+    // // display details using function in EmployeeStudent class
+    empStu1.displayDetails();
+
+    cout << endl; // Add new line
+    getch();
+    return 0;
+}
+// // Main Function End
