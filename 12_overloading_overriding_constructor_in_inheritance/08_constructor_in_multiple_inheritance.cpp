@@ -180,14 +180,3 @@ public:
         std::cout << "\nStudent Roll =>  " << getRoll();
     }
 };
-
-int main()
-{
-    // instance of class EmployeeStudent
-    EmployeeStudent empStu("Aman", 7463, 456);
-
-    // display details using the function in EmployeeStudent
-    empStu.displayDetails();
-
-    return 0;
-}
