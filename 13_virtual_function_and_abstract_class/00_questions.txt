@@ -8,8 +8,7 @@
 triangle and rectangle from the base shape. Add to the base class, a member
 function get_data() to initialise base class data members and another member
 function display_area() to compute and display the area of figures. Make
-display_area() as a virtual function and redefine this function in the derived classes to suit their requirements. Using these three classes, design a program that will accept dimensions of a triangle or a rectangle interactively, and display the area. Remember the two values given as input will be treated as lengths of two sides in the case of rectangles, and as base and height in the case of the triangles, and used as follows:
-Area of rectangle = x * y Area of triangle = 1/2 * x * y
+display_area() as a virtual function and redefine this function in the derived classes to suit their requirements. Using these three classes, design a program that will accept dimensions of a triangle or a rectangle interactively, and display the area. Remember the two values given as input will be treated as lengths of two sides in the case of rectangles, and as base and height in the case of the triangles.
 
 02. Extend the above program to display the area of circles. This requires the addition of a new derived class 'circle' that computes the area of a circle. Remember, for a circle we need only one value, its radius, but the get_data() function in the base class requires two values to be passed. (Hint: Make the second argument of get_data() function as a default one with zero value.)
 
