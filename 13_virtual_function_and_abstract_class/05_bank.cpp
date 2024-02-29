@@ -1,4 +1,4 @@
-// // C++ Program to illustrate the use of Constructors in multilevel inheritance of your choice.
+// // Design a class hierarchy for a banking system with a base class Account and two derived classes SavingsAccount and CurrentAccount. Each class should have data members for account balance, account number, and an interest rate (for savings account). Implement virtual functions for deposit, withdraw, and display account details. Demonstrate the use of these classes by creating objects and performing transactions.
 
 // // Header files
 #include <iostream>
@@ -119,11 +119,7 @@ public:
 // // Main Function Start
 int main()
 {
-    // // instance of SportsCar
-    SportsCar s1("Nissan GT-R", 7);
-
-    cout << "\nModel => " << s1.getModel();
-    cout << "\nSensor Count => " << s1.getSensorCount();
+   
 
     cout << endl; // Add new line
     getch();
