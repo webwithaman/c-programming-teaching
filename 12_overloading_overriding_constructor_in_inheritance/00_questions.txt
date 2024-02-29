@@ -4,8 +4,7 @@
 🟢 Topic ➡ Overloading , Overriding And Constructor In Inheritance
 
 
-01. Create a class FLOAT that contains one float data member. Overload all the four
-arithmetic operators so that they can operate on the objects of FLOAT.
+01. Create a class FLOAT that contains one float data member. Overload (+,-,/) arithmetic operators so that they can operate on the objects of FLOAT.
 
 02. Define a class Rectangle and overload area function for different types of data type.
 
