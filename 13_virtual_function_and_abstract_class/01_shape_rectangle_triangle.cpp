@@ -23,8 +23,9 @@ public:
     }
 
     // instance member function to display the area
-    virtual void displayArea()
+    virtual void displayArea() const
     {
+        cout << "\nNot Implemented this for class Shape...";
     }
 };
 
@@ -33,7 +34,7 @@ class Triangle : public Shape
 {
 public:
     // instance member function to display the area
-    void displayArea()
+    void displayArea() const override
     {
         cout << "\nArea of Triangle => " << 0.5 * d1 * d2;
     }
@@ -44,7 +45,7 @@ class Rectangle : public Shape
 {
 public:
     // instance member function to display the area
-    void displayArea()
+    void displayArea() const override
     {
         cout << "\nArea of Rectangle => " << d1 * d2;
     }
@@ -52,13 +53,15 @@ public:
 
 int main()
 {
-    Rectangle r1;
-    r1.setData(4, 5);
-    r1.displayArea();
-
+    // // create an instance of Triangle
     Triangle t1;
     t1.setData(4, 3);
     t1.displayArea();
+
+    // // create an instance of Rectangle
+    Rectangle r1;
+    r1.setData(4, 5);
+    r1.displayArea();
 
     cout << endl; // Add new line
     getch();
