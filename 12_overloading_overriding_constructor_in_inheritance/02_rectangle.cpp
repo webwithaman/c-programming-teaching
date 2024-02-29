@@ -81,21 +81,23 @@ public:
 // // Main Function Start
 int main()
 {
-    double area;
+    double area, length = 4.5, breadth = 8;
 
     // // create object of Rectangle
-    Rectangle rect1(4.5, 8);
+    Rectangle rect1(length, breadth);
 
     // // find area of rect1
     area = rect1.area();
 
     // // display area of rect1
-    cout << "\nArea of Rectangle Having Dimensions 4.5 and 8 => " << area;
+    cout << "\nArea of Rectangle Having Dimensions " << length << " and " << breadth << " => " << area;
 
-    // // find area of rect2
-    area = rect1.area(5, 9);
+    // // find area of any 2 dimensions
+    length = 5;
+    breadth = 9;
+    area = rect1.area(length, breadth);
 
-    cout << "\nArea of Rectangle Having Dimensions 5 and 9 => " << area;
+    cout << "\nArea of Rectangle Having Dimensions " << length << " and " << breadth << " => " << area;
 
     cout << endl; // Add new line
     getch();
