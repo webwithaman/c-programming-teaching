@@ -52,6 +52,7 @@ int main()
 
     do
     {
+        system("cls");
         cout << ">>>>>>>> Choose A Shape To Calculate Area <<<<<<<<<<<" << endl;
         cout << "\nPress 1. Triangle";
         cout << "\nPress 2. Rectangle";
@@ -109,6 +110,7 @@ int main()
         default:
             cout << "\n !!!Invalid Choice..." << endl;
         }
+        getch();
     } while (choice != 4);
 
     cout << endl; // Add new line
