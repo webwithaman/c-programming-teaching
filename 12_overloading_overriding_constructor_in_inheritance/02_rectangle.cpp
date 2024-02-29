@@ -48,12 +48,6 @@ public:
     }
 
     // // ooverloaded instance member function to calculate area of rectangle
-    double calculateArea(const Rectangle &rectange) const
-    {
-        return rectange.area();
-    }
-
-    // // ooverloaded instance member function to calculate area of rectangle
     double calculateArea(double length) const
     {
         return length * length;
@@ -64,22 +58,30 @@ public:
     {
         return length * breadth;
     }
+
+    // // ooverloaded instance member function to calculate area of rectangle
+    double calculateArea(const Rectangle &rectange) const
+    {
+        return rectange.area();
+    }
 };
 
 // // Main Function Start
 int main()
 {
-    double l, b, area;
+    double length, breadth, area;
 
     // // Get length and breadth of a rectangle to find its area
     cout << "\nEnter Length and Breadth of A Rectangle => ";
-    cin >> l >> b;
+    cin >> length >> breadth;
 
-    Rectangle rec1(l, b); // create object of Rectangle
+    // // create object of Rectangle
+    Rectangle rect1(length, breadth);
 
-    area = rec1.calculateArea(); // find area
+    // // find area
+    area = rect1.area();
 
-    // // display area of rectangle
+    // // display area of 
     cout << "\nArea of Rectangle => " << area;
 
     cout << endl; // Add new line
