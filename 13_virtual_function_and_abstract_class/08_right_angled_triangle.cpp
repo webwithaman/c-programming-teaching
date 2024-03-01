@@ -71,5 +71,7 @@ int main()
         cout << "\nThe Triangle is Not a Right-Angled Triangle.\n";
     }
 
+    cout << endl; // Add new line
+    getch();
     return 0;
 }
