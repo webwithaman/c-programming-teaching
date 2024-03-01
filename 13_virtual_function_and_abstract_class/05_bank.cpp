@@ -22,6 +22,9 @@ protected:
     double accountBalance;
 
 public:
+    // // constructor
+    Account() : accountBalance(0.0) {}
+
     // // pure virtual functions to be overridden by derived classes
     virtual void setAccountNumber(const char *) = 0;
     virtual void deposit(double) = 0;
@@ -37,10 +40,6 @@ private:
     static float rateOfInterest;
 
 public:
-    SavingAccount()
-    {
-        accountBalance = 0;
-    }
 
     // // override base class setAccountNumber function
     void setAccountNumber(const char *accountNumber) override
@@ -127,11 +126,6 @@ float SavingAccount::rateOfInterest;
 class CurrentAccount : public Account
 {
 public:
-    // // constructors
-    CurrentAccount()
-    {
-        accountBalance = 0;
-    }
 
     // // override base class setAccountNumber function
     void setAccountNumber(const char *accountNumber) override
