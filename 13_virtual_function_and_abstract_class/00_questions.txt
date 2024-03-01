@@ -14,7 +14,7 @@
 
 05. Design a class hierarchy for a banking system with a base class Account and two derived classes SavingsAccount and CurrentAccount. Each class should have data members for account balance, account number, and an interest rate (for savings account). Implement virtual functions for deposit, withdraw, and display account details. Demonstrate the use of these classes by creating objects and performing transactions.
 
-06. 
+06. Define a class Animal with a pure virtual function makeSound(). Derive three classes Dog, Cat, and Bird from Animal and implement the makeSound() function in each derived class. Create objects of each class and make them produce sounds.
 
 07. Create a base class called Matrix. Use this class to store 4 int type values that could be used to calculate determinants and create matrices. Create class
 calculate_determinant which will calculate the determinant of a matrix.Using these classes, calculate the determinant of the matrix.
