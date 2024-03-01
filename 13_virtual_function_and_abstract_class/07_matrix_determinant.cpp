@@ -74,7 +74,7 @@ public:
             return;
         }
 
-        matrix[rows][col] = element;
+        matrix[row][col] = element;
     }
 
     // // instance member variable to input matrix
@@ -100,7 +100,7 @@ public:
             return 0;
         }
 
-        return matrix[rows][col];
+        return matrix[row][col];
     }
 
     // // instance member variable to display matrix
@@ -130,9 +130,8 @@ public:
 class CalculateDeterminant : public Matrix
 {
 public:
-    // constructors
-    CalculateDeterminant(int rows) : Matrix(rows) {}
-    CalculateDeterminant(int rows, int cols) : Matrix(rows, cols) {}
+    // // inheriting the constructor of the base class
+    using Matrix::Matrix;
 
     // // instance member function to calculate determinant
     int calDeterminant()
@@ -144,14 +143,19 @@ public:
 // // Main Function Start
 int main()
 {
+    // // create an instance of CalculateDterminant
     CalculateDeterminant d1(2, 2);
+
+    // // set elements
     d1.setElement(5, 0, 0);
     d1.setElement(10, 0, 1);
     d1.setElement(3, 1, 0);
     d1.setElement(8, 1, 1);
 
+    // // display matrix
     d1.displayMatrix();
-    
+
+    // // calculate and display determinant of matrix
     cout << "\nDeterminant of Matrix => " << d1.calDeterminant();
 
     cout << endl; // Add new line
