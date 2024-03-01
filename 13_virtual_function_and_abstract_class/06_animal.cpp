@@ -3,7 +3,6 @@
 // // Header files
 #include <iostream>
 #include <conio.h>
-#include <string.h>
 
 // // use namespace
 using namespace std;
