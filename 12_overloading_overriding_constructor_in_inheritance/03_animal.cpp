@@ -20,7 +20,7 @@ public:
 };
 
 // // define class Dog by inheriting class Animal
-class Dog
+class Dog : public Animal
 {
 public:
     // // instance member function to produce sound
