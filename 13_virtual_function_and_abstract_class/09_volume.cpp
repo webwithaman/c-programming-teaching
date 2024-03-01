@@ -3,7 +3,6 @@
 // // Header files
 #include <iostream>
 #include <conio.h>
-#include <algorithm>
 
 // // use namespace
 using namespace std;
@@ -33,7 +32,7 @@ public:
     // // override base class function displayVolume
     void displayVolume() const
     {
-        cout << "Volume of Cube => " << data * data * data;
+        cout << "\nVolume of Cube => " << data * data * data;
     }
 };
 
@@ -47,7 +46,7 @@ public:
     // // override base class function displayVolume
     void displayVolume() const
     {
-        cout << "Volume of Sphere => " << 4.0 / 3 * 3.14159 * data * data * data;
+        cout << "\nVolume of Sphere => " << 4.0 / 3 * 3.14159 * data * data * data;
     }
 };
 
@@ -62,7 +61,7 @@ int main()
     Cube c1(data);
     c1.displayVolume();
 
-    cout << "\nEnter Radius of A Sphere => ";
+    cout << "\n\nEnter Radius of A Sphere => ";
     cin >> data;
 
     // // create an instance of Sphere
