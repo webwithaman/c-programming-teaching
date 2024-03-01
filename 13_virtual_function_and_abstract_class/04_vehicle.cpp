@@ -7,16 +7,16 @@
 // // use namespace
 using namespace std;
 
-// // define class Vehicle
+// // define an abstract class Vehicle
 class Vehicle
 {
 public:
-    // // pure virtual functions
+    // // pure virtual functions to be overridden by child classes
     virtual void start() = 0;
     virtual void stop() = 0;
 };
 
-// // define class Car by inheriting class Vehicle
+// // define class Car by inheriting class abstract class Vehicle
 class Car : public Vehicle
 {
 public:
@@ -33,7 +33,7 @@ public:
     }
 };
 
-// // define class MotorCycle by inheriting class Vehicle
+// // define class MotorCycle by inheriting abstract class Vehicle
 class MotorCycle : public Vehicle
 {
 public:

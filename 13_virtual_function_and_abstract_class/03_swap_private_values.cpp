@@ -20,19 +20,19 @@ public:
 
     Integer(int data) : data(data) {}
 
-    // instance member function to set data
+    // // instance member function to set data
     void setData(int data)
     {
         this->data = data;
     }
 
-    // instance member function to get data
+    // // instance member function to get data
     int getData() const
     {
         return data;
     }
 
-    // instance member function to swap values of private data members of two objects
+    // // instance member function to swap values of private data members of two objects
     void swap(Integer *obj2)
     {
         // // Check if the pointer is valid (not nullptr)

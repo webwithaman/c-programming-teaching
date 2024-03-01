@@ -15,14 +15,14 @@ protected:
     double d1, d2;
 
 public:
-    // instance member function to set data
+    // // instance member function to set data
     void setData(double d1, double d2 = 0)
     {
         this->d1 = d1;
         this->d2 = d2;
     }
 
-    // instance member function to display the area
+    // // virtual instance member function to display the area
     virtual void displayArea() const
     {
         cout << "\nNot Implemented this for class Shape...";
@@ -33,7 +33,7 @@ public:
 class Triangle : public Shape
 {
 public:
-    // instance member function to display the area
+    // // override base class function displayArea
     void displayArea() const override
     {
         cout << "\nArea of Triangle => " << 0.5 * d1 * d2;
@@ -44,7 +44,7 @@ public:
 class Rectangle : public Shape
 {
 public:
-    // instance member function to display the area
+    // // override base class function displayArea
     void displayArea() const override
     {
         cout << "\nArea of Rectangle => " << d1 * d2;
@@ -55,7 +55,7 @@ public:
 class Circle : public Shape
 {
 public:
-    // instance member function to display the area
+    // // override base class function displayArea
     void displayArea() const override
     {
         cout << "\nArea of Circle => " << 3.14159 * d1 * d1;
