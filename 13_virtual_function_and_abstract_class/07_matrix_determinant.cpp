@@ -1,4 +1,4 @@
-// // Create a base class called Matrix. Use this class to store 4 int type values that could be used to calculate determinants and create matrices. Create derived class CalculateDeterminant which will calculate the determinant of a matrix. Using these classes, calculate the determinant of the matrix.
+// // Create a base class called Matrix. Use this class to store a matrix of 2 x 2 of int type values that could be used to calculate determinants and create matrices. Create class CalculateDeterminant which will calculate the determinant of a matrix. Using these classes, calculate the determinant of the matrix.
 
 // // Header files
 #include <iostream>
