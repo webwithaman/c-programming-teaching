@@ -11,7 +11,6 @@ Define following operators in the class :-
 
 // // Header files
 #include <iostream>
-#include <conio.h>
 
 // // use namespace
 using namespace std;

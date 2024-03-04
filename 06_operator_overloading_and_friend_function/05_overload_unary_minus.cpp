@@ -12,7 +12,6 @@ Overload the operator unary vus (-) to negate the numbers.
 
 // // Header files
 #include <iostream>
-#include <conio.h>
 
 // // use namespace
 using namespace std;

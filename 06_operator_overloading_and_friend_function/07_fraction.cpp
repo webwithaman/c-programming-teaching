@@ -53,7 +53,6 @@ f2 => 9/26
 
 // // Header files
 #include <iostream>
-#include <conio.h>
 
 // // use namespace
 using namespace std;

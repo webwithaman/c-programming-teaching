@@ -1,7 +1,6 @@
 // // Create a class TemperatureConverter with a static member function to convert Celsius to Fahrenheit.
 // // Header files
 #include <iostream>
-#include <conio.h>
 
 // // use namespace
 using namespace std;

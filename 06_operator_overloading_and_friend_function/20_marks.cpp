@@ -2,7 +2,6 @@
 
 // // Header files
 #include <iostream>
-#include <conio.h>
 
 // // use namespace
 using namespace std;

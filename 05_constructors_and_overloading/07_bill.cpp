@@ -10,7 +10,7 @@ Define a class Bill with instance memebr variables name and id, initialize these
 
 // // Header files
 #include <iostream>
-#include <conio.h>
+
 #include <string.h>
 
 // // use namespace

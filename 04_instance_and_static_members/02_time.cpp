@@ -24,7 +24,6 @@ Formula: Total Seconds = (Hours * 3600) + (Minutes * 60) + Seconds
 
 // // Header files
 #include <iostream>
-#include <conio.h>
 
 // // use namespace
 using namespace std;

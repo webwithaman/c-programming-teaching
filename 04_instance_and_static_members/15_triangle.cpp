@@ -2,7 +2,7 @@
 
 // // Header files
 #include <iostream>
-#include <conio.h>
+
 #include <stdlib.h>
 
 // // use namespace

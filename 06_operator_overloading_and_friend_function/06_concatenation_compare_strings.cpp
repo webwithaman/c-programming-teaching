@@ -8,7 +8,7 @@ b. == to compare 2 strings.
 
 // // Header files
 #include <iostream>
-#include <conio.h>
+
 #include <string.h>
 
 // // use namepsace
