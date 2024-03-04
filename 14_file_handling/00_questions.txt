@@ -10,7 +10,7 @@
 
 03. Write a C++ program to open a file 'output.txt' and append data to it.
 
-04. Write a program to copy the contents of one text file to another while changing the case of every alphabet.
+04. Write a program to copy the content of one text file to another while changing the case of every alphabet.
 
 05. Write a C++ program to merge the two files.
 
