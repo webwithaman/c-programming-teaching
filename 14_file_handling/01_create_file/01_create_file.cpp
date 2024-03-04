@@ -21,7 +21,6 @@ int main()
         cout << "\nFile Created Successfully...";
 
     cout << endl; // Add new line
-    // cin.ignore();
     cin.ignore();
     return 0;
 }
