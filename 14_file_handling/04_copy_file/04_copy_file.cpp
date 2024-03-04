@@ -44,6 +44,12 @@ int main()
         // // read one character from file
         ch = fcin.get();
 
+        // // if character in uppercase, then convert it in lowercase and vice-versa
+        if (ch >= 'A' && ch <= 'Z')
+            ch += 32;
+        else if (ch >= 'a' && ch <= 'z')
+            ch -= 32;
+
         // // if not reached to the end of file
         if (!fcin.eof())
             fcout << ch;
@@ -55,7 +61,7 @@ int main()
     fcin.close();
 
     // // file copied successfully
-    cout << "\nFile Successfully Copied..." << endl;
+    cout << "\nFile Content Successfully Copied..." << endl;
 
     cout << endl; // Add new line
     return 0;
