@@ -11,7 +11,7 @@ int main()
 {
 
     // // specify file name
-    const char *fileName = "test.txt";
+    const char *fileName = "newfile.txt";
 
     // // create an instance of ofstream
     ofstream fout;
