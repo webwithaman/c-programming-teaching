@@ -12,7 +12,7 @@
 
 04. Write a program to copy the content of one text file to another while changing the case of every alphabet.
 
-05. Write a C++ program to merge the two files.
+05. Write a C++ program to merge the content of two files and generate a new file
 
 06. Write a C++ program that counts the total number of characters, words and lines in the file.
 
