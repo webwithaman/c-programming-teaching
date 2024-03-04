@@ -18,8 +18,7 @@
 
 07. Define a cpp class Book having attributes bookId, bookTitle and bookPrice and appropriate getters and setters. Now, get n number of book records from user and store each record in a file names "books_data.dat" and then read data from file and display.
 
-08. A file 'Employee.txt' contains empno and empname. Write a C++ program to add and
-read contents of this file and search for an employee whose name is 'XYZ'.
+08. In the above program add a new feature to search a book in file using book id. if book record found then display it else display book not found.
 
 09. A company has following details of their employees in the file 'emp.dat'
 a. Emp Id
