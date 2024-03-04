@@ -2,7 +2,6 @@
 
 // // Header files
 #include <iostream>
-
 #include <string.h>
 
 // // use namespace
@@ -64,13 +63,13 @@ public:
     // // instance member function to set Book Title
     void setBookTitle(char *bookTitle)
     {
-        strcpy(bookTitle, bookTitle);
+        strcpy(this->bookTitle, bookTitle);
     }
 
     // // instance member function to get Book Title
     char *getBookTitle(char *bookTitle)
     {
-        strcpy(bookTitle, bookTitle);
+        strcpy(bookTitle, this->bookTitle);
         return bookTitle;
     }
 };

@@ -16,10 +16,7 @@
 
 06. Write a C++ program that counts the total number of characters, words and lines in the file.
 
-07. There are 50 records in a file. Each record contains 6-character item-code, 20
-characters for item-name and an integer price. Write a program to read these
-records, arrange them in the descending order of price and write them in the same
-file, overwriting the earlier records.
+07. Define a cpp class Book having attributes bookId, bookTitle and bookPrice and appropriate getters and setters. Now, get n number of book records from user and store each record in a file names "books_data.dat" and then read data from file and display.
 
 08. A file 'Employee.txt' contains empno and empname. Write a C++ program to add and
 read contents of this file and search for an employee whose name is 'XYZ'.
