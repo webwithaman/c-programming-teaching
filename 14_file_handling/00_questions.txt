@@ -4,11 +4,11 @@
 🟢 Topic ➡ File Handling
 
 
-01. Write a C++ program to create a file and print “File created successfully” and throw an error if file is not created.
+01. Write a C++ program to create a file and print “File created successfully”,otherwise display "Unable to Create a File".
 
 02. Write a C++ program to read a text file and count the number of characters in it.
 
-03. Write a C++ program to open an output file 'a.txt' and append data to it.
+03. Write a C++ program to open a file 'output.txt' and append data to it.
 
 04. Write a program to copy the contents of one text file to another while changing the case of every alphabet.
 
