@@ -33,45 +33,33 @@ int main()
     int charCounter = 0, wordCounter = 0, lineCounter = 0;
     char word[WORD_SIZE]; // to store word extracted from file
 
-    // // get one character from file
-    ch = fin.get();
-
-    if (fin.eof())
-        cout << "\nFile is Empty...";
-    else
+    // // count characters and lines
+    while (fin.get(ch)) // run till the end of the file
     {
-        cout << "\n>>>>>>>>> Following is the Content Read From File <<<<<<<<<<\n";
-        lineCounter++;
-    }
-
-    while (!fin.eof()) // run till the end of the file
-    {
-        cout << "\ntell g => " << fin.tellg();
-
-        cout << ch;    // display read character
         charCounter++; // increment charCounter
+
+        if (charCounter == 1)
+            lineCounter++;
 
         // // if new line character occurs
         if (ch == '\n')
             lineCounter++;
-
-        // // get one character from file
-        ch = fin.get();
     }
 
-    cout << "\ntell g => " << fin.tellg();
+    // // clear the end-of-file flag and reset the stream state
+    fin.clear();
 
+    // // set the position to the beginning
     fin.seekg(1);
 
-    cout << "\ntell g => " << fin.tellg();
-
+    // // count words
     while (fin >> word) // run till the end of the file
         wordCounter++;
 
     // // display number of characters,words and lines
-    cout << "\n\nNumber of Characters in File => " << charCounter << endl;
-    cout << "Number of Words in File => " << wordCounter << endl;
-    cout << "Number of Lines in File => " << lineCounter << endl;
+    cout << "\nNumber of Characters in File => " << charCounter;
+    cout << "\nNumber of Words in File => " << wordCounter;
+    cout << "\nNumber of Lines in File => " << lineCounter;
 
     // // close file
     fin.close();
