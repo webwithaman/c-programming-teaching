@@ -14,23 +14,23 @@ int main()
     const char *destinationFile = "destination.txt";
 
     // // create an instances of fstream for both reading and writing in a file
-    fstream fcout, fcin;
+    fstream fout, fin;
 
     // // open file for reading
-    fcin.open(sourceFile, ios::in);
+    fin.open(sourceFile, ios::in);
 
     // // check if the file is successfully opened
-    if (!fcin.is_open())
+    if (!fin.is_open())
     {
         cout << "\nError: Unable to Open Source File...\n";
         return 1;
     }
 
     // // open file for writing
-    fcout.open(destinationFile, ios::out);
+    fout.open(destinationFile, ios::out);
 
     // // check if the file is successfully opened
-    if (!fcout.is_open())
+    if (!fout.is_open())
     {
         cout << "\nError: Unable to Open or Create Destination File...\n";
         return 1;
@@ -42,7 +42,7 @@ int main()
     do
     {
         // // read one character from file
-        ch = fcin.get();
+        ch = fin.get();
 
         // // if character in uppercase, then convert it in lowercase and vice-versa
         if (ch >= 'A' && ch <= 'Z')
@@ -51,14 +51,14 @@ int main()
             ch -= 32;
 
         // // if not reached to the end of file
-        if (!fcin.eof())
-            fcout << ch;
+        if (!fin.eof())
+            fout << ch;
 
-    } while (!fcin.eof());
+    } while (!fin.eof());
 
     // // close files
-    fcout.close();
-    fcin.close();
+    fout.close();
+    fin.close();
 
     // // file copied successfully
     cout << "\nFile Content Successfully Copied..." << endl;

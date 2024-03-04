@@ -1,4 +1,4 @@
-// // Write a C++ program to read a text file and count the number of characters in it.
+// // Write a C++ program that counts the total number of characters, words and lines in the file.
 
 // // Header files
 #include <iostream>
@@ -26,14 +26,20 @@ int main()
         return 1;
     }
 
-    // // read file character by character and count the characters
-    char ch;         // to store character
-    int counter = 0; // to count characters
+    // // read file character by character and count the characters, words and lines
+    char ch; // to store character
+    int counter = 0;
 
-    while (fin.get(ch)) // run till the end of the file
-        counter++;      // increment counter
+    while (!fin.eof()) // run till the end of the file
+    {
+        cout << ch; // display read character
+        counter++;  // increment charCounter
 
-    // // display number of characters
+        // // get one character from file
+        ch = fin.get();
+    }
+
+    // // display number of characters,words and lines
     cout << "\n\nNumber of Characters in File => " << counter << endl;
 
     // // close file
