@@ -11,9 +11,11 @@ int main()
 {
     // // specify file name
     const char *fileName = "output.txt";
+
+    // // data to be appended
     const char *appendData = "Cpp Programming";
 
-    // // create an instance of ofstream
+    // // create an instance of ofstream for writing in a file
     ofstream fout;
 
     // // open file for writing, if file not exist it will be created
@@ -22,17 +24,18 @@ int main()
     // // check if the file is successfully opened
     if (!fout.is_open())
     {
-        cout << "\n!!! Unable to Open File...\n";
+        cout << "\nError: Unable to Open File..." << endl;
         return 1;
     }
 
-    // // write data in file using insertion operator
+    // // append data in file using insertion operator
     fout << appendData;
-
-    cout << "\nData Appended Successfully..." << endl;
 
     // // close file
     fout.close();
+
+    // // data appended successfully
+    cout << "\nData Appended Successfully..." << endl;
 
     cout << endl; // Add new line
     return 0;

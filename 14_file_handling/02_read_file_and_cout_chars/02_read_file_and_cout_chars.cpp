@@ -13,7 +13,7 @@ int main()
     // // specify file name
     const char *fileName = "read.txt";
 
-    // // create an instance of ofstream
+    // // create an instance of ifstream for reading from a file
     ifstream fcin;
 
     // // open file for reading
@@ -22,29 +22,33 @@ int main()
     // // check if the file is successfully opened
     if (!fcin.is_open())
     {
-        cout << "\n!!! Unable to Open File...\n";
+        cout << "\nError: Unable to Open File..." << endl;
         return 1;
     }
 
-    // // read character by character from file and count
-    char ch;
-    int count = 0;
-
-    cout << "\n>>>>>>>>> Following is the Content Read From File <<<<<<<<<<\n";
+    // // read file character by character and count the characters
+    char ch;         // to store character
+    int counter = 0; // to count characters
 
     // // get one character from file
     ch = fcin.get();
 
-    while (!fcin.eof())
+    if (fcin.eof())
+        cout << "\nFile is Empty...";
+    else
+        cout << "\n>>>>>>>>> Following is the Content Read From File <<<<<<<<<<\n";
+
+    while (!fcin.eof()) // run till the end of the file
     {
-        cout << ch;
-        count++;
+        cout << ch; // display read character
+        counter++;  // increment counter
 
         // // get one character from file
         ch = fcin.get();
     }
 
-    cout << "\n\nNumber of Characters in File => " << count;
+    // // display number of characters
+    cout << "\n\nNumber of Characters in File => " << counter << endl;
 
     // // close file
     fcin.close();
