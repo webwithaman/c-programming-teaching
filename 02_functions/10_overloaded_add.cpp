@@ -30,7 +30,7 @@ int main()
     cout << "\nSum of " << num3 << " and " << num4 << " => " << addTwoNums(num3, num4);
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

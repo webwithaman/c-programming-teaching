@@ -65,7 +65,7 @@ int main()
     cout << "\nAdditon of " << d1 << ", " << d2 << " and " << d3 << " => " << Addition::add(d1, d2, d3);
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

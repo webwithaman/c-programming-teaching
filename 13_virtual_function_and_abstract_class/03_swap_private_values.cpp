@@ -66,6 +66,6 @@ int main()
     cout << "\ni2.data => " << i2.getData();
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }

@@ -342,7 +342,7 @@ int main()
     cout << "\nManager Name => " << managers[highestIndex].getName();
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

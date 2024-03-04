@@ -53,7 +53,7 @@ int main()
     t1.displayTime(); // display time
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

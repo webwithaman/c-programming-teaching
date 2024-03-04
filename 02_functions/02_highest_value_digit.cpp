@@ -23,7 +23,7 @@ int main()
     cout << "\nHighest value Digit of " << num << " => " << highDigit;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

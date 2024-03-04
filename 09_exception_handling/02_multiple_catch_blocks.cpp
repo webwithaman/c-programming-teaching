@@ -16,7 +16,6 @@ int main()
     cout << "\nPress 2. To Throw Exception Using Instance of double";
     cout << "\nPress 3. To Throw Exception Using Instance of string";
 
-
     try
     {
         cout << "\n\nEnter Your Choice => ";
@@ -50,7 +49,7 @@ int main()
 
     cout
         << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

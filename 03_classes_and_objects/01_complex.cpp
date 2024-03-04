@@ -51,7 +51,7 @@ int main()
     c1.displayComplex(); // display complex number
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

@@ -64,6 +64,6 @@ int main()
     r1.displayArea();
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }

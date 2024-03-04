@@ -21,7 +21,7 @@ int main()
     cout << "\nVolume of Cuboid => " << vol;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

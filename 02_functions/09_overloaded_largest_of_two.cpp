@@ -30,7 +30,7 @@ int main()
     cout << "\nLargest of " << num3 << " and " << num4 << " => " << largestOfTwo(num3, num4);
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

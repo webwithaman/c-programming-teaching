@@ -27,7 +27,7 @@ int main()
     cout << "\nLargest of " << num1 << " and " << num2 << " => " << largest;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

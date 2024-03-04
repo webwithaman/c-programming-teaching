@@ -20,7 +20,7 @@ int main()
     cout << "\nSum of " << num1 << " and " << num2 << " => " << sum;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

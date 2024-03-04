@@ -74,7 +74,7 @@ int main()
     cout << "\nEnter BankAccount's Name (MAX_CHARACTERS " << MAX_CHARS_NAME - 1 << ") => ";
     cin.getline(name, MAX_CHARS_NAME);
 
-    cout<<name<<endl;
+    cout << name << endl;
 
     // // set persons's name
     b1.setName(name);
@@ -131,7 +131,7 @@ int main()
     }
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

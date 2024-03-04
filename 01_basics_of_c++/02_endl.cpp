@@ -15,7 +15,7 @@ int main()
          << "programming"; // endl is used to add new line '\n' char
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

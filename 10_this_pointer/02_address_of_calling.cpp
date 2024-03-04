@@ -30,7 +30,7 @@ int main()
     cout << "\nAddress of Object (a1) => " << ptr;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

@@ -13,7 +13,7 @@ int main()
 
     cout << "cpp-programming"; // cout is a predefined object used to print output on screen
 
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

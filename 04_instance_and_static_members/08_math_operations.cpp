@@ -44,7 +44,7 @@ int main()
     cout << "\nSquare of " << num << " => " << sq;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

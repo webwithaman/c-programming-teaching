@@ -204,7 +204,7 @@ int main()
     cout << "\nf2 => " << f2;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

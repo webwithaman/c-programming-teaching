@@ -136,7 +136,7 @@ int main()
     cout << "\nNormalization of Added Time Period => " << normalizedTime;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

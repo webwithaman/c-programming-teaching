@@ -109,10 +109,10 @@ int main()
         default:
             cout << "\n !!!Invalid Choice..." << endl;
         }
-        getch();
+        cin.ignore();
     } while (choice != 4);
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }

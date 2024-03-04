@@ -40,7 +40,6 @@ private:
     static float rateOfInterest;
 
 public:
-
     // // override base class setAccountNumber function
     void setAccountNumber(const char *accountNumber) override
     {
@@ -126,7 +125,6 @@ float SavingAccount::rateOfInterest;
 class CurrentAccount : public Account
 {
 public:
-
     // // override base class setAccountNumber function
     void setAccountNumber(const char *accountNumber) override
     {
@@ -217,7 +215,7 @@ int main()
     ca1.displayAccountDetails();
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

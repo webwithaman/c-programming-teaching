@@ -66,7 +66,7 @@ int main()
     cout << "\nCounter After Incremented 3 Times => " << c1.getCounter();
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

@@ -134,7 +134,7 @@ int main()
     cout << "\n\nSimple Interest => " << si;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

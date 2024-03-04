@@ -159,7 +159,7 @@ int main()
     cout << "\nDeterminant of Matrix => " << d1.calDeterminant();
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

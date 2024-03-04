@@ -71,7 +71,7 @@ int main()
     cout << "\nStudent's Name => " << s1.getName(name);
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

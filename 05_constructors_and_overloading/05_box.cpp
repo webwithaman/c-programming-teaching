@@ -113,7 +113,7 @@ int main()
     cout << "\n\nVolume of Box => " << vol;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

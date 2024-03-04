@@ -20,7 +20,7 @@ public:
     // // constructors
     Complex()
     {
-        real = imag= 0;
+        real = imag = 0;
     }
 
     Complex(double r)
@@ -36,11 +36,11 @@ public:
 
     // // instance member function to set compelx number
     void setData(double r, double i)
-    {     
+    {
         real = r;
         imag = i;
     }
-    
+
     // // instance member function to display compelx number
     void showData()
     {
@@ -101,7 +101,7 @@ int main()
     c3.showData();
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End

@@ -21,7 +21,7 @@ int main()
     cout << "\nArea of Circle Having Radius " << radius << " is " << area;
 
     cout << endl; // Add new line
-    getch();
+    cin.ignore();
     return 0;
 }
 // // Main Function End
