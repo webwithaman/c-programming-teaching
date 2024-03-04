@@ -10,17 +10,24 @@ using namespace std;
 int main()
 {
 
+    // // specify file name
+    const char *fileName = "test.txt";
+
     // // create an instance of ofstream
     ofstream fout;
 
-    fout.open("test.txt", ios::out);
+    // // open file for writing, if file not exist it will be created
+    fout.open(fileName);
 
-    if (!fout)
-        cout << "\n!!! File Not Created...";
+    // // check if the file is successfully opened
+    if (fout.is_open())
+        cout << "\nFile Created Successfully...\n";
     else
-        cout << "\nFile Created Successfully...";
+        cout << "\n!!! Unable to Create File..\n.";
+
+    // // close file
+    fout.close();
 
     cout << endl; // Add new line
-    cin.ignore();
     return 0;
 }
