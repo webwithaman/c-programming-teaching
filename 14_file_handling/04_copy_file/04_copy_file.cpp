@@ -39,22 +39,17 @@ int main()
     // // read characters from source file one by one and write in destination file
     char ch; // to store character
 
-    do
+    while (fin.get(ch)) // // run till the end of file
     {
-        // // read one character from file
-        ch = fin.get();
-
         // // if character in uppercase, then convert it in lowercase and vice-versa
         if (ch >= 'A' && ch <= 'Z')
             ch += 32;
         else if (ch >= 'a' && ch <= 'z')
             ch -= 32;
 
-        // // if not reached to the end of file
-        if (!fin.eof())
-            fout << ch;
-
-    } while (!fin.eof());
+        // // write in file
+        fout << ch;
+    }
 
     // // close files
     fout.close();

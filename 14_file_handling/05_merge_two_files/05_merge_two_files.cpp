@@ -40,16 +40,11 @@ int main()
     // // read characters from file1 one by one and write in merged file
     char ch; // to store character
 
-    do
+    while (fin.get(ch))
     {
-        // // read one character from file
-        ch = fin.get();
-
-        // // if not reached to the end of file
-        if (!fin.eof())
-            fout << ch;
-
-    } while (!fin.eof());
+        // // write in merged file
+        fout << ch;
+    }
 
     // // close file1
     fin.close();
@@ -68,16 +63,11 @@ int main()
     fout << " ";
 
     // // read characters from file2 one by one and write in merged file
-    do
+    while (fin.get(ch))
     {
-        // // read one character from file
-        ch = fin.get();
-
-        // // if not reached to the end of file
-        if (!fin.eof())
-            fout << ch;
-
-    } while (!fin.eof());
+        // // write in merged file
+        fout << ch;
+    }
 
     // // close files
     fout.close();
