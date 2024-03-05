@@ -4,12 +4,12 @@ A company has following details of their employees in the file 'emp.dat'
 a. Emp Id
 b. Emp Name
 c. Emp Address
-d. Emp Dept (Admin/Sales/Production/IT)
+d. Emp Dept (admin / sales / production / design)
 e. Emp Phone Number
 f. Emp Age
 
 Write a C++ program to read the above file. Create a new file such as adm.dat,
-sal.dat, pro.dat, IT.dat respectively to store the employee details according to their department.
+sal.dat, pro.dat, Design.dat respectively to store the employee details according to their department.
 
 */
 
@@ -17,6 +17,7 @@ sal.dat, pro.dat, IT.dat respectively to store the employee details according to
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <ctype.h>
 
 // // use namespace
 using namespace std;
@@ -57,7 +58,26 @@ public:
         strcpy(this->name, name);
         strcpy(this->phoneNumber, phoneNumber);
         strcpy(this->address, address);
-        strcpy(this->department, department);
+
+        char copyDepartment[strlen(department) + 1];
+
+        int i;
+
+        for (i = 0; department[i]; i++)
+        {
+            if (isalpha(department[i]))
+            {
+                if (isupper(department[i]))
+                    copyDepartment[i] = tolower(department[i]);
+                else
+                    copyDepartment[i] = department[i];
+            }
+            copyDepartment[i] = department[i];
+        }
+
+        copyDepartment[i] = 0;
+
+        strcpy(this->department, copyDepartment);
     }
 
     // // instance member function to set id
@@ -129,7 +149,25 @@ public:
     // // instance member function to set department
     void setDepartment(const char *department)
     {
-        strcpy(this->department, department);
+        char copyDepartment[strlen(department) + 1];
+
+        int i;
+
+        for (i = 0; department[i]; i++)
+        {
+            if (isalpha(department[i]))
+            {
+                if (isupper(department[i]))
+                    copyDepartment[i] = tolower(department[i]);
+                else
+                    copyDepartment[i] = department[i];
+            }
+            copyDepartment[i] = department[i];
+        }
+
+        copyDepartment[i] = 0;
+
+        strcpy(this->department, copyDepartment);
     }
 
     // // instance member function to get department
@@ -177,7 +215,7 @@ public:
             cout << "\nPress 1. Admin";
             cout << "\nPress 2. Sales";
             cout << "\nPress 3. Production";
-            cout << "\nPress 4. IT";
+            cout << "\nPress 4. Design";
             cout << "\nEnter Department Number => ";
             cin >> choice;
 
@@ -195,7 +233,7 @@ public:
                 else if (choice == 3)
                     strcpy(department, "Production");
                 else
-                    strcpy(department, "IT");
+                    strcpy(department, "Design");
                 break;
             }
         }
@@ -233,6 +271,9 @@ public:
 
         fout.write((char *)this, sizeof(*this));
 
+        // // close file
+        fout.close();
+
         return 1; // employee data successfully stored
     }
 };
@@ -268,19 +309,116 @@ void fetchAndShowEmployeeData()
         cout << endl;
         fin.read((char *)&tempEmployee, sizeof(tempEmployee));
     }
+
+    // // close file
+    fin.close();
+}
+
+// // function to read employees data from file and store in another files according to their departments
+void readAndStoreEmpsByDepartmet()
+{
+    // // specify files names
+    const char *inputFile = "emp.dat";
+    const char *outputFiles[] = {"adm.dat", "sal.dat", "pro.dat", "des.data"};
+
+    // // departments list
+    char *departments[] = {"admin", "sales", "production", "design"};
+    char empDepartment[Employee::MAX_CHARS_IN_DEPARTMENT];
+
+    // create an instances of ifstream and ofstream for reading and writing in files
+    ifstream fin;
+    ofstream fout[4];
+
+    // // open file in binary mode for reading
+    fin.open(inputFile, ios::in | ios::binary);
+
+    // // check if the file is successfully opened
+    if (!fin.is_open())
+    {
+        cout << "\nError: Unable to Open File...";
+        return;
+    }
+
+    // // open files in binary mode for writing
+    for (int i = 0; i < 4; i++)
+    {
+        fout[i].open(outputFiles[i], ios::app | ios::binary);
+
+        // // check if the file is successfully opened
+        if (!fout[i].is_open())
+        {
+            cout << "\nError: Unable to Open File...";
+            return;
+        }
+    }
+
+    // // create an instance of Employee to store fetched data
+    Employee tempEmployee;
+
+    // // read employee data
+    fin.read((char *)&tempEmployee, sizeof(tempEmployee));
+
+    while (!fin.eof()) // run till the end of file
+    {
+        // // get and store employee department to compare
+        strcpy(empDepartment, tempEmployee.getDepartment());
+
+        int index;
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (!strcmp(empDepartment, departments[i]))
+            {
+                index = i;
+                break;
+            }
+        }
+
+        fout[index].write((char *)&tempEmployee, sizeof(tempEmployee));
+        fin.read((char *)&tempEmployee, sizeof(tempEmployee));
+    }
+
+    // // close files
+    fin.close();
+    for (int i = 0; i < 4; i++)
+    {
+        fout[i].close();
+    }
 }
 
 // // function to search a employee from file using employee id
-void searchEmployeeById(int empId)
+void readAndShowEmpsOfGivenDepartmet(const char *department)
 {
-    // // specify file name
-    const char *fileName = "employees_data.dat";
+    char copyDepartment[strlen(department) + 1];
 
-    // create an instance of ifstream for reading from a file
+    int i;
+
+    for (i = 0; department[i]; i++)
+    {
+        if (isalpha(department[i]))
+        {
+            if (isupper(department[i]))
+                copyDepartment[i] = tolower(department[i]);
+            else
+                copyDepartment[i] = department[i];
+        }
+        copyDepartment[i] = department[i];
+    }
+
+    copyDepartment[i] = 0;
+
+    const char *inputFile;
+
     ifstream fin;
 
-    // // open file in binary mode for reading
-    fin.open(fileName, ios::in | ios::binary);
+    if (!strcmp(copyDepartment, "admin"))
+        fin.open("adm.dat", ios::in | ios::binary);
+    else if (!strcmp(copyDepartment, "production"))
+        fin.open("pro.dat", ios::in | ios::binary);
+    else if (!strcmp(copyDepartment, "sales"))
+        fin.open("sal.dat", ios::in | ios::binary);
+    else if (!strcmp(copyDepartment, "design"))
+        fin.open("des.dat", ios::in | ios::binary);
 
     // // check if the file is successfully opened
     if (!fin.is_open())
@@ -291,25 +429,18 @@ void searchEmployeeById(int empId)
 
     // // create an instance of Employee to store fetched data
     Employee tempEmployee;
-    int found = 0;
 
+    // // read employee data
     fin.read((char *)&tempEmployee, sizeof(tempEmployee));
 
-    while (!fin.eof())
+    while (!fin.eof()) // run till the end of file
     {
-        if (tempEmployee.getId() == empId)
-        {
-            cout << "\n>>>>>>>>> Employee Found <<<<<<<<" << endl;
-            tempEmployee.showEmployeeData();
-            found = 1;
-            break;
-        }
-
+        tempEmployee.showEmployeeData();
         fin.read((char *)&tempEmployee, sizeof(tempEmployee));
     }
 
-    if (!found)
-        cout << "\nThere is No Employee Data Stored having Employee Id " << empId << endl;
+    // // close files
+    fin.close();
 }
 
 // // Main Function Start
@@ -354,14 +485,15 @@ int main()
     cout << "\n>>>>>>>>>> Employees Data Stored In File <<<<<<<<<<<<<<";
     fetchAndShowEmployeeData();
 
-    // // get employee id to search a employee in file
-    int empId;
+    readAndStoreEmpsByDepartmet();
 
-    cout << "\nEnter Employee Id to Search A Employee => ";
-    cin >> empId;
+    char dep[100];
+    cout << "\nEnetr de[ =>] ";
+    cin >> dep;
 
-    // // search employee
-    searchEmployeeById(empId);
+    cout << "\n<<<<<< " << dep << " <<<<<<<<<<<<<<" << endl;
+
+    readAndShowEmpsOfGivenDepartmet(dep);
 
     cout << endl; // Add new line
     cin.ignore();

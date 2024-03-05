@@ -133,6 +133,9 @@ public:
 
         fout.write((char *)this, sizeof(*this));
 
+        // // close file
+        fout.close();
+
         return 1; // book data successfully stored
     }
 };
@@ -168,6 +171,9 @@ void fetchAndShowBookData()
         cout << endl;
         fin.read((char *)&tempBook, sizeof(tempBook));
     }
+
+    // // close file
+    fin.close();
 }
 
 // // function to search a book from file using book id
@@ -207,6 +213,9 @@ void searchBookById(int bookId)
 
         fin.read((char *)&tempBook, sizeof(tempBook));
     }
+
+    // // close file
+    fin.close();
 
     if (!found)
         cout << "\nThere is No Book Data Stored having Book Id " << bookId << endl;

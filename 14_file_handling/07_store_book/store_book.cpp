@@ -79,7 +79,7 @@ public:
     }
 
     // // instance member function to input and set book data
-    void inputBookData() 
+    void inputBookData()
     {
         int bookId;
         char bookTitle[Book::MAX_CHARS_IN_TITLE];
@@ -133,12 +133,15 @@ public:
 
         fout.write((char *)this, sizeof(*this));
 
+        // // close file
+        fout.close();
+
         return 1; // book data successfully stored
     }
 };
 
 // // function to fetch books data from a fike and show
-void fetchAndShowBookData() 
+void fetchAndShowBookData()
 {
     // // specify file name
     const char *fileName = "books_data.dat";
@@ -168,6 +171,9 @@ void fetchAndShowBookData()
         cout << endl;
         fin.read((char *)&tempBook, sizeof(tempBook));
     }
+
+    // // close file
+    fin.close();
 }
 
 // // Main Function Start
