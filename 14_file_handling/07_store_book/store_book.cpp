@@ -49,7 +49,7 @@ public:
     }
 
     // // instance member function to get bookId
-    unsigned int getBookId()
+    unsigned int getBookId() const
     {
         return bookId;
     }
@@ -61,7 +61,7 @@ public:
     }
 
     // // instance member function to get bookTitle
-    const char *getBookTitle()
+    const char *getBookTitle() const
     {
         return bookTitle;
     }
@@ -73,13 +73,13 @@ public:
     }
 
     // // instance member function to get bookPrice
-    double getBookPrice()
+    double getBookPrice() const
     {
         return bookPrice;
     }
 
     // // instance member function to input and set book data
-    void inputBookData()
+    void inputBookData() 
     {
         int bookId;
         char bookTitle[Book::MAX_CHARS_IN_TITLE];
@@ -105,7 +105,7 @@ public:
     }
 
     // // instance member function to show book data
-    void showBookData()
+    void showBookData() const
     {
         cout << "\nBook Id => " << bookId;
         cout << "\nBook Title => " << bookTitle;
@@ -113,7 +113,7 @@ public:
     }
 
     // // instance member function to store book record
-    int storeBookData()
+    int storeBookData() const
     {
         if (bookId == -1 || bookPrice == -1)
             return 0; // book data not stored
@@ -138,7 +138,7 @@ public:
 };
 
 // // function to fetch books data from a fike and show
-void fetchAndShowBookData()
+void fetchAndShowBookData() 
 {
     // // specify file name
     const char *fileName = "books_data.dat";
