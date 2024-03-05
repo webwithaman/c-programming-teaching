@@ -227,13 +227,13 @@ public:
             else
             {
                 if (choice == 1)
-                    strcpy(department, "Admin");
+                    strcpy(department, "admin");
                 else if (choice == 2)
-                    strcpy(department, "Sales");
+                    strcpy(department, "sales");
                 else if (choice == 3)
-                    strcpy(department, "Production");
+                    strcpy(department, "production");
                 else
-                    strcpy(department, "Design");
+                    strcpy(department, "design");
                 break;
             }
         }
@@ -317,6 +317,8 @@ void fetchAndShowEmployeeData()
 // // function to read employees data from file and store in another files according to their departments
 void readAndStoreEmpsByDepartmet()
 {
+    cout << "\nIn store by dep starting" << endl;
+
     // // specify files names
     const char *inputFile = "emp.dat";
     const char *outputFiles[] = {"adm.dat", "sal.dat", "pro.dat", "des.data"};
@@ -384,9 +386,11 @@ void readAndStoreEmpsByDepartmet()
     {
         fout[i].close();
     }
+
+    cout << "\nIn store by dfep" << endl;
 }
 
-// // function to search a employee from file using employee id
+// // function to read and show employees of given department
 void readAndShowEmpsOfGivenDepartmet(const char *department)
 {
     char copyDepartment[strlen(department) + 1];
@@ -485,15 +489,15 @@ int main()
     cout << "\n>>>>>>>>>> Employees Data Stored In File <<<<<<<<<<<<<<";
     fetchAndShowEmployeeData();
 
+    cout << "\n>>>>>>>>> Employees Stored In Different-2 Files According to Their Departments <<<<<<<<<<<<<";
     readAndStoreEmpsByDepartmet();
 
-    char dep[100];
-    cout << "\nEnetr de[ =>] ";
-    cin >> dep;
+    char department[Employee::MAX_CHARS_IN_DEPARTMENT];
+    cout << "\nEnter A Department to Show Employees of That Department => ";
+    cin >> department;
 
-    cout << "\n<<<<<< " << dep << " <<<<<<<<<<<<<<" << endl;
-
-    readAndShowEmpsOfGivenDepartmet(dep);
+    cout << "\n>>>>>>>>>> Employees of " << department << " Department <<<<<<<<<" << endl;
+    readAndShowEmpsOfGivenDepartmet(department);
 
     cout << endl; // Add new line
     cin.ignore();

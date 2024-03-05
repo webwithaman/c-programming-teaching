@@ -140,140 +140,140 @@ public:
     }
 };
 
-// // function to fetch books data from a fike and show
-void fetchAndShowBookData()
-{
-    // // specify file name
-    const char *fileName = "books_data.dat";
-
-    // create an instance of ifstream for reading from a file
-    ifstream fin;
-
-    // // open file in binary mode for reading
-    fin.open(fileName, ios::in | ios::binary);
-
-    // // check if the file is successfully opened
-    if (!fin.is_open())
+    // // function to fetch books data from a fike and show
+    void fetchAndShowBookData()
     {
-        cout << "\nError: Unable to Open File...";
-        return;
-    }
+        // // specify file name
+        const char *fileName = "books_data.dat";
 
-    // // create an instance of Book to store fetched data
-    Book tempBook;
+        // create an instance of ifstream for reading from a file
+        ifstream fin;
 
-    fin.read((char *)&tempBook, sizeof(tempBook));
+        // // open file in binary mode for reading
+        fin.open(fileName, ios::in | ios::binary);
 
-    while (!fin.eof())
-    {
-        cout << endl;
-        tempBook.showBookData();
-        cout << endl;
-        fin.read((char *)&tempBook, sizeof(tempBook));
-    }
-
-    // // close file
-    fin.close();
-}
-
-// // function to search a book from file using book id
-void searchBookById(int bookId)
-{
-    // // specify file name
-    const char *fileName = "books_data.dat";
-
-    // create an instance of ifstream for reading from a file
-    ifstream fin;
-
-    // // open file in binary mode for reading
-    fin.open(fileName, ios::in | ios::binary);
-
-    // // check if the file is successfully opened
-    if (!fin.is_open())
-    {
-        cout << "\nError: Unable to Open File...";
-        return;
-    }
-
-    // // create an instance of Book to store fetched data
-    Book tempBook;
-    int found = 0;
-
-    fin.read((char *)&tempBook, sizeof(tempBook));
-
-    while (!fin.eof())
-    {
-        if (tempBook.getBookId() == bookId)
+        // // check if the file is successfully opened
+        if (!fin.is_open())
         {
-            cout << "\n>>>>>>>>> Book Found <<<<<<<<" << endl;
-            tempBook.showBookData();
-            found = 1;
-            break;
+            cout << "\nError: Unable to Open File...";
+            return;
         }
 
+        // // create an instance of Book to store fetched data
+        Book tempBook;
+
         fin.read((char *)&tempBook, sizeof(tempBook));
-    }
 
-    // // close file
-    fin.close();
-
-    if (!found)
-        cout << "\nThere is No Book Data Stored having Book Id " << bookId << endl;
-}
-
-// // Main Function Start
-int main()
-{
-    int n;
-
-    cout << "\nHow Many Books' Data You Want to Store (MAX " << MAX_BOOKS << ") => ";
-    cin >> n;
-
-    // // invalid input
-    if (n < 1 || n > MAX_BOOKS)
-    {
-        cout << "\n!!! Invalid Input..." << endl;
-        return 0;
-    }
-
-    // // dynamically allocate memory for n objects of Book
-    Book *books = new Book[n];
-
-    // // input, set and store books data
-    cout << "\n>>>>>>>>>> Enter Data of " << n << " Books <<<<<<<<<<<<<" << endl;
-    for (int i = 0; i < n; i++)
-    {
-        cout << "\n>>>>>>>>>>> Enter Data of Book " << i + 1 << " <<<<<<<<<<<<" << endl;
-
-        // // input and set book data
-        books[i].inputBookData();
-
-        // // store book data
-        if (!(books[i].storeBookData()))
+        while (!fin.eof())
         {
-            cout << "\n!!! Book Data Not Stored..." << endl;
+            cout << endl;
+            tempBook.showBookData();
+            cout << endl;
+            fin.read((char *)&tempBook, sizeof(tempBook));
+        }
+
+        // // close file
+        fin.close();
+    }
+
+    // // function to search a book from file using book id
+    void searchBookById(int bookId)
+    {
+        // // specify file name
+        const char *fileName = "books_data.dat";
+
+        // create an instance of ifstream for reading from a file
+        ifstream fin;
+
+        // // open file in binary mode for reading
+        fin.open(fileName, ios::in | ios::binary);
+
+        // // check if the file is successfully opened
+        if (!fin.is_open())
+        {
+            cout << "\nError: Unable to Open File...";
+            return;
+        }
+
+        // // create an instance of Book to store fetched data
+        Book tempBook;
+        int found = 0;
+
+        fin.read((char *)&tempBook, sizeof(tempBook));
+
+        while (!fin.eof())
+        {
+            if (tempBook.getBookId() == bookId)
+            {
+                cout << "\n>>>>>>>>> Book Found <<<<<<<<" << endl;
+                tempBook.showBookData();
+                found = 1;
+                break;
+            }
+
+            fin.read((char *)&tempBook, sizeof(tempBook));
+        }
+
+        // // close file
+        fin.close();
+
+        if (!found)
+            cout << "\nThere is No Book Data Stored having Book Id " << bookId << endl;
+    }
+
+    // // Main Function Start
+    int main()
+    {
+        int n;
+
+        cout << "\nHow Many Books' Data You Want to Store (MAX " << MAX_BOOKS << ") => ";
+        cin >> n;
+
+        // // invalid input
+        if (n < 1 || n > MAX_BOOKS)
+        {
+            cout << "\n!!! Invalid Input..." << endl;
             return 0;
         }
+
+        // // dynamically allocate memory for n objects of Book
+        Book *books = new Book[n];
+
+        // // input, set and store books data
+        cout << "\n>>>>>>>>>> Enter Data of " << n << " Books <<<<<<<<<<<<<" << endl;
+        for (int i = 0; i < n; i++)
+        {
+            cout << "\n>>>>>>>>>>> Enter Data of Book " << i + 1 << " <<<<<<<<<<<<" << endl;
+
+            // // input and set book data
+            books[i].inputBookData();
+
+            // // store book data
+            if (!(books[i].storeBookData()))
+            {
+                cout << "\n!!! Book Data Not Stored..." << endl;
+                return 0;
+            }
+        }
+
+        // // books data stored successfully
+        cout << "\nBooks Data Successfully Stored..." << endl;
+
+        // // read and show books data
+        cout << "\n>>>>>>>>>> Books Data Stored In File <<<<<<<<<<<<<<";
+        fetchAndShowBookData();
+
+        // // get book id to search a book in file
+        int bookId;
+
+        cout << "\nEnter Book Id to Search A Book => ";
+        cin >> bookId;
+
+        // // search book
+        searchBookById(bookId);
+
+        cout << endl; // Add new line
+        cin.ignore();
+        return 0;
     }
-
-    // // books data stored successfully
-    cout << "\nBooks Data Successfully Stored..." << endl;
-
-    // // read and show books data
-    cout << "\n>>>>>>>>>> Books Data Stored In File <<<<<<<<<<<<<<";
-    fetchAndShowBookData();
-
-    // // get book id to search a book in file
-    int bookId;
-
-    cout << "\nEnter Book Id to Search A Book => ";
-    cin >> bookId;
-
-    // // search book
-    searchBookById(bookId);
-
-    cout << endl; // Add new line
-    cin.ignore();
-    return 0;
-}
-// // Main Function End
+    // // Main Function End
