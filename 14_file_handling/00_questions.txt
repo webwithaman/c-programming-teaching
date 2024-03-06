@@ -24,14 +24,13 @@
 a. Emp Id
 b. Emp Name
 c. Emp Address
-d. Emp Dept (Admin/Sales/Production/IT)
+d. Emp Dept (admin / sales / production / design)
 e. Emp Phone
 f. Emp Age
-Write a C++ program to read the above file. Create a new file such as Adm.dat,
-Sal.dat, Pro.dat, IT.dat respectively to store the employee details according to their department.
+Write a C++ program to read the above file. Create a new file such as adm.dat,
+sal.dat, pro.dat, des.dat respectively to store the employee details according to their department.
 
-10. Write a C++ program to create a file which has information Name, Account number,
-Balance and perform following operations:
-a. Add record
+10. Write a C++ program to having class BankAccount containing attributes such as name, accountNumber and balance and perform following operations:
+a. Add record in a file
 b. Display content of file
 c. Display name of person having balance > 10,000

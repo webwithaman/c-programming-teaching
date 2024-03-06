@@ -22,7 +22,8 @@ sal.dat, pro.dat, Design.dat respectively to store the employee details accordin
 // // use namespace
 using namespace std;
 
-#define MAX_BOOKS 50
+// // maximum number of employees can be stored
+#define MAX_EMPS 50
 
 // // define class Employee
 class Employee
@@ -43,6 +44,7 @@ public:
     // // constructors
     Employee()
     {
+        // // set default values
         id = -1;
         age = -1;
         name[0] = 0;
@@ -53,17 +55,31 @@ public:
 
     Employee(int id, const char *name, int age, const char *phoneNumber, const char *address, const char *department)
     {
+        // // set id and age
         this->id = id;
         this->age = age;
-        strcpy(this->name, name);
-        strcpy(this->phoneNumber, phoneNumber);
-        strcpy(this->address, address);
 
-        char copyDepartment[strlen(department) + 1];
+        // // set name
+        strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
+        this->name[MAX_CHARS_IN_NAME - 1] = '\0';
+
+        // // set phone number
+        strncpy(this->phoneNumber, phoneNumber, MAX_CHARS_IN_PHONE - 1);
+        this->phoneNumber[MAX_CHARS_IN_PHONE - 1] = '\0';
+
+        // // set address
+        strncpy(this->address, address, MAX_CHARS_IN_ADDRESS - 1);
+        this->address[MAX_CHARS_IN_ADDRESS - 1] = '\0';
+
+        // // set department after converting each character to lowercase
+        int lengthOfDepartment = strlen(department);
+
+        lengthOfDepartment > MAX_CHARS_IN_DEPARTMENT - 1 ? MAX_CHARS_IN_DEPARTMENT - 1 : lengthOfDepartment;
+
+        char copyDepartment[lengthOfDepartment + 1];
 
         int i;
-
-        for (i = 0; department[i]; i++)
+        for (i = 0; i < lengthOfDepartment; i++)
         {
             if (isalpha(department[i]))
             {
@@ -72,11 +88,11 @@ public:
                 else
                     copyDepartment[i] = department[i];
             }
-            copyDepartment[i] = department[i];
+            else
+                copyDepartment[i] = department[i];
         }
 
-        copyDepartment[i] = 0;
-
+        copyDepartment[i] = '\0';
         strcpy(this->department, copyDepartment);
     }
 
@@ -90,7 +106,7 @@ public:
     }
 
     // // instance member function to get id
-    unsigned int getId()
+    unsigned int getId() const
     {
         return id;
     }
@@ -105,7 +121,7 @@ public:
     }
 
     // // instance member function to get age
-    unsigned int getAge()
+    unsigned int getAge() const
     {
         return age;
     }
@@ -113,11 +129,12 @@ public:
     // // instance member function to set name
     void setName(const char *name)
     {
-        strcpy(this->name, name);
+        strncpy(this->name, name, MAX_CHARS_IN_NAME - 1);
+        this->name[MAX_CHARS_IN_NAME - 1] = '\0';
     }
 
     // // instance member function to get name
-    const char *getName()
+    const char *getName() const
     {
         return name;
     }
@@ -125,11 +142,12 @@ public:
     // // instance member function to set phoneNumber
     void setPhoneNumber(const char *phoneNumber)
     {
-        strcpy(this->phoneNumber, phoneNumber);
+        strncpy(this->phoneNumber, phoneNumber, MAX_CHARS_IN_PHONE - 1);
+        this->phoneNumber[MAX_CHARS_IN_PHONE - 1] = '\0';
     }
 
     // // instance member function to get phoneNumber
-    const char *getPhoneNumber()
+    const char *getPhoneNumber() const
     {
         return phoneNumber;
     }
@@ -137,11 +155,12 @@ public:
     // // instance member function to set address
     void setAddress(const char *address)
     {
-        strcpy(this->address, address);
+        strncpy(this->address, address, MAX_CHARS_IN_ADDRESS - 1);
+        this->address[MAX_CHARS_IN_ADDRESS - 1] = '\0';
     }
 
     // // instance member function to get address
-    const char *getAddress()
+    const char *getAddress() const
     {
         return address;
     }
@@ -149,11 +168,16 @@ public:
     // // instance member function to set department
     void setDepartment(const char *department)
     {
-        char copyDepartment[strlen(department) + 1];
+        // // set department after converting each character to lowercase
+
+        int lengthOfDepartment = strlen(department);
+
+        lengthOfDepartment > MAX_CHARS_IN_DEPARTMENT - 1 ? MAX_CHARS_IN_DEPARTMENT - 1 : lengthOfDepartment;
+
+        char copyDepartment[lengthOfDepartment + 1];
 
         int i;
-
-        for (i = 0; department[i]; i++)
+        for (i = 0; i < lengthOfDepartment; i++)
         {
             if (isalpha(department[i]))
             {
@@ -162,16 +186,16 @@ public:
                 else
                     copyDepartment[i] = department[i];
             }
-            copyDepartment[i] = department[i];
+            else
+                copyDepartment[i] = department[i];
         }
 
-        copyDepartment[i] = 0;
-
+        copyDepartment[i] = '\0';
         strcpy(this->department, copyDepartment);
     }
 
     // // instance member function to get department
-    const char *getDepartment()
+    const char *getDepartment() const
     {
         return department;
     }
@@ -269,6 +293,7 @@ public:
         if (!fout.is_open())
             return 0; // employee data not stored
 
+        // // write in file
         fout.write((char *)this, sizeof(*this));
 
         // // close file
@@ -278,8 +303,8 @@ public:
     }
 };
 
-// // function to fetch employees data from a fike and show
-void fetchAndShowEmployeeData()
+// // function to read employees data from a file and show
+void readAndShowAllEmps()
 {
     // // specify file name
     const char *fileName = "emp.dat";
@@ -297,16 +322,20 @@ void fetchAndShowEmployeeData()
         return;
     }
 
-    // // create an instance of Employee to store fetched data
+    // // create an instance of Employee to store readed data
     Employee tempEmployee;
 
+    // // read one record
     fin.read((char *)&tempEmployee, sizeof(tempEmployee));
 
     while (!fin.eof())
     {
         cout << endl;
+        // // display data
         tempEmployee.showEmployeeData();
         cout << endl;
+
+        // // read one record
         fin.read((char *)&tempEmployee, sizeof(tempEmployee));
     }
 
@@ -315,16 +344,14 @@ void fetchAndShowEmployeeData()
 }
 
 // // function to read employees data from file and store in another files according to their departments
-void readAndStoreEmpsByDepartmet()
+void readAndStoreEmpsByDepartment()
 {
-    cout << "\nIn store by dep starting" << endl;
-
     // // specify files names
     const char *inputFile = "emp.dat";
-    const char *outputFiles[] = {"adm.dat", "sal.dat", "pro.dat", "des.data"};
+    const char outputFiles[][20] = {"adm.dat", "sal.dat", "pro.dat", "des.data"};
 
     // // departments list
-    char *departments[] = {"admin", "sales", "production", "design"};
+    char departments[][20] = {"admin", "sales", "production", "design"};
     char empDepartment[Employee::MAX_CHARS_IN_DEPARTMENT];
 
     // create an instances of ifstream and ofstream for reading and writing in files
@@ -344,7 +371,7 @@ void readAndStoreEmpsByDepartmet()
     // // open files in binary mode for writing
     for (int i = 0; i < 4; i++)
     {
-        fout[i].open(outputFiles[i], ios::app | ios::binary);
+        fout[i].open(outputFiles[i], ios::out | ios::binary);
 
         // // check if the file is successfully opened
         if (!fout[i].is_open())
@@ -354,7 +381,7 @@ void readAndStoreEmpsByDepartmet()
         }
     }
 
-    // // create an instance of Employee to store fetched data
+    // // create an instance of Employee to store readed data
     Employee tempEmployee;
 
     // // read employee data
@@ -365,9 +392,8 @@ void readAndStoreEmpsByDepartmet()
         // // get and store employee department to compare
         strcpy(empDepartment, tempEmployee.getDepartment());
 
-        int index;
-
-        for (int i = 0; i < 4; i++)
+        int index = 0;
+        for (int i = 1; i < 4; i++)
         {
             if (!strcmp(empDepartment, departments[i]))
             {
@@ -376,27 +402,32 @@ void readAndStoreEmpsByDepartmet()
             }
         }
 
+        // // write employee data in appropriate file according to departments
         fout[index].write((char *)&tempEmployee, sizeof(tempEmployee));
+
+        // // read data of next employee
         fin.read((char *)&tempEmployee, sizeof(tempEmployee));
     }
 
     // // close files
     fin.close();
     for (int i = 0; i < 4; i++)
-    {
         fout[i].close();
-    }
-
-    cout << "\nIn store by dfep" << endl;
 }
 
 // // function to read and show employees of given department
-void readAndShowEmpsOfGivenDepartmet(const char *department)
+void readAndShowEmpsOfGivenDepartment(const char *department)
 {
+
+    if (strlen(department) > Employee::MAX_CHARS_IN_DEPARTMENT - 1)
+    {
+        cout << "!!! Given Department is Invalid ..." << endl;
+        return;
+    }
+
+    // // convert department in lowercase
     char copyDepartment[strlen(department) + 1];
-
     int i;
-
     for (i = 0; department[i]; i++)
     {
         if (isalpha(department[i]))
@@ -406,15 +437,16 @@ void readAndShowEmpsOfGivenDepartmet(const char *department)
             else
                 copyDepartment[i] = department[i];
         }
-        copyDepartment[i] = department[i];
+        else
+            copyDepartment[i] = department[i];
     }
 
-    copyDepartment[i] = 0;
+    copyDepartment[i] = '\0'; // terminate with null char
 
-    const char *inputFile;
-
+    // // create an instance of ifstream to read a file
     ifstream fin;
 
+    // // open appropriate file for reading according to given department
     if (!strcmp(copyDepartment, "admin"))
         fin.open("adm.dat", ios::in | ios::binary);
     else if (!strcmp(copyDepartment, "production"))
@@ -427,11 +459,44 @@ void readAndShowEmpsOfGivenDepartmet(const char *department)
     // // check if the file is successfully opened
     if (!fin.is_open())
     {
-        cout << "\nError: Unable to Open File...";
+        ifstream fin;
+
+        fin.open("emp.dat", ios::in | ios::binary);
+
+        // // check if the file is successfully opened
+        if (!fin.is_open())
+        {
+            cout << "\nError: Unable to Open File...";
+            return;
+        }
+
+        // // create an instance of Employee to store readed data
+        Employee tempEmployee;
+
+        // // read employee data
+        fin.read((char *)&tempEmployee, sizeof(tempEmployee));
+
+        while (!fin.eof()) // run till the end of file
+        {
+            // // display data
+            if (!strcmp(tempEmployee.getDepartment(), copyDepartment))
+            {
+                cout << endl;
+                tempEmployee.showEmployeeData();
+                cout << endl;
+            }
+
+            // // read data of next employee
+            fin.read((char *)&tempEmployee, sizeof(tempEmployee));
+        }
+
+        // // close files
+        fin.close();
+
         return;
     }
 
-    // // create an instance of Employee to store fetched data
+    // // create an instance of Employee to store readed data
     Employee tempEmployee;
 
     // // read employee data
@@ -439,7 +504,12 @@ void readAndShowEmpsOfGivenDepartmet(const char *department)
 
     while (!fin.eof()) // run till the end of file
     {
+        // // display data
+        cout << endl;
         tempEmployee.showEmployeeData();
+        cout << endl;
+
+        // // read data of next employee
         fin.read((char *)&tempEmployee, sizeof(tempEmployee));
     }
 
@@ -452,11 +522,11 @@ int main()
 {
     int n;
 
-    cout << "\nHow Many Employees' Data You Want to Store (MAX " << MAX_BOOKS << ") => ";
+    cout << "\nHow Many Employees' Data You Want to Store (MAX " << MAX_EMPS << ") => ";
     cin >> n;
 
     // // invalid input
-    if (n < 1 || n > MAX_BOOKS)
+    if (n < 1 || n > MAX_EMPS)
     {
         cout << "\n!!! Invalid Input..." << endl;
         return 0;
@@ -487,17 +557,17 @@ int main()
 
     // // read and show employees data
     cout << "\n>>>>>>>>>> Employees Data Stored In File <<<<<<<<<<<<<<";
-    fetchAndShowEmployeeData();
+    readAndShowAllEmps();
 
-    cout << "\n>>>>>>>>> Employees Stored In Different-2 Files According to Their Departments <<<<<<<<<<<<<";
-    readAndStoreEmpsByDepartmet();
+    cout << "\n>>>>>>>>> Employees Data Have Successfully Stored In Different-2 Files According to Their Departments <<<<<<<<<<<<<" << endl;
+    readAndStoreEmpsByDepartment();
 
     char department[Employee::MAX_CHARS_IN_DEPARTMENT];
     cout << "\nEnter A Department to Show Employees of That Department => ";
     cin >> department;
 
     cout << "\n>>>>>>>>>> Employees of " << department << " Department <<<<<<<<<" << endl;
-    readAndShowEmpsOfGivenDepartmet(department);
+    readAndShowEmpsOfGivenDepartment(department);
 
     cout << endl; // Add new line
     cin.ignore();
