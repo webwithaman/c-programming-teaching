@@ -33,10 +33,10 @@ public:
     }
 };
 
-
 // // Main Function Start
 int main()
 {
+    
     // // create an instance of Rectangle
     Rectangle r1;
 
