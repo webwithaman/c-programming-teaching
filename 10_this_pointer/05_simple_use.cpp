@@ -45,6 +45,7 @@ int main()
 
     cout << endl; // Add new line
     cin.ignore();
+    
     return 0;
 }
 // // Main Function End
