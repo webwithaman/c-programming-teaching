@@ -226,7 +226,8 @@ void showPersonsHavingBalGreater(double balanceLimit)
     // // specify file name
     const char *fileName = "bank_data.dat";
 
-    int found = 0;
+    // // found any person having balance greater than given balance
+    int found = false;
 
     // create an instance of ifstream for reading from a file
     ifstream fin;
@@ -256,7 +257,7 @@ void showPersonsHavingBalGreater(double balanceLimit)
             // // display data
             tempBankAccount.showBankAccountData();
             cout << endl;
-            found = 1;
+            found = true;
         }
 
         // // read one record
@@ -266,6 +267,7 @@ void showPersonsHavingBalGreater(double balanceLimit)
     // // close file
     fin.close();
 
+    // // if there is no person having balance greater than given balance
     if (!found)
     {
         cout << "\nThere is No Person Having Balance Greater than " << balanceLimit << endl;
