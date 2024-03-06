@@ -29,10 +29,10 @@ public:
     // // instance member function to find area of rectangle
     void area()
     {
+       
         cout << "\nArea => " << length * breadth;
     }
 };
-
 
 // // Main Function Start
 int main()
