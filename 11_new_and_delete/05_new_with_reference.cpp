@@ -16,11 +16,6 @@ public:
     {
         cout << "\nHello";
     }
-
-    operator Hello *()
-    {
-        return (*this);
-    }
 };
 
 // // Main Function Start
