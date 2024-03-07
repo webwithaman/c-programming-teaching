@@ -1,4 +1,4 @@
-// // Use this pointer to get the address of calling or current object. define a class A and a member function that returns the address of calling object.
+// // Use this pointer to get the reference of caller object. define a class A and a member function that returns the reference of caller object.
 
 // // Header files
 #include <iostream>
