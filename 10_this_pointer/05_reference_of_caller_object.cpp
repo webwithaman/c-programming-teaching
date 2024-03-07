@@ -11,22 +11,20 @@ class A
 {
 
 public:
-    // // instance member function that returns the address of calling or current object
-    A *getAddress()
+    // // instance member function that returns the reference of caller or current object
+    A &getReference()
     {
-        return this; // this pointer points to the current object
+        return *this; // this pointer points to the current object
     }
 };
 
 // // Main Function Start
 int main()
 {
-    A a1, *ptr;
+    A a1;
 
-    // // get address of a1
-    ptr = a1.getAddress();
-
-    cout << "\nAddress of Object (a1) => " << ptr;
+    // // get reference of a1
+    A refOfA1 = a1.getReference();
 
     cout << endl; // Add new line
     cin.ignore();
