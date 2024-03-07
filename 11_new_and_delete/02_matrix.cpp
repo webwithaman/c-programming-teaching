@@ -50,7 +50,7 @@ int main()
         for (int j = 0; j < cols; j++)
             cout << left << setw(4) << matrix[i][j];
 
-        putch(10); // // Add New line
+        cout << endl; // // Add New line
     }
 
     // // Transpose of Matrix
@@ -60,7 +60,7 @@ int main()
         for (int j = 0; j < rows; j++)
             cout << left << setw(4) << matrix[j][i];
 
-        putch(10); // // Add New line
+        cout << endl; // // Add New line
     }
 
     // // deallocate dynamically allocated memory

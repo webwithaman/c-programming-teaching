@@ -12,3 +12,4 @@
 
 04. Define a class representing a student with attributes like name and roll number. Dynamically create an array of student objects based on user input for the number of students. Allow the user to input details for each student, display their information, and then use delete to free the memory.
 
+05. Demonstrate the use of new operator with reference variable in cpp.
